@@ -10,18 +10,19 @@
 </head>
 <body>
     <div class="container">
-            <h1>Hello!</h1>    
+            <h1>Hello! This is state {{state['name']}}</h1>    
 
-            <h2>The States</h2>
+            
+            <section class="race">
+                <div>
+                    Total population: {{state['Population']}}                                         
+                </div>
 
-            <ul>
+                <div>
+                    Whites: {{state['White']}} ({{state['White %']}} %)
+                </div>
+            </section>
 
-            {% for s in states %}
-                <li>
-                    <a href="/states/{{s.id}}">{{s.name}}</a>
-                </li>
-            {% endfor %}
-            </ul>
 
     </div>
 
