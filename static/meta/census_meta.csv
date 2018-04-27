@@ -1,0 +1,39 @@
+readable_name,Name,type,dataset,subset,code,api_value
+Total population,Percent; SEX AND AGE - Total population,,ACS_16_5YR,DP05,HC03_VC03,B00001_001E
+Median age,Estimate; SEX AND AGE - Median age (years),,ACS_16_5YR,DP05,HC01_VC23,B01002_001E
+White,Percent; RACE - One race - White,,ACS_16_5YR,DP05,HC03_VC49,B02001_002E
+Total Housing Units,OWNER HOMES TKTK,,,,,B25075_001E
+Total population in owner occupied homes,Total population in owner occupied home units TK TK,,,,,B25026_002E
+Moved in 1979 or earlier,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Occupied housing units - Moved in 1979 and earlier,,ACS_16_5YR,DP04,HC03_VC80,B25026_008E
+Moved in 1980 to 1989,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Occupied housing units - Moved in 1980 to 1989,,ACS_16_5YR,DP04,HC03_VC79,B25026_007E
+Moved in 1990 to 1999,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Occupied housing units - Moved in 1990 to 1999,,ACS_16_5YR,DP04,HC03_VC78,B25026_006E
+Moved in 2000 to 2009,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Occupied housing units - Moved in 2000 to 2009,,ACS_16_5YR,DP04,HC03_VC77,B25026_006E
+Moved in 2010 to 2014,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Occupied housing units - Moved in 2010 to 2014,,ACS_16_5YR,DP04,HC03_VC76,B25026_004E
+Moved in 2015 or later,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Occupied housing units - Moved in 2015 or later,,ACS_16_5YR,DP04,HC03_VC75,B25026_003E
+Median home value,Estimate; VALUE - Owner-occupied units - Median (dollars),,ACS_16_5YR,DP04,HC01_VC128,B25077_001E
+Homes worth $1 million or more,"Percent; VALUE - Owner-occupied units - $1,000,000 or more",,ACS_16_5YR,DP04,HC03_VC127,B25075_025E
+Have at least a bachelor's degree,EDUCATIONAL ATTAINMENT BY EMPLOYMENT STATUS FOR THE POPULATION 25 TO 64 YEARS; Bachelor's degree or higher,,ACS_16_5YR,DP05,B23006_023E,B15003_022E
+Below poverty level,Percent below poverty level; Estimate; Population for whom poverty status is determined,,ACS_16_5YR,S1701,HC03_EST_VC01,B17001_001E
+Household income $200K+,"Household Income in the Past 12 Months; $200,000 or more",,ACS_16_5YR,DP03,HC03_VC84,B19001_017E
+Median household income,Estimate; INCOME AND BENEFITS (IN 2016 INFLATION-ADJUSTED DOLLARS) - Total households - Median household income (dollars),,ACS_16_5YR,DP03,HC01_VC85,B19013_001E
+,Estimate; Native: - Born in state of residence,,ACS_16_5YR,B05002,HD01_VD03,B05002_003E
+,Estimate; Native: - Born in other state in the United States:,,ACS_16_5YR,B05002,HD01_VD04,B05002_004E
+,Estimate; Foreign born:,,ACS_16_5YR,B05002,HD01_VD13,B05002_009E
+,Number; Total population,,DEC_00,SF1_DP1,HC01_VC01,POP100
+,Number; Total population - SEX AND AGE - Median age (years),,DEC_00,SF1_DP1,HC01_VC18,P013001
+,Percent; Total population - RACE - One race - White,,DEC_00,SF1_DP1,HC02_VC29,P003003
+,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Moved in 2005 or later,,ACS_11_5YR,DP04,HC03_VC72,
+,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Moved in 2000 to 2004,,ACS_11_5YR,DP04,HC03_VC73,
+,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Moved in 1990 to 1999,,ACS_11_5YR,DP04,HC03_VC74,
+,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Moved in 1980 to 1989,,ACS_11_5YR,DP04,HC03_VC75,
+,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Moved in 1970 to 1979,,ACS_11_5YR,DP04,HC03_VC76,
+,Percent; YEAR HOUSEHOLDER MOVED INTO UNIT - Moved in 1969 or earlier,,ACS_11_5YR,DP04,HC03_VC77,
+,Estimate; VALUE - Median (dollars),,ACS_11_5YR,DP04,HC01_VC125,
+,"Percent; VALUE - $1,000,000 or more",,ACS_11_5YR,DP04,HC03_VC124,
+,Both sexes; EDUCATIONAL ATTAINMENT (highest level) - Population 25 years and over - Bachelor's degree,,DEC_00,SF3_QTP20,HC01_VC15,"P037015, P037032        "
+,Percent below poverty level; All individuals for whom poverty status is determined,,DEC_00,SF3_QTP34,HC04_VC01,P087001
+,"Percent; INCOME IN 1999 - Households - $200,000 or more",,DEC_00,SF3_DP3,HC02_VC63,P052017
+,Number; INCOME IN 1999 - Households - Median household income (dollars),,DEC_00,SF3_DP3,HC01_VC64,P053001
+,Percent; NATIVITY AND PLACE OF BIRTH - Total population - Native - Born in United States - State of residence,,DEC_00,SF3_DP2,HC02_VC57,P021003
+,Percent; NATIVITY AND PLACE OF BIRTH - Total population - Native - Born in United States - Different state,,DEC_00,SF3_DP2,HC02_VC58,P021004
+,Percent; NATIVITY AND PLACE OF BIRTH - Total population - Native - Born outside United States,,DEC_00,SF3_DP2,HC02_VC59,P021009
