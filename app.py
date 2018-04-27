@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-from helpers.state import get_state, get_states
+from helpers.entity import get_state, get_states
 
 myapp = Flask(__name__)
 
