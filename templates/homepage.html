@@ -9,11 +9,20 @@
     <title>Document</title>
 </head>
 <body>
+   
     <div class="container">
-            <h1>Hello!</h1>    
+        <style>h1,h2 {text-align:center;} </style>
+            <h1>HEADLINE TK</h1>    
+            <p style="text-align:center;">
+                <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States" height="400" width="600">
+            </p>
 
-            <h2>The States</h2>
-
+            <p align="center">This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)</p>
+            
+            <h2>States</h2>
+            <div class="topnav">
+                    <input type="text" placeholder="Search..">
+                  </div>
             <ul>
 
             {% for s in states %}
@@ -28,3 +37,4 @@
 
 </body>
 </html>
+

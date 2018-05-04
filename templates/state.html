@@ -9,11 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-            <h1>Hello! This is state {{state['name']}}</h1>    
-
-            
+    <div class="container" align="center">
+            <h1>Data for {{state['name']}}</h1>    
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/2000px-Alabama_in_United_States.svg.png" alt="Alabama" align="center" height="250" width="400">
+            -- INSERT MAPBOX RESPONSE HERE --
             <section class="race">
+                <p>
+                    Data from 2016 5-Year American Community Survey
+                </p>
+
                 <div>
                     Total population: {{state['Population']}}                                         
                 </div>
@@ -21,8 +25,79 @@
                 <div>
                     Whites: {{state['White']}} ({{state['White %']}} %)
                 </div>
+
+                <div>
+                    Median Age {{state['Median Age']}}
+                </div>
+
+                <div>
+                    Total Housing Units {{state['Total Housing Units']}}
+                </div>
+
+                <div>
+                    Number in owner-occupied units {{state['Number in owner-occupied units']}}
+                </div>
+
+                <div>
+                    Moved in 1979 and earlier {{state['Moved in 1979 and earlier']}}
+                </div>
+
+                <div> 
+                    Moved in 1980 to 1989 {{state['Moved in 1980 to 1989']}}
+                </div>
+
+                <div>
+                    Moved in 1990 to 1999 {{state['Moved in 1990 to 1999']}}
+                </div>
+
+                <div>
+                    Moved in 2010 to 2014 {{state['Moved in 2010 to 2014']}}
+                </div>
+
+                <div>
+                    Moved in 2015 or later {{state['Moved in 2015 or later']}}
+                </div>
+
+                <div>
+                    Median home value ${{state['Median home value']}}
+                </div>
+
+                <div>
+                    Homes worth $1 million or more {{state['Homes worth $1 million or more']}}
+                </div>
+
+                <div>
+                    Have at least a Bachelor's degree {{state['Have at least a bachelors degree']}}
+                </div>
+
+                <div>
+                    Below poverty level {{state['Below poverty level']}}
+                </div>
+
+                <div>
+                    Household income 200k or more {{state['Household income $200K+']}}
+                </div>
+
+                <div>
+                    Median household income ${{state['Median household income']}}
+                </div>
+
+                <div>
+                    Born in other state {{state['Born in other state']}}
+                </div>
+
+
+                <p>
+
+
+                </p>
+                <p>Data from 2000 Census (TK)</p>
+
             </section>
 
+            <section> 
+                <img src="http://www.cityofbarnesville.com/our_community/images/Census_Data_Chart.jpg">
+            </section>
 
     </div>
 
