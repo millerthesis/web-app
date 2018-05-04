@@ -1,0 +1,24 @@
+section#main{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    background: lime;
+    padding: 1.0em;
+}
+
+header h1{
+    font-size: 1.2em;
+}
+
+footer{
+    margin-top: 3em;
+    border-top: 2px solid #444;
+    padding-top: 2em;
+    padding-bottom: 4em;
+    background: pink;
+}

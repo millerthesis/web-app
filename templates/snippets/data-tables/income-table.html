@@ -1,0 +1,41 @@
+
+<table class="table table-sm table-data">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                {{state['name']}}
+            </th>
+            <th>
+                {{US['name']}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set fields =  [
+                                'Population',
+                              '% Below poverty level',
+                                'Below poverty level',
+                                'Household income $200K+',
+                                'Median household income',
+                                'Have at least a bachelors degree',]
+
+
+        %}
+
+
+
+        {% for fieldname in fields %}
+
+            <tr>
+                <td>{{fieldname}}</td>
+                <td>{{state[fieldname]}}</td>
+                <td>{{US[fieldname]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+

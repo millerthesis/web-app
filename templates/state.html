@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Document</title>
+    <title>State: {{state['name']}}</title>
+    {% include 'snippets/head-meta.html' %}
 </head>
+
+
 <body>
-    <div class="container" align="center">
-            <h1>Data for {{state['name']}}</h1>    
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/2000px-Alabama_in_United_States.svg.png" alt="Alabama" align="center" height="250" width="400">
-            -- INSERT MAPBOX RESPONSE HERE --
+
+    {% include 'snippets/header.html' %}
+
+    <div class="container">
+
+            <section id="main">
+
+                        <h1>Data for {{state['name']}}</h1>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/2000px-Alabama_in_United_States.svg.png" alt="Alabama" align="center" height="250" width="400">
+
+
+                        <section id="race">
+                            <h2>Race/Ethnicity data TK</h2>
+
+                            {% include 'snippets/data-tables/race-table.html' %}
+
+                        </section>
+
+
+                        <section id="housing">
+                            <h2>Housing stuff TK</h2>
+
+
+
+                            {% include 'snippets/data-tables/housing-table.html' %}
+                        </section>
+
+
+                        <section id="income">
+                            <h2>Income/Poverty TK</h2>
+
+                            {% include 'snippets/data-tables/income-table.html' %}
+
+                        </section>
+
+                    </section>
+
+    </div>
+
+
+
+                {% include 'snippets/footer.html' %}
+
+
+</body>
+</html>
+
+
+<!--
+
+
             <section class="race">
                 <p>
                     Data from 2016 5-Year American Community Survey
                 </p>
 
                 <div>
-                    Total population: {{state['Population']}}                                         
+                    Total population: {{state['Population']}}
                 </div>
 
                 <div>
@@ -42,7 +87,7 @@
                     Moved in 1979 and earlier {{state['Moved in 1979 and earlier']}}
                 </div>
 
-                <div> 
+                <div>
                     Moved in 1980 to 1989 {{state['Moved in 1980 to 1989']}}
                 </div>
 
@@ -95,12 +140,6 @@
 
             </section>
 
-            <section> 
+            <section>
                 <img src="http://www.cityofbarnesville.com/our_community/images/Census_Data_Chart.jpg">
-            </section>
-
-    </div>
-
-
-</body>
-</html>
+            </section> -->

@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Homepage</title>
+    {% include 'snippets/head-meta.html' %}
 
-    <title>Document</title>
 </head>
 <body>
-   
+
+    {% include 'snippets/header.html' %}
+
+
     <div class="container">
-        <style>h1,h2 {text-align:center;} </style>
-            <h1>HEADLINE TK</h1>    
-            <p style="text-align:center;">
-                <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States" height="400" width="600">
-            </p>
 
-            <p align="center">This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)</p>
-            
-            <h2>States</h2>
-            <div class="topnav">
-                    <input type="text" placeholder="Search..">
-                  </div>
-            <ul>
+            <section id="main">
 
-            {% for s in states %}
-                <li>
-                    <a href="/states/{{s.id}}">{{s.name}}</a>
-                </li>
-            {% endfor %}
-            </ul>
+                <h1>HEADLINE TK</h1>
+                <p style="text-align:center;">
+                    <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States" height="400" width="600">
+                </p>
+
+                <p align="center">This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)</p>
+
+                <h2>States</h2>
+                <div class="topnav">
+                        <input type="text" placeholder="Search..">
+                      </div>
+                <ul>
+
+                {% for s in states %}
+                    <li>
+                        <a href="/states/{{s.id}}">{{s.name}}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </section>
 
     </div>
+
+
+        {% include 'snippets/footer.html' %}
+
 
 
 </body>
