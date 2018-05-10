@@ -46,19 +46,25 @@ def make_entity(rawdict):
     d['Number in owner-occupied units'] = int(float(rawdict['B25026_002E']))
     d['Median home value'] = int(float(rawdict['B25077_001E']))
     d['Homes worth $1 million or more'] = int(float(rawdict['B25075_025E']))
+    d['Percent of homes worth $1 million or more'] = round(d['Homes worth $1 million or more'] * 100.0 / d['Total Housing Units'], 1)
 
     # income
     d['Population (Poverty determined)'] = int(float(rawdict['B17001_001E']))
     d['Below poverty level'] = int(float(rawdict['B17001_002E']))
     d['% Below poverty level'] = round(d['Below poverty level'] * 100.0 / d['Population (Poverty determined)'], 1)
-    d['Household income $200K+'] = int(float(rawdict['B19001_017E']))
+    d['Household income $200k+'] = int(float(rawdict['B19001_017E']))
+    d['Percent of households with income $200k+'] = round(d['Household income $200k+'] * 100.0 / d['Population'], 1)
     d['Median household income'] = int(float(rawdict['B19013_001E']))
     d['Have at least a bachelors degree'] = int(float(rawdict['B15003_022E']))
+    d['Percent with bachelors degree'] = round(d['Have at least a bachelors degree'] * 100.0 / d['Population'], 1)
 
     # residency
     d['Born in state'] = int(float(rawdict['B05002_003E']))
+    d['Percent born in state'] = round(d['Born in state'] * 100.0 / d['Population'], 1)
     d['Born in other state'] = int(float(rawdict['B05002_004E']))
+    d['Percent born in other state'] = round(d['Born in other state'] * 100.0 / d['Population'], 1)
     d['Foreign born'] = int(float(rawdict['B05002_009E']))
+    d['Percent foreign born'] = round(d['Foreign born'] * 100.0 / d['Population'], 1)
     d['Moved in 1979 and earlier'] = int(float(rawdict['B25026_008E']))
     d['Moved in 1980 to 1989'] = int(float(rawdict['B25026_007E']))
     d['Moved in 1990 to 1999'] = int(float(rawdict['B25026_006E']))
