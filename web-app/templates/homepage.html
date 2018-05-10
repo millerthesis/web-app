@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homepage</title>
+    {% include 'snippets/head-meta.html' %}
+
+</head>
+<body>
+
+    {% include 'snippets/header.html' %}
+
+
+    <div class="container">
+
+            <section id="main">
+
+                <h1>HEADLINE TK</h1>
+                <p style="text-align:center;">
+                    <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States" height="400" width="600">
+                </p>
+
+                <p align="center">This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)</p>
+
+                <h2>States</h2>
+                <div class="topnav">
+                        <input type="text" placeholder="Search..">
+                      </div>
+                <ul>
+
+                {% for s in states %}
+                    <li>
+                        <a href="/states/{{s.id}}">{{s.name}}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </section>
+
+    </div>
+
+
+        {% include 'snippets/footer.html' %}
+
+
+
+</body>
+</html>
+

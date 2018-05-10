@@ -1,0 +1,76 @@
+
+<table class="table table-sm table-data">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                {{state['name']}}
+            </th>
+            <th>
+                {{US['name']}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set housingfields = ['Total Housing Units',
+                                'Number in owner-occupied units',
+                                'Median home value',
+                                'Homes worth $1 million or more',
+                                'Percent of homes worth $1 million or more',
+                                ]
+
+
+        %}
+
+        {% for fieldname in housingfields %}
+
+            <tr>
+                <td>{{fieldname}}</td>
+                <td>{{state[fieldname]}}</td>
+                <td>{{US[fieldname]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+<!--
+
+                <div>
+                    Total Housing Units {{state['Total Housing Units']}}
+                </div>
+
+                <div>
+                    Number in owner-occupied units {{state['Number in owner-occupied units']}}
+                </div>
+
+                <div>
+                    Moved in 1979 and earlier {{state['Moved in 1979 and earlier']}}
+                </div>
+
+                <div>
+                    Moved in 1980 to 1989 {{state['Moved in 1980 to 1989']}}
+                </div>
+
+                <div>
+                    Moved in 1990 to 1999 {{state['Moved in 1990 to 1999']}}
+                </div>
+
+                <div>
+                    Moved in 2010 to 2014 {{state['Moved in 2010 to 2014']}}
+                </div>
+
+                <div>
+                    Moved in 2015 or later {{state['Moved in 2015 or later']}}
+                </div>
+
+                <div>
+                    Median home value ${{state['Median home value']}}
+                </div>
+
+                <div>
+                    Homes worth $1 million or more {{state['Homes worth $1 million or more']}}
+                </div> -->

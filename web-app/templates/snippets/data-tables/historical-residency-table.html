@@ -1,0 +1,45 @@
+
+<table class="table table-sm table-data">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                {{state['name']}}
+            </th>
+            <th>
+                {{US['name']}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set hresidencyfields =  [
+                                'Born in state_00',
+                                'Born in different state_00',
+                                'Foreign born_00',
+                                'Moved in before 1969_09'
+                                'Moved in between 1970-1979_09',
+                                'Moved in between 1980-1989_09',
+                                'Moved in between 1990-1999_09',
+                                'Moved in between 2000-2004_09',
+                                'Moved in 2005 or later_09',
+                                ]
+
+
+        %}
+
+
+
+        {% for fieldname in hresidencyfields %}
+
+            <tr>
+                <td>{{fieldname}}</td>
+                <td>{{state[fieldname]}}</td>
+                <td>{{US[fieldname]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
