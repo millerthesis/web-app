@@ -2,7 +2,6 @@ from helpers.data import get_geo_data
 GEOS = ['us', 'state',] # just for reference
 
 
-
 def get_us():
     return get_entity('0100000US', 'us')
 
@@ -52,12 +51,9 @@ def make_entity(rawdict):
     d['Population (Poverty determined)'] = int(float(rawdict['B17001_001E']))
     d['Below poverty level'] = int(float(rawdict['B17001_002E']))
     d['% Below poverty level'] = round(d['Below poverty level'] * 100.0 / d['Population (Poverty determined)'], 1)
-
-
     d['Household income $200K+'] = int(float(rawdict['B19001_017E']))
     d['Median household income'] = int(float(rawdict['B19013_001E']))
     d['Have at least a bachelors degree'] = int(float(rawdict['B15003_022E']))
-
 
     # residency
     d['Born in state'] = int(float(rawdict['B05002_003E']))
@@ -69,21 +65,37 @@ def make_entity(rawdict):
     d['Moved in 2010 to 2014'] = int(float(rawdict['B25026_004E']))
     d['Moved in 2015 or later'] = int(float(rawdict['B25026_003E']))
 
-
     return d
-
-
-
-
-
-
-
-
-
-
 
 ########
 
+    # ######## 
+    #     # historical residency
+    #     d['Born in state_00'] = int(float(rawdict['P021003']))
+    #     d['Born in different state_00'] = int(float(rawdict['P021004']))
+    #     d['Foreign born_00'] = int(float(rawdict['P021009']))
+    #     d['Moved in before 1969_09'] = int(float(rawdict['B25109_008E']))
+    #     d['Moved in between 1970-1979_09'] = int(float(rawdict['B25109_007E']))
+    #     d['Moved in between 1980-1989_09'] = int(float(rawdict['B25109_006E']))
+    #     d['Moved in between 1990-1999_09'] = int(float(rawdict['B25109_005E']))
+    #     d['Moved in between 2000-2004_09'] = int(float(rawdict['B25109_004E']))
+    #     d['Moved in 2005 or later_09'] = int(float(rawdict['B25026_003E']))
+
+    #     # historical income
+    #     d['Percent for poverty determined_00'] = int(float(rawdict['P087001']))
+    #     d['Amount below poverty level_00'] = int(float(rawdict['P087002']))
+    #     d['Household income $200K+_00'] = int(float(rawdict['P052017']))
+    #     d['Median household income_00'] = int(float(rawdict['P053001']))
+    #     d['Amount with bachelors degrees_00'] = int(float(rawdict['P037015, P037032']))
+
+    #     # historical race
+    #     d['Total population_00'] = int(float(rawdict['P001001']))
+    #     d['White people (percent)_00'] = int(float(rawdict['P003003']))
+    #     d['Median age_00'] = int(float(rawdict['P013001']))
+
+    #     # historical housing
+    #     d['Median value (dollars)_09 for owner-occupied housing units'] = int(float(rawdict['B25077_001E']))
+    #     d['Homes worth $1 million or more_09'] = int(float(rawdict['B25075_025E']))
 
 # HOUSING_FIELDS = [
 #     ['Total Housing Units', 'B25075_001E'],

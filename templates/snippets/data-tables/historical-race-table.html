@@ -14,20 +14,15 @@
         </tr>
     </thead>
     <tbody>
-        {% set incomefields =  [
-                                'Population',
-                              '% Below poverty level',
-                                'Below poverty level',
-                                'Household income $200K+',
-                                'Median household income',
-                                'Have at least a bachelors degree',]
+        {% set hracefields = ['Total population_00',
+                                'White people (percent)_00',
+                                'Median age_00',
+                                ]
 
 
         %}
 
-
-
-        {% for fieldname in incomefields %}
+        {% for fieldname in hracefields %}
 
             <tr>
                 <td>{{fieldname}}</td>
@@ -37,5 +32,3 @@
         {% endfor %}
     </tbody>
 </table>
-
-

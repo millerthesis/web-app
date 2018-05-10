@@ -14,20 +14,20 @@
         </tr>
     </thead>
     <tbody>
-        {% set incomefields =  [
-                                'Population',
-                              '% Below poverty level',
-                                'Below poverty level',
-                                'Household income $200K+',
-                                'Median household income',
-                                'Have at least a bachelors degree',]
+        {% set hincomefields =  [
+                                'Percent for poverty determined_00',
+                                'Amount below poverty level_00',
+                                'Household income $200K+_00',
+                                'Median household income_00',
+                                'Amount with bachelors degrees_00'
+                                ]
 
 
         %}
 
 
 
-        {% for fieldname in incomefields %}
+        {% for fieldname in hincomefields %}
 
             <tr>
                 <td>{{fieldname}}</td>
