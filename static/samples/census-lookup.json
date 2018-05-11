@@ -1,0 +1,115 @@
+{
+  "result": {
+    "geographies": {
+      "Counties": [
+        {
+          "OID": 275901063468976,
+          "STATE": "06",
+          "FUNCSTAT": "A",
+          "AREAWATER": 1794659470,
+          "NAME": "Los Angeles County",
+          "LSADC": "06",
+          "CENTLON": "-118.2617650",
+          "BASENAME": "Los Angeles",
+          "INTPTLAT": "+34.1963983",
+          "COUNTYCC": "H1",
+          "MTFCC": "G4020",
+          "COUNTY": "037",
+          "GEOID": "06037",
+          "CENTLAT": "+34.1957768",
+          "INTPTLON": "-118.2618616",
+          "AREALAND": 10510687541,
+          "COUNTYNS": "00277283",
+          "OBJECTID": 398
+        }
+      ],
+      "Census Tracts": [
+        {
+          "OID": 207901115289435,
+          "STATE": "06",
+          "FUNCSTAT": "S",
+          "NAME": "Census Tract 2074",
+          "AREAWATER": 6458,
+          "LSADC": "CT",
+          "CENTLON": "-118.2455899",
+          "BASENAME": "2074",
+          "INTPTLAT": "+34.0562223",
+          "MTFCC": "G5020",
+          "COUNTY": "037",
+          "GEOID": "06037207400",
+          "CENTLAT": "+34.0557740",
+          "INTPTLON": "-118.2466420",
+          "AREALAND": 862957,
+          "OBJECTID": 13453,
+          "TRACT": "207400"
+        }
+      ],
+      "2010 Census Blocks": [
+        {
+          "BLKGRP": "1",
+          "OID": 210404056365185,
+          "FUNCSTAT": "S",
+          "STATE": "06",
+          "AREAWATER": 0,
+          "NAME": "Block 1031",
+          "SUFFIX": "",
+          "LSADC": "BK",
+          "CENTLON": "-118.2440492",
+          "LWBLKTYP": "L",
+          "BASENAME": "1031",
+          "BLOCK": "1031",
+          "INTPTLAT": "+34.0543000",
+          "MTFCC": "G5040",
+          "COUNTY": "037",
+          "GEOID": "060372074001031",
+          "CENTLAT": "+34.0543000",
+          "INTPTLON": "-118.2440492",
+          "AREALAND": 35363,
+          "OBJECTID": 8347318,
+          "TRACT": "207400"
+        }
+      ],
+      "States": [
+        {
+          "OID": 2749018475066,
+          "STATE": "06",
+          "FUNCSTAT": "A",
+          "NAME": "California",
+          "AREAWATER": 20484627967,
+          "LSADC": "00",
+          "CENTLON": "-119.5277460",
+          "STUSAB": "CA",
+          "BASENAME": "California",
+          "INTPTLAT": "+37.1551773",
+          "DIVISION": "9",
+          "MTFCC": "G4000",
+          "STATENS": "01779778",
+          "GEOID": "06",
+          "CENTLAT": "+37.1547352",
+          "INTPTLON": "-119.5434183",
+          "REGION": "4",
+          "AREALAND": 403483191859,
+          "OBJECTID": 14
+        }
+      ]
+    },
+    "input": {
+      "location": {
+        "x": -118.2439,
+        "y": 34.0544
+      },
+      "benchmark": {
+        "benchmarkName": "Public_AR_Current",
+        "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+        "isDefault": false,
+        "id": "4"
+      },
+      "vintage": {
+        "vintageDescription": "Current Vintage - Current Benchmark",
+        "vintageName": "Current_Current",
+        "isDefault": true,
+        "id": "4"
+      }
+    }
+  }
+}

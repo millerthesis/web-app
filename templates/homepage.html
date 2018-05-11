@@ -21,6 +21,9 @@
                     This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)
                 </p>
 
+                {% include 'snippets/forms/address-search.html' %}
+
+
                 <div class="lede-image">
                     <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States">
                 </div>
@@ -36,23 +39,6 @@
 
 
 
-
-
-            <section>
-                <div>
-                    <form action="/geocode">
-                        <div class="form-row">
-                            <div class="form-group col-sm-6">
-                                <input type="text" placeholder="Enter an address" name="address" class="form-control form-control-lg">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <input type="submit" value="Search!" class="btn btn-primary">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-            </section>
 
 
 

@@ -3,11 +3,20 @@ body{
 
 }
 
-/*
-section#main{
-    margin-left: auto;
-    margin-right: auto;
-}*/
+
+
+h1.page-title{
+    font-size: 2.6em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+section#debug{
+    margin-top: 20em;
+    background: pink;
+}
+
 
 #site-header{
     margin-top: 0.5em;
