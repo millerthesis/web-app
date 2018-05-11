@@ -2,65 +2,75 @@
 <html lang="en">
 <head>
     <title>
-        <font color="black">
                 Homepage
-        </font> 
-        
+
     </title>
-    {% include 'snippets/head-meta.html' %}
+    {% include 'snippets/sitewide/head-meta.html' %}
 
 </head>
-<body>
-    <style>
-    body {
-        background-color: #ced7e5;
-    }
-    </style>
+<body class="homepage">
+    {% include 'snippets/sitewide/header.html' %}
 
-    
+        <div id="top" class="jumbotron">
+            <div class="container">
 
-    {% include 'snippets/header.html' %}
-    
+                <h1 class="site-title display-3">Gentrification Near U</h1>
 
-    <div class="container" style="color:#ced7e5">
 
-            <section id="main" style="color:#000000">
-
-                <h1>
-                    <font color="black">
-                            My App
-
-                    </font> 
-                </h1>
-                <p style="text-align:center;">
-                    <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States" height="400" width="600">
+                <p class="lead">
+                    This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)
                 </p>
 
-                <p align="center">This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)</p>
-                <div class="topnav">
-                        <input type="text" placeholder="Enter an address">
-                      </div>
-                <h2 align="center" style="color:#000000">States</h2>
-             
-                <ul>
+                <div class="lede-image">
+                    <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States">
+                </div>
 
-                {% for s in states %}
-                    <li>
-                        <a href="/states/{{s.id}}" style="color:black">
-                           {{s.name}}
-                        </a>
-                    </li>
-                {% endfor %}
-                </ul>
+            </div>
+        </div>
+
+
+
+
+    <div class="container">
+
+
+
+
+
+
+            <section>
+                <div>
+                    <form action="/geocode">
+                        <div class="form-row">
+                            <div class="form-group col-sm-6">
+                                <input type="text" placeholder="Enter an address" name="address" class="form-control form-control-lg">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="submit" value="Search!" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+
+
+
+            <section>
+                <h2>States</h2>
+
+                {% include 'snippets/forms/state-selector.html' %}
+            </section>
+
+
+
+
+
+
             </section>
 
     </div>
 
 
-        {% include 'snippets/footer.html' %}
-
-
-
-</body>
-</html>
+    {% include 'snippets/sitewide/footer.html' %}
 
