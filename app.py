@@ -33,6 +33,10 @@ def geocode_address():
                             )
 
 
+@myapp.errorhandler(404)
+def render_404(err):
+    return render_template('meta/404.html', error=err)
+
 
 # @myapp.route("/testdata")
 # def xfoo():

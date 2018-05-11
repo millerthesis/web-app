@@ -9,24 +9,32 @@
 
 </head>
 <body class="homepage">
-    {% include 'snippets/sitewide/header.html' %}
+        {% include 'snippets/sitewide/header.html' %}
 
-        <div id="top" class="jumbotron">
+        <div id="banner" class="jumbotron">
             <div class="container">
 
                 <h1 class="site-title display-3">Gentrification Near U</h1>
 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="lead">
+                            This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)
+                        </p>
 
-                <p class="lead">
-                    This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)
-                </p>
+                        {% include 'snippets/forms/address-search.html' %}
 
-                {% include 'snippets/forms/address-search.html' %}
-
-
-                <div class="lede-image">
-                    <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="lede-image">
+                            <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States">
+                        </div>
+                    </div>
                 </div>
+
+
+
+
 
             </div>
         </div>
@@ -43,9 +51,26 @@
 
 
             <section>
-                <h2>States</h2>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Pick a state</h2>
+                        {% include 'snippets/forms/state-selector.html' %}
 
-                {% include 'snippets/forms/state-selector.html' %}
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>...or a Place</h3>
+                        <ul>
+                            <li><a href="/places/detroit">Detroit</a></li>
+                            <li><a href="/places/palo-alto">Palo Alto</a></li>
+                            <li><a href="/places/brooklyn">Brooklyn</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
             </section>
 
 

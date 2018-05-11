@@ -1,0 +1,32 @@
+body{
+    background-color: #ced7e5;
+}
+
+
+h1.page-title{
+    font-size: 2.6em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+.lede-image{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+/* specific stuff... */
+
+.homepage .lede-image img{
+    max-height: 300px;
+}
+
+section#debug{
+    margin-top: 20em;
+    background: pink;
+}
+
+
+

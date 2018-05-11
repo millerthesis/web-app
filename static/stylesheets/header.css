@@ -1,0 +1,23 @@
+#site-header{
+    background: black;
+    padding: 0.3em 0 0.1em 0;
+    text-align: right;
+}
+
+
+#site-header h1.title{
+    color: #dadada;
+    font-size: 1.2em;
+    margin: 0 0 0 0;
+    padding-top: 0.3em;
+    padding-bottom: 0;
+    text-align: left;
+}
+
+#site-header h1.title a{
+    color: white;
+}
+
+#site-header ul.navbar{
+    margin-bottom: 0;
+}

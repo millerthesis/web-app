@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700|Roboto+Slab:400,700');
+
+body{
+    font-family: "Lato", -apple-system, system, system-ui, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+h1,h2,h3,h4{
+    font-family: "Roboto Slab", system, system-ui, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+
+
