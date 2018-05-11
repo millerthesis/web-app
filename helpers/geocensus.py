@@ -6,6 +6,7 @@ from copy import copy
 
 SAMPLE_DATA_PATH = Path('static', 'samples', 'census-lookup.json') #TK
 
+THIS_IS_NOT_A_PATH = whatever(text)
 
 # https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-118.2439&y=34.0544&benchmark=Public_AR_Current&format=json&vintage=Current_Current
 BASE_ENDPOINT = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates'
@@ -16,6 +17,11 @@ BASE_PARAMS = {
 }
 
 
+
+def get_tract(data):
+    ###
+    d = {}
+    return d
 
 
 def lookup(longitude, latitude):
@@ -31,16 +37,6 @@ def lookup(longitude, latitude):
     txt = SAMPLE_DATA_PATH.read_text()
     ##############
     return json.loads(txt)
-
-
-
-def get_tract(data):
-    ###
-    d = {}
-    return d
-
-
-
 
 """
 What the census structure looks like:
@@ -69,3 +65,4 @@ What the census structure looks like:
 
 
 
+kjfnkjefnkje Testing Testing testing changes
