@@ -29,7 +29,6 @@ def get_entity(code, geo):
     raise ValueError("{s} is not a valid code".format(s=code))
 
 
-
 def make_entity(rawdict):
     d = {}
     d['name'] = rawdict['NAME']

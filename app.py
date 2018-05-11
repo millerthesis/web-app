@@ -14,6 +14,15 @@ def state(statecode):
     rawhtml = render_template('state.html', state=get_state(statecode), US=get_us())
     return rawhtml
 
+@myapp.route("/sample")
+def examples():
+    return render_template('sample.html')
+
+@myapp.route("/methodology")
+def methodology():
+    return render_template('methodology.html')
+   
+
 @myapp.route("/testdata")
 def xfoo():
     return render_template('altairtest.html')

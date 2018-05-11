@@ -7,7 +7,7 @@ section#main{
 header{
     margin-top: 0.5em;
     margin-bottom: 2em;
-    background: #DBDADA;
+    background: #000000;
     padding: 1.0em;
 }
 
@@ -22,3 +22,4 @@ footer{
     padding-bottom: 4em;
     background: #444;
 }
+
