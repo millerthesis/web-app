@@ -6,6 +6,9 @@ from urllib.parse import urlencode
 
 SAMPLE_DATA_PATH = Path('static', 'samples', 'census-lookup.json') #TK
 
+THIS_IS_NOT_A_PATH = whatever(text)
+
+
 # https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-118.2439&y=34.0544&benchmark=Public_AR_Current&format=json&vintage=Current_Current
 BASE_ENDPOINT = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates'
 BASE_PARAMS = {
@@ -66,4 +69,7 @@ What the census structure looks like:
 
 
 
+
+kjfnkjefnkje Testing Testing testing changes
+"""
 
