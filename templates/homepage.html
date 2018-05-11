@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Homepage</title>
+    <title>
+        <font color="black">
+                Homepage
+        </font> 
+        
+    </title>
     {% include 'snippets/head-meta.html' %}
 
 </head>
 <body>
+    <style>
+    body {
+        background-color: #ced7e5;
+    }
+    </style>
+
+    
 
     {% include 'snippets/header.html' %}
+    
 
+    <div class="container" style="color:#ced7e5">
 
-    <div class="container">
+            <section id="main" style="color:#000000">
 
-            <section id="main">
+                <h1>
+                    <font color="black">
+                            My App
 
-                <h1>HEADLINE TK</h1>
+                    </font> 
+                </h1>
                 <p style="text-align:center;">
                     <img src="http://www.yourchildlearns.com/online-atlas/images/map-of-united-states-2.gif" alt="United States" height="400" width="600">
                 </p>
 
                 <p align="center">This app allows you to compare historical Census data across multiple Census surveys for a chosen geography (State, city, address)</p>
-
-                <h2>States</h2>
                 <div class="topnav">
-                        <input type="text" placeholder="Search..">
+                        <input type="text" placeholder="Enter an address">
                       </div>
+                <h2 align="center" style="color:#000000">States</h2>
+             
                 <ul>
 
                 {% for s in states %}
                     <li>
-                        <a href="/states/{{s.id}}">{{s.name}}</a>
+                        <a href="/states/{{s.id}}" style="color:black">
+                           {{s.name}}
+                        </a>
                     </li>
                 {% endfor %}
                 </ul>
