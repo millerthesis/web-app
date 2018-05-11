@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>State: {{state['name']}}</title>
     {% include 'snippets/sitewide/head-meta.html' %}
+
+    <title>State: {{state['name']}}</title>
 </head>
 
 
-<body>
+<body class="state-page">
 
     {% include 'snippets/sitewide/header.html' %}
 
     <div class="container">
 
+
+
+
             <section id="main">
 
-                        <h1>Data for {{state['name']}}</h1>
+                        <h1 class="page-title">Data for {{state['name']}}</h1>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/2000px-Alabama_in_United_States.svg.png" alt="Alabama" align="center" height="250" width="400">
 
 
