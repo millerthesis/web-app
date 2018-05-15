@@ -4,7 +4,7 @@ API_TYPES = {
     'acs5-subject': 'https://api.census.gov/data/2016/acs/acs5/subject',
     'acs5-detailed': 'https://api.census.gov/data/2016/acs/acs5',
     'decennial': 'https://api.census.gov/data/2010/sf1',
-}   
+}
 
 params = {
     'state': '06',
@@ -13,36 +13,54 @@ params = {
 }
 
 def for_tract_querystring(state, county, tract):
-    params = {
-    'tract': '207400',
-    'state': '06',
-    'county': '037',
-    }
-
-    return urlencode(params)
     """
     state, county, tract are strings, e.g.
         "06", "037", "207400"
 
     Returns:
         "tract:207400&in=state:06%20county:037"
+        which is the encoded version of:
+        'tract=207400&state=06&county=037'
+
     """
 
+    # params = {
+    # 'tract': '207400',
+    # 'state': '06',
+    # 'county': '037',
+    # }
+    forstr = 'tract:{}'.format(tract)
+    instr = 'state:{s} county:{c}'.format(s=state, c=county)
+    tractparams = {'for': forstr, 'in': instr}
 
+    return urlencode(tractparams)
 
-def tract_request_url(apitype, fieldnames, state, county, tract):
-   
-    if API_TYPES == 'acs5-subject':
-        print( + urlencode(params))
-
-    if API_TYPES == 'acs5-detailed':
-        print( + urlencode(params))
-
-    if API_TYPES == 'decennial':
-        print( + urlencode(params))
 
 
 """
+example:
+tract_request_url('decennial', ['P0010001','P0030001'], '06', '037', '207400')
+
+"""
+
+def tract_request_url(apitype, fieldnames, state, county, tract):
+    """
+    fieldnames is a list of strings, e.g.
+        ['P0010001','P0030001']
+    """
+
+    if apitype not in API_TYPES.keys():
+        raise ValueError("apiname must be {}".format(API_TYPES.keys()))
+
+    locstring = for_tract_querystring(state, county, tract)
+    tablestring = ','.join(['NAME'] + fieldnames)
+    getstring = urlencode({'get': tablestring})
+    urlbase = API_TYPES[apitype]
+
+    return urlbase + '?' + getstring + '&' + locstring
+
+
+    """
     Args:
         apitype <str>: either "acs5-subject" or "acs5-detailed" or "decennial"
 
@@ -54,17 +72,11 @@ def tract_request_url(apitype, fieldnames, state, county, tract):
         https://api.census.gov/data/2016/acs/acs5?get=NAME,B01001_001E&for=tract:207400&in=state:06%20county:037
 
         Decennial call
-        https://api.census.gov/data/2010/sf1?get=NAME,P0010001,P0030001&for=tract:207400&in=state:06%20county:037"""
+            https://api.census.gov/data/2010/sf1?get=NAME,P0010001,P0030001&for=tract:207400&in=state:06%20county:037
+
+    """
 
 
-    if apiname not in API_TYPES.keys():
-        raise ValueError("apiname must be {}".format(API_TYPES.keys()))
-
-    api_endpoint = API_TYPES[apitype]
-    fieldnames = ['NAME'] + fieldnames
-    forqs = for_tract_querystring(state, county, tract)
-
-    return forqs
 
 
 
