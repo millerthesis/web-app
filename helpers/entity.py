@@ -36,8 +36,8 @@ def make_entity(rawdict):
 
     # race
     d['Population'] = int(float(rawdict['B01003_001E']))
-    d['White'] = int(float(rawdict['B02001_002E']))
-    d['White %'] = round(100 * d['White'] / d['Population'], 1)
+    d['White (total)'] = int(float(rawdict['B02001_002E']))
+    d['% White'] = round(100 * d['White (total)'] / d['Population'], 1)
     d['Median Age'] = int(float(rawdict['B01002_001E']))
 
     # housing
