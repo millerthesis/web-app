@@ -1,20 +1,25 @@
-from urllib.parse import urlencode, quote, urlretrieve
+from urllib.parse import urlencode, quote
 
 API_TYPES = {
     'acs5-subject': 'https://api.census.gov/data/2016/acs/acs5/subject',
     'acs5-detailed': 'https://api.census.gov/data/2016/acs/acs5',
     'decennial': 'https://api.census.gov/data/2010/sf1',
-}
+}   
 
 params = {
-        'tract':tract,
-        'in state':state,
-        'county':county,
-    }
+    'state':state,
+    'county':county,
+    'tract':tract,
+}
 
 def for_tract_querystring(state, county, tract):
-    return urlencode(params)
+    params = {
+        "tract": "207400",
+        "in state": "06",
+        "county": "037",
+        }
 
+    return urlencode(params)
     """
     state, county, tract are strings, e.g.
         "06", "037", "207400"
@@ -22,7 +27,6 @@ def for_tract_querystring(state, county, tract):
     Returns:
         "tract:207400&in=state:06%20county:037"
     """
-
 
 
 
