@@ -15,7 +15,7 @@ params = {
 def for_tract_querystring(state, county, tract):
     params = {
     'tract': '207400',
-    'in state': '06',
+    'state': '06',
     'county': '037',
     }
 
