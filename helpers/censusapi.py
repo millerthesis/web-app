@@ -7,17 +7,17 @@ API_TYPES = {
 }   
 
 params = {
-    'state':state,
-    'county':county,
-    'tract':tract,
+    'state': '06',
+    'county': '037',
+    'tract': '207400',
 }
 
 def for_tract_querystring(state, county, tract):
     params = {
-        "tract": "207400",
-        "in state": "06",
-        "county": "037",
-        }
+    'tract': '207400',
+    'in state': '06',
+    'county': '037',
+    }
 
     return urlencode(params)
     """
@@ -32,14 +32,14 @@ def for_tract_querystring(state, county, tract):
 
 def tract_request_url(apitype, fieldnames, state, county, tract):
    
-    if API_TYPES == 'subject':
-        print(subject + urlencode(params))
+    if API_TYPES == 'acs5-subject':
+        print( + urlencode(params))
 
-    if API_TYPES == 'detailed':
-        print(detailed + urlencode(params))
+    if API_TYPES == 'acs5-detailed':
+        print( + urlencode(params))
 
     if API_TYPES == 'decennial':
-        print(decennial + urlencode(params))
+        print( + urlencode(params))
 
 
 """
