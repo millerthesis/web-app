@@ -17,25 +17,16 @@ BASE_PARAMS = {
 
 
 def lookup(longitude, latitude):
-    """
-    Calls Census Geocoder API
-
-    Returns dictionary
-    """
-    myparams = copy(BASE_PARAMS)
-
-
-    # blah blah blah this part is the dummy part:
-    txt = SAMPLE_DATA_PATH.read_text()
-    ##############
-    return json.loads(txt)
-
+    r = requests.get("https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-118.2439&y=34.0544&benchmark=Public_AR_Current&format=json&vintage=Current_Current")
+    data = r.json()
+    return data
 
 
 def get_tract(data):
-    tracts = data['results']['geographies']['Census Tracts']
-    # etc etc.
-    d = {}
+    tracts = data['result']['geographies']['Census Tracts']
+    longitude = data['result']['geographies']['Census Tracts'][0]['CENTLON']
+    latitude = data['result']['geographies']['Census Tracts'][0]['CENTLAT']
+    d = {longitude, latitude}
     return d
 
 
