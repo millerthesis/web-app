@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import render_template, request
-from helpers.entity import get_state, get_states, get_us
+from helpers.entity import get_state, get_states, get_us, get_county
 import helpers.geocoder as geo
+import helpers.censusgeo as cg
 
 myapp = Flask(__name__)
 
@@ -23,13 +24,44 @@ def state(statecode):
 @myapp.route("/geocode")
 def geocode_address():
     addr = request.args['address']
-    data = geo.geocode(addr)
-    coords = geo.get_coords(data)
+    coords = geo.geocode(addr)
+    censuscodes = cg.lookup_tract(coords['longitude'], coords['latitude'])
+    county = get_county(censuscodes['state'], censuscodes['county'])
+    state = get_state(censuscodes['state'])
+    tract = 'TK'
 
     return render_template('geocode.html',
                                 address_query=addr,
                                 coords=coords,
+                                censuscodes=censuscodes,
+                                county=county,
+                                state=state,
+                                us=get_us(),
+                            )
 
+
+@myapp.route("/proto")
+def geoprototype():
+    from pathlib import Path
+    import json
+
+    addr = "1200 bryn mawr chicago, il"
+    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
+    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
+    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
+    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
+    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
+    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
+
+
+    return render_template('protopage.html',
+                                address_query=addr,
+                                coords=coords,
+                                censuscodes=censuscodes,
+                                county=county,
+                                state=state,
+                                us=us,
+                                tract=tract,
                             )
 
 

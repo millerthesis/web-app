@@ -9,7 +9,17 @@ def get_states():
     return get_entities('state')
 
 def get_state(code):
-    return get_entity(code, 'state')
+    if len(code) == 2:
+        _id = '0400000US' + code
+    else:
+        _id = code
+
+    return get_entity(_id, 'state')
+
+
+def get_county(state_code, county_code):
+    _id = '0500000US' + state_code + county_code
+    return get_entity(_id, 'county')
 
 
 def get_entities(geo): # e.g. 'state', 'county'
@@ -74,7 +84,7 @@ def make_entity(rawdict):
 
 ########
 
-    # ######## 
+    # ########
     #     # historical residency
     #     d['Born in state_00'] = int(float(rawdict['P021003']))
     #     d['Born in different state_00'] = int(float(rawdict['P021004']))
