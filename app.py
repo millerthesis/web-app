@@ -28,7 +28,7 @@ def geocode_address():
     censuscodes = cg.lookup_tract(coords['longitude'], coords['latitude'])
     county = get_county(censuscodes['state'], censuscodes['county'])
     state = get_state(censuscodes['state'])
-    tract = 'TK'
+    tract = {}
 
     return render_template('geocode.html',
                                 address_query=addr,
@@ -36,6 +36,7 @@ def geocode_address():
                                 censuscodes=censuscodes,
                                 county=county,
                                 state=state,
+                                tract=tract,
                                 us=get_us(),
                             )
 

@@ -1,0 +1,19 @@
+    <div id="the-map" style="width:100%; height:300px;"></div>
+    <script type="text/javascript">
+        var lng = {{coords['longitude']}};
+        var lat = {{coords['latitude']}};
+
+        var map = L.map('the-map').setView([lat, lng], 13);
+        var osmLayer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Data, imagery and map information provided by <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>.'
+        });
+        map.addLayer(osmLayer);
+        var blackIcon = L.Icon.extend({
+            options: {
+                iconUrl: "{{ url_for('static', filename='images/marker-24.png') }}",
+                iconSize: [24, 24]
+            }
+        });
+        var marker = L.marker([lat, lng], {icon: new blackIcon()}).addTo(map);
+    </script>
