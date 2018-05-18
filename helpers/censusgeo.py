@@ -16,17 +16,29 @@ BASE_PARAMS = {
 }
 
 
+
+def lookup_tract(longitude, latitude):
+  d = lookup(longitude, latitude)
+  return get_tract(d)
+
+
 def lookup(longitude, latitude):
-    r = requests.get("https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-118.2439&y=34.0544&benchmark=Public_AR_Current&format=json&vintage=Current_Current")
+    myparams = copy(BASE_PARAMS)
+    myparams['x'] = longitude
+    myparams['y'] = latitude
+    r = requests.get(BASE_ENDPOINT, params=myparams)
     data = r.json()
     return data
 
 
 def get_tract(data):
     tracts = data['result']['geographies']['Census Tracts']
-    longitude = data['result']['geographies']['Census Tracts'][0]['CENTLON']
-    latitude = data['result']['geographies']['Census Tracts'][0]['CENTLAT']
-    d = {longitude, latitude}
+    t = tracts[0]
+    d = {}
+    d['name'] = t['NAME']
+    d['tract'] = t['TRACT']
+    d['state'] = t['STATE']
+    d['county'] = t['COUNTY']
     return d
 
 
