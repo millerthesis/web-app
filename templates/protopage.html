@@ -23,34 +23,308 @@
         <h1>debug stuff</h1>
 
         <h2>query</h2>
-            <p>{{address_query | tojson }}</p>
-
+      
+        {{ address_query | tojson }}
+    
         <h2>coordinates</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
 
-        {{ coords | tojson }}
-
+                <tr>
+                    <td>{{ coords.name | tojson }} </td>
+                    <td>{{ coords.latitude | tojson }}</td>
+                    <td>{{ coords.longitude | tojson }}</td>
+                </tr>
+            
+            </table>
         <h2>censuscodes</h2>
+            <table>
+                <tr>
+                    <th>County</th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Tract</th>
+                </tr>
 
-        {{ censuscodes | tojson }}
-
+                <tr>
+                    <td>{{censuscodes.county | tojson }} </td>
+                    <td>{{censuscodes.name | tojson }} </td>
+                    <td>{{censuscodes.state | tojson }} </td>
+                    <td>{{censuscodes.tract | tojson }} </td>
+                </tr>
+            </table>
+            
+        
         <h2>tract</h2>
-
-        {{ tract | tojson}}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>White People</th>
+                    <th>Percent White</th>
+                    <th>Below Poverty Level</th>
+                    <th>Percent Below Poverty Level</th>
+                    <th>Born in state</th>
+                    <th>Born in other state</th>
+                    <th>Foreign born</th>
+                    <th>Have at least a bachelor's degree</th>
+                    <th>Homes worth $1 million+</th>
+                    <th>Household income $200k+</th>
+                    <th>Median Age</th>
+                    <th>Median home value</th>
+                    <th>Median household income</th>
+                    <th>Moved in 1979 and earlier</th>
+                    <th>Moved in 1980 to 1989</th>
+                    <th>Moved in 1990 to 1999</th>
+                    <th>Moved in 2010 to 2014</th>
+                    <th>Moved in 2015 or later</th>
+                    <th>Number in owner-occupied units</th>
+                    <th>Percent born in other state</th>
+                    <th>Percent born in state</th>
+                    <th>Percent of homes worth $1 million+</th>
+                    <th>Percent of households with income 200k+</th>
+                    <th>Percent with at least bachelor's degree</th>
+                    <th>Total housing units</th>
+                </tr>
+               
+                <tr>
+                        <td>{{tract.name | tojson}}</td>
+                        <td>{{tract.Population | tojson }} </td>
+                        <td>{{tract.WhiteTotal | tojson }} </td>
+                        <td>{{ tract.PercentWhite | tojson }}</td>
+                        <td>{{ tract.Belowpovertylevel | tojson }}</td>
+                        <td>{{ tract.PercentBelowpovertylevel | tojson }}</td>
+                        <td>{{tract.Borninstate | tojson }}</td>
+                        <td>{{ tract.Borninotherstate | tojson }}</td>
+                        <td>{{tract.Foreignborn | tojson }}</td>
+                        <td>{{tract.Haveatleastabachelorsdegree | tojson }}</td>
+                        <td>{{tract.Homesworth1millionormore | tojson }}</td>
+                        <td>{{tract.Householdincome200k | tojson }}</td>
+                        <td>{{ tract.MedianAge | tojson }}</td>
+                        <td>{{tract.Medianhomevalue | tojson}} </td>
+                        <td>{{tract.Medianhouseholdincome | tojson }}</td>
+                        <td>{{tract.Movedin1979andearlier | tojson }}</td>
+                        <td>{{tract.Movedin1980to1989 | tojson }}</td> 
+                        <td>{{tract.Movedin1990to1999 | tojson }}</td>
+                        <td>{{tract.Movedin2010to2014 | tojson }}</td>
+                        <td>{{tract.Movedin2015orlater | tojson }}</td>
+                        <td>{{tract.Numberinowneroccupiedunits | tojson }} </td>
+                        <td>{{tract.Percentborninotherstate | tojson }} </td>
+                        <td>{{tract.Percentborninstate | tojson }} </td>
+                        <td>{{tract.Percentforeignborn | tojson }} </td>
+                        <td>{{tract.Percentofhomesworth1millionormore | tojson }}</td>
+                        <td>{{tract.Percentofhouseholdswithincome200k | tojson }}
+                        <td>{{tract.Percentwithbachelorsdegree | tojson }}
+                        <td>{{tract.TotalHousingUnits | tojson }} </td>
+                </tr>
+            
+            </table>
+           
+           
 
         <h2>county</h2>
 
-        {{ county | tojson }}
+        <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>White People</th>
+                    <th>Percent White</th>
+                    <th>Below Poverty Level</th>
+                    <th>Percent Below Poverty Level</th>
+                    <th>Born in state</th>
+                    <th>Born in other state</th>
+                    <th>Foreign born</th>
+                    <th>Have at least a bachelor's degree</th>
+                    <th>Homes worth $1 million+</th>
+                    <th>Household income $200k+</th>
+                    <th>Median Age</th>
+                    <th>Median home value</th>
+                    <th>Median household income</th>
+                    <th>Moved in 1979 and earlier</th>
+                    <th>Moved in 1980 to 1989</th>
+                    <th>Moved in 1990 to 1999</th>
+                    <th>Moved in 2010 to 2014</th>
+                    <th>Moved in 2015 or later</th>
+                    <th>Number in owner-occupied units</th>
+                    <th>Percent born in other state</th>
+                    <th>Percent born in state</th>
+                    <th>Percent of homes worth $1 million+</th>
+                    <th>Percent of households with income 200k+</th>
+                    <th>Percent with at least bachelor's degree</th>
+                    <th>Total housing units</th>
+                </tr>
+            
+                <tr>
+                        <td>{{county.name | tojson}}</td>
+                        <td>{{county.Population | tojson }} </td>
+                        <td>{{county.WhiteTotal | tojson }} </td>
+                        <td>{{county.PercentWhite | tojson }}</td>
+                        <td>{{county.Belowpovertylevel | tojson }}</td>
+                        <td>{{county.PercentBelowpovertylevel | tojson }}</td>
+                        <td>{{county.Borninstate | tojson }}</td>
+                        <td>{{county.Borninotherstate | tojson }}</td>
+                        <td>{{county.Foreignborn | tojson }}</td>
+                        <td>{{county.Haveatleastabachelorsdegree | tojson }}</td>
+                        <td>{{county.Homesworth1millionormore | tojson }}</td>
+                        <td>{{county.Householdincome200k | tojson }}</td>
+                        <td>{{county.MedianAge | tojson }}</td>
+                        <td>{{county.Medianhomevalue | tojson}} </td>
+                        <td>{{county.Medianhouseholdincome | tojson }}</td>
+                        <td>{{county.Movedin1979andearlier | tojson }}</td>
+                        <td>{{county.Movedin1980to1989 | tojson }}</td> 
+                        <td>{{county.Movedin1990to1999 | tojson }}</td>
+                        <td>{{county.Movedin2010to2014 | tojson }}</td>
+                        <td>{{county.Movedin2015orlater | tojson }}</td>
+                        <td>{{county.Numberinowneroccupiedunits | tojson }} </td>
+                        <td>{{county.Percentborninotherstate | tojson }} </td>
+                        <td>{{county.Percentborninstate | tojson }} </td>
+                        <td>{{county.Percentforeignborn | tojson }} </td>
+                        <td>{{county.Percentofhomesworth1millionormore | tojson }}</td>
+                        <td>{{county.Percentofhouseholdswithincome200k | tojson }}
+                        <td>{{county.Percentwithbachelorsdegree | tojson }}
+                        <td>{{county.TotalHousingUnits | tojson }} </td>
+                </tr>
+            
+            </table>
 
         <h2>state</h2>
 
-        {{ state | tojson }}
+        <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>White People</th>
+                    <th>Percent White</th>
+                    <th>Below Poverty Level</th>
+                    <th>Percent Below Poverty Level</th>
+                    <th>Born in state</th>
+                    <th>Born in other state</th>
+                    <th>Foreign born</th>
+                    <th>Have at least a bachelor's degree</th>
+                    <th>Homes worth $1 million+</th>
+                    <th>Household income $200k+</th>
+                    <th>Median Age</th>
+                    <th>Median home value</th>
+                    <th>Median household income</th>
+                    <th>Moved in 1979 and earlier</th>
+                    <th>Moved in 1980 to 1989</th>
+                    <th>Moved in 1990 to 1999</th>
+                    <th>Moved in 2010 to 2014</th>
+                    <th>Moved in 2015 or later</th>
+                    <th>Number in owner-occupied units</th>
+                    <th>Percent born in other state</th>
+                    <th>Percent born in state</th>
+                    <th>Percent of homes worth $1 million+</th>
+                    <th>Percent of households with income 200k+</th>
+                    <th>Percent with at least bachelor's degree</th>
+                    <th>Total housing units</th>
+                </tr>
+            
+                <tr>
+                        <td>{{state.name | tojson}}</td>
+                        <td>{{state.Population | tojson }} </td>
+                        <td>{{state.WhiteTotal | tojson }} </td>
+                        <td>{{state.PercentWhite | tojson }}</td>
+                        <td>{{state.Belowpovertylevel | tojson }}</td>
+                        <td>{{state.PercentBelowpovertylevel | tojson }}</td>
+                        <td>{{state.Borninstate | tojson }}</td>
+                        <td>{{state.Borninotherstate | tojson }}</td>
+                        <td>{{state.Foreignborn | tojson }}</td>
+                        <td>{{state.Haveatleastabachelorsdegree | tojson }}</td>
+                        <td>{{state.Homesworth1millionormore | tojson }}</td>
+                        <td>{{state.Householdincome200k | tojson }}</td>
+                        <td>{{state.MedianAge | tojson }}</td>
+                        <td>{{state.Medianhomevalue | tojson}} </td>
+                        <td>{{state.Medianhouseholdincome | tojson }}</td>
+                        <td>{{state.Movedin1979andearlier | tojson }}</td>
+                        <td>{{state.Movedin1980to1989 | tojson }}</td> 
+                        <td>{{state.Movedin1990to1999 | tojson }}</td>
+                        <td>{{state.Movedin2010to2014 | tojson }}</td>
+                        <td>{{state.Movedin2015orlater | tojson }}</td>
+                        <td>{{state.Numberinowneroccupiedunits | tojson }} </td>
+                        <td>{{state.Percentborninotherstate | tojson }} </td>
+                        <td>{{state.Percentborninstate | tojson }} </td>
+                        <td>{{state.Percentforeignborn | tojson }} </td>
+                        <td>{{state.Percentofhomesworth1millionormore | tojson }}</td>
+                        <td>{{state.Percentofhouseholdswithincome200k | tojson }}
+                        <td>{{state.Percentwithbachelorsdegree | tojson }}
+                        <td>{{state.TotalHousingUnits | tojson }} </td>
+                </tr>
+            
+            </table>
 
         <h1>us</h1>
-
-        {{ us | tojson }}
+       
+            <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Population</th>
+                        <th>White People</th>
+                        <th>Percent White</th>
+                        <th>Below Poverty Level</th>
+                        <th>Percent Below Poverty Level</th>
+                        <th>Born in state</th>
+                        <th>Born in other state</th>
+                        <th>Foreign born</th>
+                        <th>Have at least a bachelor's degree</th>
+                        <th>Homes worth $1 million+</th>
+                        <th>Household income $200k+</th>
+                        <th>Median Age</th>
+                        <th>Median home value</th>
+                        <th>Median household income</th>
+                        <th>Moved in 1979 and earlier</th>
+                        <th>Moved in 1980 to 1989</th>
+                        <th>Moved in 1990 to 1999</th>
+                        <th>Moved in 2010 to 2014</th>
+                        <th>Moved in 2015 or later</th>
+                        <th>Number in owner-occupied units</th>
+                        <th>Percent born in other state</th>
+                        <th>Percent born in state</th>
+                        <th>Percent of homes worth $1 million+</th>
+                        <th>Percent of households with income 200k+</th>
+                        <th>Percent with at least bachelor's degree</th>
+                        <th>Total housing units</th>
+                    </tr>
+                
+                    <tr>
+                            <td>{{us.name | tojson}}</td>
+                            <td>{{us.Population | tojson }} </td>
+                            <td>{{us.WhiteTotal | tojson }} </td>
+                            <td>{{ us.PercentWhite | tojson }}</td>
+                            <td>{{ us.Belowpovertylevel | tojson }}</td>
+                            <td>{{ us.PercentBelowpovertylevel | tojson }}</td>
+                            <td>{{us.Borninstate | tojson }}</td>
+                            <td>{{ us.Borninotherstate | tojson }}</td>
+                            <td>{{us.Foreignborn | tojson }}</td>
+                            <td>{{us.Haveatleastabachelorsdegree | tojson }}</td>
+                            <td>{{us.Homesworth1millionormore | tojson }}</td>
+                            <td>{{us.Householdincome200k | tojson }}</td>
+                            <td>{{ us.MedianAge | tojson }}</td>
+                            <td>{{us.Medianhomevalue | tojson}} </td>
+                            <td>{{us.Medianhouseholdincome | tojson }}</td>
+                            <td>{{us.Movedin1979andearlier | tojson }}</td>
+                            <td>{{us.Movedin1980to1989 | tojson }}</td> 
+                            <td>{{us.Movedin1990to1999 | tojson }}</td>
+                            <td>{{us.Movedin2010to2014 | tojson }}</td>
+                            <td>{{us.Movedin2015orlater | tojson }}</td>
+                            <td>{{us.Numberinowneroccupiedunits | tojson }} </td>
+                            <td>{{us.Percentborninotherstate | tojson }} </td>
+                            <td>{{us.Percentborninstate | tojson }} </td>
+                            <td>{{us.Percentforeignborn | tojson }} </td>
+                            <td>{{us.Percentofhomesworth1millionormore | tojson }}</td>
+                            <td>{{us.Percentofhouseholdswithincome200k | tojson }}
+                            <td>{{us.Percentwithbachelorsdegree | tojson }}
+                            <td>{{us.TotalHousingUnits | tojson }} </td>
+                    </tr>
+                
+                </table>
 
     </section>
-
 
 
 
