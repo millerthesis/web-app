@@ -25,7 +25,8 @@
         {{ address_query | tojson }}
     
         <h3>Coordinates</h3>
-            <table>
+        <div style="overflow-x:auto;">
+            <table class="proto">
                 <tr>
                     <th>Name</th>
                     <th>Latitude</th>
@@ -39,9 +40,11 @@
                 </tr>
             
             </table>
+        </div>
 
         <h3>Census Codes</h3>
-            <table>
+        <div style="overflow-x:auto;">
+            <table class="proto">
                 <tr>
                     <th>County</th>
                     <th>Name</th>
@@ -56,9 +59,11 @@
                     <td>{{censuscodes.tract | tojson }} </td>
                 </tr>
             </table>
-        
-            <h3>Overview</h3>
-            <table id="proto-overview">
+        </div>
+
+        <h3>Overview</h3>
+        <div style="overflow-x:auto;">
+            <table class="proto">
                 <th>Geography</th>
                 <th>Name</th>
                 <th>Population</th>
@@ -103,168 +108,131 @@
                         <td>{{us.Medianhouseholdincome | tojson }}</td>
                     </tr>
             </table>
+        </div>
 
-            <h4>Housing</h4>
-            <table id="proto-housing">
+        <h4>Housing</h4>
+        <div style="overflow-x:auto;">
+            <table class="proto">
                 <th>Geography</th>
                 <th>Name</th>
                 <th>Homes worth $1 million+</th>
-                <th>Percent of homes worth $1 million+</th>
-                <th>Moved in 1979 and earlier</th>
-                <th>Moved in 1980 to 1989</th>
-                <th>Moved in 1990 to 1999</th>
-                <th>Moved in 2010 to 2014</th>
-                <th>Moved in 2015 or later</th>
+                <th>Moved in before 1999</th>
+                <th>Moved in 2010-2014</th>
+                <th>Moved in after 2015</th>
                     <tr>
                         <td>Tract</td>
                         <td>{{tract.name | tojson}}</td>
-                        <td>{{tract.Homesworth1millionormore | tojson }}</td>
-                        <td>{{tract.Percentofhomesworth1millionormore | tojson }}</td>
-                        <td>{{tract.Movedin1979andearlier | tojson }}</td>
-                        <td>{{tract.Movedin1980to1989 | tojson }}</td> 
-                        <td>{{tract.Movedin1990to1999 | tojson }}</td>
+                        <td>{{tract.Homesworth1millionormore | tojson }} ({{tract.Percentofhomesworth1millionormore | tojson }}%)</td>
+                        <td>{{tract.Movedin1979andearlier | tojson }} + {{tract.Movedin1980to1989 | tojson }} + {{tract.Movedin1990to1999 | tojson }}</td>
                         <td>{{tract.Movedin2010to2014 | tojson }}</td>
                         <td>{{tract.Movedin2015orlater | tojson }}</td>
                     </tr>
                     <tr>
                             <td>County</td>
                             <td>{{county.name | tojson}}</td>
-                            <td>{{county.Homesworth1millionormore | tojson }}</td>
-                            <td>{{county.Percentofhomesworth1millionormore | tojson }}</td>
-                            <td>{{county.Movedin1979andearlier | tojson }}</td>
-                            <td>{{county.Movedin1980to1989 | tojson }}</td> 
-                            <td>{{county.Movedin1990to1999 | tojson }}</td>
+                            <td>{{county.Homesworth1millionormore | tojson }} ({{county.Percentofhomesworth1millionormore | tojson }}%)</td>
+                            <td>{{county.Movedin1979andearlier | tojson }}+{{county.Movedin1980to1989 | tojson }}+{{county.Movedin1990to1999 | tojson }}</td>
                             <td>{{county.Movedin2010to2014 | tojson }}</td>
                             <td>{{county.Movedin2015orlater | tojson }}</td>
                     </tr>
                     <tr>
                             <td>State</td>
                             <td>{{state.name | tojson}}</td>
-                            <td>{{state.Homesworth1millionormore | tojson }}</td>
-                            <td>{{state.Percentofhomesworth1millionormore | tojson }}</td>
-                            <td>{{state.Movedin1979andearlier | tojson }}</td>
-                            <td>{{state.Movedin1980to1989 | tojson }}</td> 
-                            <td>{{state.Movedin1990to1999 | tojson }}</td>
+                            <td>{{state.Homesworth1millionormore | tojson }} ({{state.Percentofhomesworth1millionormore | tojson }}%)</td>
+                            <td>{{state.Movedin1979andearlier | tojson }}+{{state.Movedin1980to1989 | tojson }}+{{state.Movedin1990to1999 | tojson }}</td>
                             <td>{{state.Movedin2010to2014 | tojson }}</td>
                             <td>{{state.Movedin2015orlater | tojson }}</td>
                     </tr>
                     <tr>
                             <td>Country</td>
                             <td>{{us.name | tojson}}</td>
-                            <td>{{us.Homesworth1millionormore | tojson }}</td>
-                            <td>{{us.Percentofhomesworth1millionormore | tojson }}</td>
-                            <td>{{us.Movedin1979andearlier | tojson }}</td>
-                            <td>{{us.Movedin1980to1989 | tojson }}</td> 
-                            <td>{{us.Movedin1990to1999 | tojson }}</td>
+                            <td>{{us.Homesworth1millionormore | tojson }} ({{us.Percentofhomesworth1millionormore | tojson }}%)</td>
+                            <td>{{us.Movedin1979andearlier | tojson }}+{{us.Movedin1980to1989 | tojson }}+{{us.Movedin1990to1999 | tojson }}</td>
                             <td>{{us.Movedin2010to2014 | tojson }}</td>
                             <td>{{us.Movedin2015orlater | tojson }}</td>
                     </tr>
                     
             </table>
+        </div>
 
-            <h4>Income and education</h4>
-            <table id="proto-income">
+        <h4>Income and education</h4>
+        <div style="overflow-x:auto;">
+            <table class="proto">
                     <th>Geography</th>
                     <th>Name</th>
                     <th>Household income $200k+</th>
-                    <th>Percent of households with income 200k+</th>
                     <th>Below Poverty Level</th>
-                    <th>Percent Below Poverty Level</th>
-                    <th>Have at least a bachelor's degree</th>
-                    <th>Percent with at least bachelor's degree</th>
+                    <th>Have a bachelor's degree</th>
                         <tr>
                             <td>Tract</td>
                             <td>{{tract.name | tojson}}</td>
-                            <td>{{tract.Householdincome200k | tojson }}</td>
-                            <td>{{tract.Percentofhouseholdswithincome200k | tojson }}
-                            <td>{{tract.Belowpovertylevel | tojson }}</td>
-                            <td>{{tract.PercentBelowpovertylevel | tojson }}</td>
-                            <td>{{tract.Haveatleastabachelorsdegree | tojson }}</td>
-                            <td>{{tract.Percentwithbachelorsdegree | tojson }}
+                            <td>{{tract.Householdincome200k | tojson }} ({{tract.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                            <td>{{tract.Belowpovertylevel | tojson }} ({{tract.PercentBelowpovertylevel | tojson }}%)</td>
+                            <td>{{tract.Haveatleastabachelorsdegree | tojson }} ({{tract.Percentwithbachelorsdegree | tojson }}%)</td>
                         </tr>
                         <tr>
                                 <td>County</td>
                                 <td>{{county.name | tojson}}</td>
-                                <td>{{county.Householdincome200k | tojson }}</td>
-                                <td>{{county.Percentofhouseholdswithincome200k | tojson }}
-                                <td>{{county.Belowpovertylevel | tojson }}</td>
-                                <td>{{county.PercentBelowpovertylevel | tojson }}</td>
-                                <td>{{county.Haveatleastabachelorsdegree | tojson }}</td>
-                                <td>{{county.Percentwithbachelorsdegree | tojson }}
+                                <td>{{county.Householdincome200k | tojson }} ({{county.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                                <td>{{county.Belowpovertylevel | tojson }} ({{county.PercentBelowpovertylevel | tojson }}%)</td>
+                                <td>{{county.Haveatleastabachelorsdegree | tojson }} ({{county.Percentwithbachelorsdegree | tojson }}%)</td>
+                               
                             </tr>
                             <tr>
                                     <td>State</td>
                                     <td>{{state.name | tojson}}</td>
-                                    <td>{{state.Householdincome200k | tojson }}</td>
-                                    <td>{{state.Percentofhouseholdswithincome200k | tojson }}
-                                    <td>{{state.Belowpovertylevel | tojson }}</td>
-                                    <td>{{state.PercentBelowpovertylevel | tojson }}</td>
-                                    <td>{{state.Haveatleastabachelorsdegree | tojson }}</td>
-                                    <td>{{state.Percentwithbachelorsdegree | tojson }}
+                                    <td>{{state.Householdincome200k | tojson }} ({{state.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                                    <td>{{state.Belowpovertylevel | tojson }} ({{state.PercentBelowpovertylevel | tojson }}%)</td>
+                                    <td>{{state.Haveatleastabachelorsdegree | tojson }} ({{state.Percentwithbachelorsdegree | tojson }}%)</td>
                             </tr>
                             <tr>
                                     <td>Country</td>
                                     <td>{{us.name | tojson}}</td>
-                                    <td>{{us.Householdincome200k | tojson }}</td>
-                                    <td>{{us.Percentofhouseholdswithincome200k | tojson }}
-                                    <td>{{us.Belowpovertylevel | tojson }}</td>
-                                    <td>{{us.PercentBelowpovertylevel | tojson }}</td>
-                                    <td>{{us.Haveatleastabachelorsdegree | tojson }}</td>
-                                    <td>{{us.Percentwithbachelorsdegree | tojson }}
+                                    <td>{{us.Householdincome200k | tojson }} ({{us.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                                    <td>{{us.Belowpovertylevel | tojson }} ({{us.PercentBelowpovertylevel | tojson }}%)</td>
+                                    <td>{{us.Haveatleastabachelorsdegree | tojson }} ({{us.Percentwithbachelorsdegree | tojson }}%)</td>
                             </tr>
             </table>
+        </div>
             
-            <h4>Residency</h4>
-            <table id="proto-residency">
+        <h4>Residency</h4>
+        <div style="overflow-x:auto;">
+            <table class="proto">
                     <th>Geography</th>
                     <th>Name</th>
                     <th>Born in state</th>
-                    <th>Percent born in state</th>
                     <th>Born in other state</th>
-                    <th>Percent born in other state</th>
                     <th>Foreign born</th>
-                    <th>Percent foreign born</th>
                         <tr>
                             <td>Tract</td>
                             <td>{{tract.name | tojson}}</td>
-                            <td>{{tract.Borninstate | tojson }}</td>
-                            <td>{{tract.Percentborninstate | tojson }} </td>
-                            <td>{{tract.Borninotherstate | tojson }}</td>
-                            <td>{{tract.Percentborninotherstate | tojson }} </td>
-                            <td>{{tract.Foreignborn | tojson }}</td>
-                            <td>{{tract.Percentforeignborn | tojson }} </td>
+                            <td>{{tract.Borninstate | tojson }} ({{tract.Percentborninstate | tojson }}%)</td>
+                            <td>{{tract.Borninotherstate | tojson }} ({{tract.Percentborninotherstate | tojson }}%)</td>
+                            <td>{{tract.Foreignborn | tojson }} ({{tract.Percentforeignborn | tojson }}%)</td>
                         </tr>
                         <tr>
                                 <td>County</td>
                                 <td>{{county.name | tojson}}</td>
-                                <td>{{county.Borninstate | tojson }}</td>
-                                <td>{{county.Percentborninstate | tojson }} </td>
-                                <td>{{county.Borninotherstate | tojson }}</td>
-                                <td>{{county.Percentborninotherstate | tojson }} </td>
-                                <td>{{county.Foreignborn | tojson }}</td>
-                                <td>{{county.Percentforeignborn | tojson }} </td>
+                                <td>{{county.Borninstate | tojson }} ({{county.Percentborninstate | tojson }}%)</td>
+                                <td>{{county.Borninotherstate | tojson }} ({{county.Percentborninotherstate | tojson }}%)</td>
+                                <td>{{county.Foreignborn | tojson }} ({{county.Percentforeignborn | tojson }}%)</td>
                         </tr>
                         <tr>
                                 <td>State</td>
                                 <td>{{state.name | tojson}}</td>
-                                <td>{{state.Borninstate | tojson }}</td>
-                                <td>{{state.Percentborninstate | tojson }} </td>
-                                <td>{{state.Borninotherstate | tojson }}</td>
-                                <td>{{state.Percentborninotherstate | tojson }} </td>
-                                <td>{{state.Foreignborn | tojson }}</td>
-                                <td>{{state.Percentforeignborn | tojson }} </td>
+                                <td>{{state.Borninstate | tojson }} ({{state.Percentborninstate | tojson }}%)</td>
+                                <td>{{state.Borninotherstate | tojson }} ({{state.Percentborninotherstate | tojson }}%)</td>
+                                <td>{{state.Foreignborn | tojson }} ({{state.Percentforeignborn | tojson }}%)</td>
                         </tr>
                         <tr>
                                 <td>Country</td>
                                 <td>{{us.name | tojson}}</td>
-                                <td>{{us.Borninstate | tojson }}</td>
-                                <td>{{us.Percentborninstate | tojson }} </td>
-                                <td>{{us.Borninotherstate | tojson }}</td>
-                                <td>{{us.Percentborninotherstate | tojson }} </td>
-                                <td>{{us.Foreignborn | tojson }}</td>
-                                <td>{{us.Percentforeignborn | tojson }} </td>
+                                <td>{{us.Borninstate | tojson }} ({{us.Percentborninstate | tojson }}%)</td>
+                                <td>{{us.Borninotherstate | tojson }} ({{us.Percentborninotherstate | tojson }}%)</td>
+                                <td>{{us.Foreignborn | tojson }} ({{us.Percentforeignborn | tojson }}%)</td>
                         </tr>
             </table>
+        </div>
     </section>
 
 </div>
