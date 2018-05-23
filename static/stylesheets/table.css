@@ -15,4 +15,13 @@ table.proto{
 
 table.proto th, td{
     padding: 5px;
+    border: 2px solid #000000;
+}
+
+table.proto th{
+    background: #FFFFFF
+}
+
+table.proto td:hover{
+    background-color: brown;
 }
