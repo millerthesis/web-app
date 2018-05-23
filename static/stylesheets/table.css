@@ -7,14 +7,12 @@ table.table-data td:first-child, table.table-data thead th:first-child{
     font-weight: bold;
 }
 
-#proto{
-    text-align: left;
-    border: 1px black;
+table.proto{
+    text-align: justify;
     padding: 10px;
     white-space: nowrap;
 }
 
-#proto th, td{
-    border: 1px black;
+table.proto th, td{
     padding: 5px;
 }
