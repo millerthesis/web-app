@@ -19,9 +19,28 @@
 
     <section id="debug">
         <h1>debug stuff</h1>
+        
+        <h5> TK:
+            <ul>
+                <li>
+                    1) receive pop-up window when hovering over table cells to receive the delta between current and historical census data (ex: "This is xxx higher than in 2000). 
+                </li>
+                <li>
+                    2) Click on cell to receive visualization of delta between years.
+                </li> 
+                <li>
+                    3) Fix residency columns (Moved in between/Moved in before) 
+                </li>
+                <li>
+                    4) Make values numbers - add in commas 
+                </li>
+                <li>
+                    5) Possible: add in heatmap of areas with highest deltas?
+                </li>
+            </ul>
+        </h5>
 
         <h3>Query</h3>
-      
         {{ address_query | tojson }}
     
         <h3>Coordinates</h3>
