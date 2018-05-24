@@ -41,7 +41,7 @@ def geocode_address():
                             )
 
 
-@myapp.route("/proto")
+@myapp.route("/proto/")
 def geoprototype():
     from pathlib import Path
     import json
