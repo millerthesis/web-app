@@ -19,9 +19,9 @@ table.proto th, td{
 }
 
 table.proto th{
-    background: #FFFFFF
+    background: #E9AAAA;
 }
 
 table.proto td:hover{
-    background-color: brown;
+    background-color: royalblue;
 }
