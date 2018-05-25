@@ -20,7 +20,6 @@ def state(statecode):
     return render_template('state.html', state=get_state(statecode), US=get_us())
 
 
-
 @myapp.route("/geocode")
 def geocode_address():
     addr = request.args['address']
