@@ -37,9 +37,6 @@
                 <li>
                     5) Possible: add in heatmap of areas with highest deltas?
                 </li>
-                <li>
-                    6) Add the following fields to tables: Total Black; Total Asian; Total Native American; Total Hawaiian/Pacific Islander; Total some other race alone; Total Housing Units; Total population in owner-occupied units; Total population in renter-occupied units; Homes worth $1-1.5 million; Homes worth $1.5-$2 million; Homes worth $2 million+; Income per capita; Population below poverty level; Speak only English.
-                </li>
             </ul>
         </h5>
 
@@ -83,7 +80,7 @@
             </table>
         </div>
 
-        <h3>Overview</h3>
+        <h3>Demographics</h3>
         <div style="overflow-x:auto;">
             <table class="proto">
                 <th>Geography</th>
@@ -93,6 +90,12 @@
                 <th>Percent White</th>
                 <th>Median home value</th>
                 <th>Median household income</th>
+                <th>Percent Black TK</th>
+                <th>Percent Asian</th>
+                <th>Percent Native American</th>
+                <th>Percent Hawaiian/Pacific Islander</th>
+                <th>Percent some other race</th>
+                <th>Speak only English</th>
                     <tr>
                         <td>Tract</td>
                         <td>{{tract.name | tojson}}</td>
@@ -141,6 +144,12 @@
                 <th>Moved in before 1999</th>
                 <th>Moved in 2010-2014</th>
                 <th>Moved in after 2015</th>
+                <th>Total housing units</th>
+                <th>Population in owner-occupied</th>
+                <th>Population in renter-occupied</th>
+                <th>Homes worth $1-$1.5m</th>
+                <th>Homes worth $1.5-$2m</th>
+                <th>Homes worth $2m+</th>
                     <tr>
                         <td>Tract</td>
                         <td>{{tract.name | tojson}}</td>
@@ -185,6 +194,8 @@
                     <th>Household income $200k+</th>
                     <th>Below Poverty Level</th>
                     <th>Have a bachelor's degree</th>
+                    <th>Income per capita</th>
+                    <th>Population below poverty level</th>
                         <tr>
                             <td>Tract</td>
                             <td>{{tract.name | tojson}}</td>
