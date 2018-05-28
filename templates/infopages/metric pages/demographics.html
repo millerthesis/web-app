@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'snippets/sitewide/head-meta.html' %}
+    <title>Page Title</title>
+</head>
+
+{% include 'snippets/sitewide/header.html' %}
+
+<h3>Demographics</h3>
+        <div style="overflow-x:auto;">
+            <table class="proto">
+                <th>Geography</th>
+                <th>Name</th>
+                <th>Population</th>
+                <th>Median Age</th>
+                <th>Percent White</th>
+                <th>Median home value</th>
+                <th>Median household income</th>
+                <th>Percent Black TK</th>
+                <th>Percent Asian</th>
+                <th>Percent Native American</th>
+                <th>Percent Hawaiian/Pacific Islander</th>
+                <th>Percent some other race</th>
+                <th>Speak only English</th>
+                    <tr>
+                        <td>Tract</td>
+                        <td>{{tract.name | tojson}}</td>
+                        <td>{{tract.Population | tojson }} </td>
+                        <td>{{tract.MedianAge | tojson }}</td>
+                        <td>{{tract.PercentWhite | tojson }}</td>
+                        <td>{{tract.Medianhomevalue | tojson}} </td>
+                        <td>{{tract.Medianhouseholdincome | tojson }}</td>
+                    </tr>
+                    <tr>
+                        <td>County</td>
+                        <td>{{county.name | tojson}}</td>
+                        <td>{{county.Population | tojson }} </td>
+                        <td>{{county.MedianAge | tojson }}</td>
+                        <td>{{county.PercentWhite | tojson }}</td>
+                        <td>{{county.Medianhomevalue | tojson}} </td>
+                        <td>{{county.Medianhouseholdincome | tojson }}</td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td>{{state.name | tojson}}</td>
+                        <td>{{state.Population | tojson }} </td>
+                        <td>{{state.MedianAge | tojson }}</td>
+                        <td>{{state.PercentWhite | tojson }}</td>
+                        <td>{{state.Medianhomevalue | tojson}} </td>
+                        <td>{{state.Medianhouseholdincome | tojson }}</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>{{us.name | tojson}}</td>
+                        <td>{{us.Population | tojson }} </td>
+                        <td>{{us.MedianAge | tojson }}</td>
+                        <td>{{us.PercentWhite | tojson }}</td>
+                        <td>{{us.Medianhomevalue | tojson}} </td>
+                        <td>{{us.Medianhouseholdincome | tojson }}</td>
+                    </tr>
+            </table>
+        </div>
+
+{% include 'snippets/sitewide/footer.html' %}
+
+

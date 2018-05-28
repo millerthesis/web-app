@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'snippets/sitewide/head-meta.html' %}
+    <title>Page Title</title>
+</head>
+{% include 'snippets/sitewide/header.html' %}
+
+<h3>Housing</h3>
+<div style="overflow-x:auto;">
+    <table class="proto">
+        <th>Geography</th>
+        <th>Name</th>
+        <th>Homes worth $1 million+</th>
+        <th>Moved in before 1999</th>
+        <th>Moved in 2010-2014</th>
+        <th>Moved in after 2015</th>
+        <th>Total housing units</th>
+        <th>Population in owner-occupied</th>
+        <th>Population in renter-occupied</th>
+        <th>Homes worth $1-$1.5m</th>
+        <th>Homes worth $1.5-$2m</th>
+        <th>Homes worth $2m+</th>
+            <tr>
+                <td>Tract</td>
+                <td>{{tract.name | tojson}}</td>
+                <td>{{tract.Homesworth1millionormore | tojson }} ({{tract.Percentofhomesworth1millionormore | tojson }}%)</td>
+                <td>{{tract.Movedin1979andearlier | tojson }} + {{tract.Movedin1980to1989 | tojson }} + {{tract.Movedin1990to1999 | tojson }}</td>
+                <td>{{tract.Movedin2010to2014 | tojson }}</td>
+                <td>{{tract.Movedin2015orlater | tojson }}</td>
+            </tr>
+            <tr>
+                    <td>County</td>
+                    <td>{{county.name | tojson}}</td>
+                    <td>{{county.Homesworth1millionormore | tojson }} ({{county.Percentofhomesworth1millionormore | tojson }}%)</td>
+                    <td>{{county.Movedin1979andearlier | tojson }}+{{county.Movedin1980to1989 | tojson }}+{{county.Movedin1990to1999 | tojson }}</td>
+                    <td>{{county.Movedin2010to2014 | tojson }}</td>
+                    <td>{{county.Movedin2015orlater | tojson }}</td>
+            </tr>
+            <tr>
+                    <td>State</td>
+                    <td>{{state.name | tojson}}</td>
+                    <td>{{state.Homesworth1millionormore | tojson }} ({{state.Percentofhomesworth1millionormore | tojson }}%)</td>
+                    <td>{{state.Movedin1979andearlier | tojson }}+{{state.Movedin1980to1989 | tojson }}+{{state.Movedin1990to1999 | tojson }}</td>
+                    <td>{{state.Movedin2010to2014 | tojson }}</td>
+                    <td>{{state.Movedin2015orlater | tojson }}</td>
+            </tr>
+            <tr>
+                    <td>Country</td>
+                    <td>{{us.name | tojson}}</td>
+                    <td>{{us.Homesworth1millionormore | tojson }} ({{us.Percentofhomesworth1millionormore | tojson }}%)</td>
+                    <td>{{us.Movedin1979andearlier | tojson }}+{{us.Movedin1980to1989 | tojson }}+{{us.Movedin1990to1999 | tojson }}</td>
+                    <td>{{us.Movedin2010to2014 | tojson }}</td>
+                    <td>{{us.Movedin2015orlater | tojson }}</td>
+            </tr>
+            
+    </table>
+</div>
+
+{% include 'snippets/sitewide/footer.html' %}
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'snippets/sitewide/head-meta.html' %}
+    <title>Page Title</title>
+</head>
+
+{% include 'snippets/sitewide/header.html' %}
+
+<h4>Income and education</h4>
+        <div style="overflow-x:auto;">
+            <table class="proto">
+                    <th>Geography</th>
+                    <th>Name</th>
+                    <th>Household income $200k+</th>
+                    <th>Below Poverty Level</th>
+                    <th>Have a bachelor's degree</th>
+                    <th>Income per capita</th>
+                    <th>Population below poverty level</th>
+                        <tr>
+                            <td>Tract</td>
+                            <td>{{tract.name | tojson}}</td>
+                            <td>{{tract.Householdincome200k | tojson }} ({{tract.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                            <td>{{tract.Belowpovertylevel | tojson }} ({{tract.PercentBelowpovertylevel | tojson }}%)</td>
+                            <td>{{tract.Haveatleastabachelorsdegree | tojson }} ({{tract.Percentwithbachelorsdegree | tojson }}%)</td>
+                        </tr>
+                        <tr>
+                                <td>County</td>
+                                <td>{{county.name | tojson}}</td>
+                                <td>{{county.Householdincome200k | tojson }} ({{county.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                                <td>{{county.Belowpovertylevel | tojson }} ({{county.PercentBelowpovertylevel | tojson }}%)</td>
+                                <td>{{county.Haveatleastabachelorsdegree | tojson }} ({{county.Percentwithbachelorsdegree | tojson }}%)</td>
+                               
+                            </tr>
+                            <tr>
+                                    <td>State</td>
+                                    <td>{{state.name | tojson}}</td>
+                                    <td>{{state.Householdincome200k | tojson }} ({{state.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                                    <td>{{state.Belowpovertylevel | tojson }} ({{state.PercentBelowpovertylevel | tojson }}%)</td>
+                                    <td>{{state.Haveatleastabachelorsdegree | tojson }} ({{state.Percentwithbachelorsdegree | tojson }}%)</td>
+                            </tr>
+                            <tr>
+                                    <td>Country</td>
+                                    <td>{{us.name | tojson}}</td>
+                                    <td>{{us.Householdincome200k | tojson }} ({{us.Percentofhouseholdswithincome200k | tojson }}%)</td>
+                                    <td>{{us.Belowpovertylevel | tojson }} ({{us.PercentBelowpovertylevel | tojson }}%)</td>
+                                    <td>{{us.Haveatleastabachelorsdegree | tojson }} ({{us.Percentwithbachelorsdegree | tojson }}%)</td>
+                            </tr>
+            </table>
+        </div>
+
+
+{% include 'snippets/sitewide/footer.html' %}
+
+
