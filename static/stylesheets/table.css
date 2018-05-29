@@ -11,6 +11,7 @@ table.proto{
     text-align: justify;
     padding: 10px;
     white-space: nowrap;
+    display: inline-block;
 }
 
 table.proto th, td{
@@ -18,10 +19,16 @@ table.proto th, td{
     border: 2px solid #000000;
 }
 
-table.proto th{
-    background: #E9AAAA;
-}
-
 table.proto td:hover{
     background-color: royalblue;
+}
+
+table.homepage{
+    padding: 10px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+table.homepage th{
+    padding: 5px;
 }
