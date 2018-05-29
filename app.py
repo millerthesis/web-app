@@ -10,6 +10,10 @@ myapp = Flask(__name__)
 def homepage():
     return render_template('homepage.html', states=get_states())
 
+@myapp.route("/metrics")
+def metricpage():
+    return render_template('infopages/metric pages/metrics.html')
+
 @myapp.route("/demography")
 def demography():
     from pathlib import Path
@@ -114,6 +118,9 @@ def state(statecode):
 
 @myapp.route("/geocode")
 def geocode_address():
+    from pathlib import Path
+    import json
+    
     addr = request.args['address']
     coords = geo.geocode(addr)
     censuscodes = cg.lookup_tract(coords['longitude'], coords['latitude'])
