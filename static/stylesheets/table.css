@@ -32,3 +32,47 @@ table.homepage{
 table.homepage th{
     padding: 5px;
 }
+
+table.demographics{
+        text-align: justify;
+        padding: 10px;
+        white-space: nowrap;
+        display: inline-block;
+}
+
+table.demographics th{
+    padding: 5px;
+}
+
+table.housing{
+    text-align: justify;
+    padding: 10px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+table.housing th{
+    padding: 5px;
+}
+
+table.income{
+    text-align: justify;
+    padding: 10px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+table.income th{
+    padding: 5px;
+}
+
+table.residency{
+    text-align: justify;
+    padding: 10px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+table.residency th{
+    padding: 5px;
+}

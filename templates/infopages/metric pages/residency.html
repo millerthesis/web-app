@@ -9,44 +9,207 @@
 {% include 'snippets/sitewide/header.html' %}
 
 <h4>Residency</h4>
-        <div style="overflow-x:auto;">
-            <table class="proto">
-                    <th>Geography</th>
-                    <th>Name</th>
-                    <th>Born in state</th>
-                    <th>Born in other state</th>
-                    <th>Foreign born</th>
-                        <tr>
-                            <td>Tract</td>
-                            <td>{{tract.name | tojson}}</td>
-                            <td>{{tract.Borninstate | tojson }} ({{tract.Percentborninstate | tojson }}%)</td>
-                            <td>{{tract.Borninotherstate | tojson }} ({{tract.Percentborninotherstate | tojson }}%)</td>
-                            <td>{{tract.Foreignborn | tojson }} ({{tract.Percentforeignborn | tojson }}%)</td>
-                        </tr>
-                        <tr>
-                                <td>County</td>
-                                <td>{{county.name | tojson}}</td>
-                                <td>{{county.Borninstate | tojson }} ({{county.Percentborninstate | tojson }}%)</td>
-                                <td>{{county.Borninotherstate | tojson }} ({{county.Percentborninotherstate | tojson }}%)</td>
-                                <td>{{county.Foreignborn | tojson }} ({{county.Percentforeignborn | tojson }}%)</td>
-                        </tr>
-                        <tr>
-                                <td>State</td>
-                                <td>{{state.name | tojson}}</td>
-                                <td>{{state.Borninstate | tojson }} ({{state.Percentborninstate | tojson }}%)</td>
-                                <td>{{state.Borninotherstate | tojson }} ({{state.Percentborninotherstate | tojson }}%)</td>
-                                <td>{{state.Foreignborn | tojson }} ({{state.Percentforeignborn | tojson }}%)</td>
-                        </tr>
-                        <tr>
-                                <td>Country</td>
-                                <td>{{us.name | tojson}}</td>
-                                <td>{{us.Borninstate | tojson }} ({{us.Percentborninstate | tojson }}%)</td>
-                                <td>{{us.Borninotherstate | tojson }} ({{us.Percentborninotherstate | tojson }}%)</td>
-                                <td>{{us.Foreignborn | tojson }} ({{us.Percentforeignborn | tojson }}%)</td>
-                        </tr>
-            </table>
-        </div>
 
+<table class="residency">
+                <th>Areas with greatest and least change in number of people born in state</th>
+                <th>Rank</th>
+                <th>2016</th>
+                <th>2000</th>
+                    <tr>
+                        <td>Name</td>
+                        <td>1</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>2</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>3</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>4</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>5</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>100</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>101</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>102</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>103</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>104</td>
+                        <td>Name</td>
+                        <td>Name</td>
+                    </tr>
+        </table>
+
+<table class="residency">
+                        <th>Areas with greatest and least change in number of people born out of state</th>
+                        <th>Rank</th>
+                        <th>2016</th>
+                        <th>2000</th>
+                            <tr>
+                                <td>Name</td>
+                                <td>1</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>2</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>3</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>4</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>5</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>100</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>101</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>102</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>103</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>104</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+        </table>
+
+<table class="residency">
+                        <th>Areas with greatest and least change in number of foreign born</th>
+                        <th>Rank</th>
+                        <th>2016</th>
+                        <th>2000</th>
+                            <tr>
+                                <td>Name</td>
+                                <td>1</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>2</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>3</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>4</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>5</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>100</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>101</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>102</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>103</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>104</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+        </table>
 {% include 'snippets/sitewide/footer.html' %}
 
 
