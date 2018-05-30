@@ -26,3 +26,12 @@ section#debug{
     margin-top: 10em;
     background: #ced7e5;
 }
+
+div.col-sm-6 ul{
+    display:inline-block;
+    text-align: left;
+}
+
+section#homepagetables{
+    align: center;
+}
