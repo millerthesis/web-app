@@ -84,14 +84,10 @@
                 <th>Name</th>
                 <th>Population</th>
                 <th>Median Age</th>
-                <th>Percent White</th>
+                <th>Total white</th>
+                <th>Total non-white</th>
                 <th>Median home value</th>
                 <th>Median household income</th>
-                <th>Percent Black TK</th>
-                <th>Percent Asian</th>
-                <th>Percent Native American</th>
-                <th>Percent Hawaiian/Pacific Islander</th>
-                <th>Percent some other race</th>
                 <th>Speak only English</th>
                     <tr>
                         <td>Tract</td>
@@ -99,8 +95,10 @@
                         <td>{{tract.Population | tojson }} </td>
                         <td>{{tract.MedianAge | tojson }}</td>
                         <td>{{tract.PercentWhite | tojson }}</td>
+                        <td>non-white</td>
                         <td>{{tract.Medianhomevalue | tojson}} </td>
                         <td>{{tract.Medianhouseholdincome | tojson }}</td>
+                        <td>Speak only English</td>
                     </tr>
                     <tr>
                         <td>County</td>
@@ -108,6 +106,7 @@
                         <td>{{county.Population | tojson }} </td>
                         <td>{{county.MedianAge | tojson }}</td>
                         <td>{{county.PercentWhite | tojson }}</td>
+                        <td>non-white</td>
                         <td>{{county.Medianhomevalue | tojson}} </td>
                         <td>{{county.Medianhouseholdincome | tojson }}</td>
                     </tr>
@@ -117,6 +116,7 @@
                         <td>{{state.Population | tojson }} </td>
                         <td>{{state.MedianAge | tojson }}</td>
                         <td>{{state.PercentWhite | tojson }}</td>
+                        <td>non-white</td>
                         <td>{{state.Medianhomevalue | tojson}} </td>
                         <td>{{state.Medianhouseholdincome | tojson }}</td>
                     </tr>
@@ -126,6 +126,7 @@
                         <td>{{us.Population | tojson }} </td>
                         <td>{{us.MedianAge | tojson }}</td>
                         <td>{{us.PercentWhite | tojson }}</td>
+                        <td>non-white</td>
                         <td>{{us.Medianhomevalue | tojson}} </td>
                         <td>{{us.Medianhouseholdincome | tojson }}</td>
                     </tr>
@@ -137,16 +138,12 @@
             <table class="proto">
                 <th>Geography</th>
                 <th>Name</th>
+                <th>Total housing units</th>
                 <th>Homes worth $1 million+</th>
                 <th>Moved in before 1999</th>
-                <th>Moved in 2010-2014</th>
-                <th>Moved in after 2015</th>
-                <th>Total housing units</th>
+                <th>Moved in after 2000</th>
                 <th>Population in owner-occupied</th>
                 <th>Population in renter-occupied</th>
-                <th>Homes worth $1-$1.5m</th>
-                <th>Homes worth $1.5-$2m</th>
-                <th>Homes worth $2m+</th>
                     <tr>
                         <td>Tract</td>
                         <td>{{tract.name | tojson}}</td>
