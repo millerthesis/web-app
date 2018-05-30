@@ -76,3 +76,13 @@ table.residency{
 table.residency th{
     padding: 5px;
 }
+
+div#metrictable{
+    background-color: #bcd1f2;
+    margin: 50px;
+}
+
+div#homepagetables{
+    background-color: #bcd1f2;
+    margin: 50px;
+}
