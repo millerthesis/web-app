@@ -12,6 +12,7 @@ table.proto{
     padding: 10px;
     white-space: nowrap;
     display: inline-block;
+    width: 100%;
 }
 
 table.proto th, td{
