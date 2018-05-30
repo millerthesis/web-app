@@ -78,11 +78,17 @@ table.residency th{
 }
 
 div#metrictable{
-    background-color: #bcd1f2;
     margin: 50px;
+    width: 100%;
 }
 
 div#homepagetables{
-    background-color: #bcd1f2;
     margin: 50px;
+}
+
+div#geotables{
+    margin: 50px;
+}
+section#debug div#geotables{
+    width: 100%;
 }
