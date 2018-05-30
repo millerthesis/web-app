@@ -43,3 +43,7 @@ section#homepagetables{
 div#metricpages h3{
     margin: 1em;
 }
+
+div#proto{
+    display: inline-block;
+}
