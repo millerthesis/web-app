@@ -12,19 +12,19 @@
 {% include 'snippets/sitewide/header.html' %}
 <div class="container">
 
-    <h1 class="page-title">Geocode!</h1>
+    <h1 class="page-title">Search results for {{address_query | tojson }}</h1>
 
     {% include 'snippets/mapstuff/map.html' %}
 
     <section id="debug">
-        <h1>debug stuff</h1>
 
-        <h2>query</h2>
         
-        <p>{{address_query | tojson }}</p>
+        <div id="geotables">
+        </div>
 
         <h2>coordinates</h2>
-        <div style="overflow-x:auto;">
+
+        <div id="geotables" style="overflow-x:auto;">
                 <table class="proto">
                     <tr>
                         <th>Name</th>
@@ -39,10 +39,12 @@
                     </tr>
                 
                 </table>
+        </div>
+        
+        <h2>Census codes</h2>    
 
-        <h2>censuscodes</h2>
-        <div style="overflow-x:auto;">
-                <table class="proto">
+        <div id="geotables" style="overflow-x:auto;">
+            <table class="proto">
                     <tr>
                         <th>County</th>
                         <th>Name</th>
@@ -60,21 +62,16 @@
             </div>
 
             <h3>Demographics</h3>
-            <div style="overflow-x:auto;">
+            <div id="geotables" style="overflow-x:auto;">
                 <table class="proto">
                     <th>Geography</th>
                     <th>Name</th>
                     <th>Population</th>
                     <th>Median Age</th>
-                    <th>Percent White</th>
+                    <th>Total White</th>
+                    <th>Total non-white</th>
                     <th>Median home value</th>
                     <th>Median household income</th>
-                    <th>Percent Black TK</th>
-                    <th>Percent Asian</th>
-                    <th>Percent Native American</th>
-                    <th>Percent Hawaiian/Pacific Islander</th>
-                    <th>Percent some other race</th>
-                    <th>Speak only English</th>
                         <tr>
                             <td>Tract</td>
                         </tr>
@@ -91,20 +88,16 @@
             </div>
 
             <h3>Housing</h3>
-            <div style="overflow-x:auto;">
+            <div id="geotables" style="overflow-x:auto;">
                 <table class="proto">
                         <th>Geography</th>
                         <th>Name</th>
+                        <th>Total housing units</th>
                         <th>Homes worth $1 million+</th>
                         <th>Moved in before 1999</th>
-                        <th>Moved in 2010-2014</th>
-                        <th>Moved in after 2015</th>
-                        <th>Total housing units</th>
-                        <th>Population in owner-occupied</th>
-                        <th>Population in renter-occupied</th>
-                        <th>Homes worth $1-$1.5m</th>
-                        <th>Homes worth $1.5-$2m</th>
-                        <th>Homes worth $2m+</th>
+                        <th>Moved in after 2000</th>
+                        <th>Owner-occupied</th>
+                        <th>Renter-occupied</th>
                         <tr>
                             <td>Tract</td>
                         </tr>
@@ -121,7 +114,7 @@
             </div>
 
             <h3>Income and education</h3>
-            <div style="overflow-x:auto;">
+            <div id="geotables" style="overflow-x:auto;">
                 <table class="proto">
                         <th>Geography</th>
                         <th>Name</th>
@@ -146,7 +139,7 @@
             </div>
 
             <h3>Residency</h3>
-            <div style="overflow-x:auto;">
+            <div id="geotables" style="overflow-x:auto;">
                 <table class="proto">
                         <th>Geography</th>
                         <th>Name</th>
