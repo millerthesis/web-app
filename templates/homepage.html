@@ -8,6 +8,7 @@
     {% include 'snippets/sitewide/head-meta.html' %}
 
 </head>
+
 <body class="homepage">
         {% include 'snippets/sitewide/header.html' %}
 
@@ -48,7 +49,7 @@
 
         <section>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div>
                         <h2>Pick a state</h2>
                         {% include 'snippets/forms/state-selector.html' %}
 
@@ -60,6 +61,8 @@
                             <li><a href="/places/palo-alto">Palo Alto</a></li>
                             <li><a href="/places/brooklyn">Brooklyn</a></li>
                         </ul>
+                    </div>
+                    <div>
                         <h3>...or a category</h3>
                         <ul>
                             <li><a href="/demography">Demographics</a></li>
@@ -72,6 +75,7 @@
         </section>
         
         <section id="homepagetables">
+                <div id="homepagetables">
                 <table class="homepage">
                         <caption>Index: Most Gentrified Areas</caption>
                         <th>Rank</th>
@@ -128,7 +132,9 @@
                                 <td>Name</td>
                             </tr>
                     </table>
-                   
+                </div>
+                
+                <div id="homepagetables">
                     <table class="homepage">
                         <caption>Areas with greatest and least # of non-white</caption>
                         <th>Rank</th>
@@ -186,7 +192,9 @@
                             </tr>
                                 
                     </table>
+                </div>
                     
+                <div id="homepagetables">
                     <table class="homepage">
                         <caption>Biggest/Least change in median home value</caption>
                         <th>Rank</th>
@@ -243,7 +251,9 @@
                                 <td>Name</td>
                             </tr>
                     </table>
+                </div>
             
+                <div id="homepagetables">
                     <table class="homepage">
                         <caption>Biggest/least change in median income</caption>
                         <th>Rank</th>
@@ -300,7 +310,9 @@
                                 <td>Name</td>
                             </tr>
                     </table>
+                </div>
             
+                <div id="homepagetables">
                     <table class="homepage">
                         <caption>Biggest/least change in # of renters</caption>
                         <th>Rank</th>
@@ -357,7 +369,9 @@
                                 <td>Name</td>
                             </tr>
                     </table>
+                </div>
             
+                <div id="homepagetables">
                     <table class="homepage">
                         <caption>Biggest/least change in # with bachelor's or higher</caption>
                         <th>Rank</th>
@@ -414,7 +428,9 @@
                                 <td>Name</td>
                             </tr>
                     </table>
+                </div>
             
+                <div id="homepagetables">
                     <table class="homepage">
                         <caption>Biggest/least change in # in  poverty</caption>
                         <th>Rank</th>
@@ -471,6 +487,7 @@
                                 <td>Name</td>
                             </tr>
                     </table>
+                </div>
         </section>
 
 
