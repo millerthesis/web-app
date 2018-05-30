@@ -89,6 +89,10 @@ div#homepagetables{
 div#geotables{
     margin: 50px;
 }
+
+div#geotables td:hover{
+    background-color: royalblue;
+}
 section#debug div#geotables{
     width: 100%;
 }
