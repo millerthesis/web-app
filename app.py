@@ -173,5 +173,27 @@ def render_404(err):
 # def xfoo():
 #     return render_template('altairtest.html')
 
+
+# CODE FOR geocode_address():
+# from pathlib import Path
+#     import json
+    
+#     addr = request.args['address']
+#     coords = geo.geocode(addr)
+#     censuscodes = cg.lookup_tract(coords['longitude'], coords['latitude'])
+#     county = get_county(censuscodes['state'], censuscodes['county'])
+#     state = get_state(censuscodes['state'])
+#     tract = {}
+
+#     return render_template('geocode.html',
+#                                 address_query=addr,
+#                                 coords=coords,
+#                                 censuscodes=censuscodes,
+#                                 county=county,
+#                                 state=state,
+#                                 tract=tract,
+#                                 us=get_us(),
+#                             )
+
 if __name__ == '__main__':
     myapp.run(debug=True, use_reloader=True)
