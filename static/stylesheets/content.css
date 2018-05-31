@@ -53,3 +53,15 @@ div#homepagetables img#example{
     position: absolute;
     right: 12em;
 }
+
+div.container section#debug img{
+    max-width: 80%;
+}
+
+section#debug img#ex{
+    max-width:45%;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+
+}
