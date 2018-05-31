@@ -28,11 +28,9 @@
                 <li>
                     2) Click on cell to receive visualization of delta between years.
                 </li> 
+
                 <li>
-                    3) Fix residency columns (Moved in between/Moved in before) 
-                </li>
-                <li>
-                    4) Make values numbers - add in commas 
+                    3) Make values numbers - add in commas 
                 </li>
             </ul>
         </h5>
@@ -109,6 +107,7 @@
                         <td>non-white</td>
                         <td>{{county.Medianhomevalue | tojson}} </td>
                         <td>{{county.Medianhouseholdincome | tojson }}</td>
+                        <td>Speak only English</td>
                     </tr>
                     <tr>
                         <td>State</td>
@@ -119,6 +118,7 @@
                         <td>non-white</td>
                         <td>{{state.Medianhomevalue | tojson}} </td>
                         <td>{{state.Medianhouseholdincome | tojson }}</td>
+                        <td>Speak only English</td>
                     </tr>
                     <tr>
                         <td>Country</td>
@@ -129,9 +129,14 @@
                         <td>non-white</td>
                         <td>{{us.Medianhomevalue | tojson}} </td>
                         <td>{{us.Medianhouseholdincome | tojson }}</td>
+                        <td>Speak only English</td>
+
                     </tr>
             </table>
+       
+            <img src="https://cdn-images-1.medium.com/max/637/1*Eq40iwcboRFBMF37oAaM7Q.png" align="right"> 
         </div>
+        
 
         <h4>Housing</h4>
         <div id="proto" style="overflow-x:auto;">
@@ -151,6 +156,8 @@
                         <td>{{tract.Movedin1979andearlier | tojson }} + {{tract.Movedin1980to1989 | tojson }} + {{tract.Movedin1990to1999 | tojson }}</td>
                         <td>{{tract.Movedin2010to2014 | tojson }}</td>
                         <td>{{tract.Movedin2015orlater | tojson }}</td>
+                        <td>Renters</td>
+                        <td>Owners</td>
                     </tr>
                     <tr>
                             <td>County</td>
@@ -159,6 +166,8 @@
                             <td>{{county.Movedin1979andearlier | tojson }}+{{county.Movedin1980to1989 | tojson }}+{{county.Movedin1990to1999 | tojson }}</td>
                             <td>{{county.Movedin2010to2014 | tojson }}</td>
                             <td>{{county.Movedin2015orlater | tojson }}</td>
+                            <td>Renters</td>
+                            <td>Owners</td>
                     </tr>
                     <tr>
                             <td>State</td>
@@ -167,6 +176,8 @@
                             <td>{{state.Movedin1979andearlier | tojson }}+{{state.Movedin1980to1989 | tojson }}+{{state.Movedin1990to1999 | tojson }}</td>
                             <td>{{state.Movedin2010to2014 | tojson }}</td>
                             <td>{{state.Movedin2015orlater | tojson }}</td>
+                            <td>Renters</td>
+                            <td>Owners</td>
                     </tr>
                     <tr>
                             <td>Country</td>
@@ -175,13 +186,18 @@
                             <td>{{us.Movedin1979andearlier | tojson }}+{{us.Movedin1980to1989 | tojson }}+{{us.Movedin1990to1999 | tojson }}</td>
                             <td>{{us.Movedin2010to2014 | tojson }}</td>
                             <td>{{us.Movedin2015orlater | tojson }}</td>
+                            <td>Renters</td>
+                            <td>Owners</td>
                     </tr>
                     
             </table>
+        
+        
+            <img src="https://cdn-images-1.medium.com/max/637/1*Eq40iwcboRFBMF37oAaM7Q.png" align="right">
         </div>
-
+        
         <h4>Income and education</h4>
-        <div id="proto" style="overflow-x:auto;">
+        <div id="proto" style="overflow-x:auto;">   
             <table class="proto">
                     <th>Geography</th>
                     <th>Name</th>
@@ -196,6 +212,8 @@
                             <td>{{tract.Householdincome200k | tojson }} ({{tract.Percentofhouseholdswithincome200k | tojson }}%)</td>
                             <td>{{tract.Belowpovertylevel | tojson }} ({{tract.PercentBelowpovertylevel | tojson }}%)</td>
                             <td>{{tract.Haveatleastabachelorsdegree | tojson }} ({{tract.Percentwithbachelorsdegree | tojson }}%)</td>
+                            <td>Income per capita</td>
+                            <td>Population below poverty level</td>
                         </tr>
                         <tr>
                                 <td>County</td>
@@ -203,7 +221,8 @@
                                 <td>{{county.Householdincome200k | tojson }} ({{county.Percentofhouseholdswithincome200k | tojson }}%)</td>
                                 <td>{{county.Belowpovertylevel | tojson }} ({{county.PercentBelowpovertylevel | tojson }}%)</td>
                                 <td>{{county.Haveatleastabachelorsdegree | tojson }} ({{county.Percentwithbachelorsdegree | tojson }}%)</td>
-                               
+                                <td>Income per capita</td>
+                                <td>Population below poverty level</td>
                             </tr>
                             <tr>
                                     <td>State</td>
@@ -211,6 +230,8 @@
                                     <td>{{state.Householdincome200k | tojson }} ({{state.Percentofhouseholdswithincome200k | tojson }}%)</td>
                                     <td>{{state.Belowpovertylevel | tojson }} ({{state.PercentBelowpovertylevel | tojson }}%)</td>
                                     <td>{{state.Haveatleastabachelorsdegree | tojson }} ({{state.Percentwithbachelorsdegree | tojson }}%)</td>
+                                    <td>Income per capita</td>
+                                    <td>Population below poverty level</td>
                             </tr>
                             <tr>
                                     <td>Country</td>
@@ -218,8 +239,13 @@
                                     <td>{{us.Householdincome200k | tojson }} ({{us.Percentofhouseholdswithincome200k | tojson }}%)</td>
                                     <td>{{us.Belowpovertylevel | tojson }} ({{us.PercentBelowpovertylevel | tojson }}%)</td>
                                     <td>{{us.Haveatleastabachelorsdegree | tojson }} ({{us.Percentwithbachelorsdegree | tojson }}%)</td>
+                                    <td>Income per capita</td>
+                                    <td>Population below poverty level</td>
                             </tr>
+
             </table>
+        
+            <img src="https://cdn-images-1.medium.com/max/637/1*Eq40iwcboRFBMF37oAaM7Q.png" align="right">
         </div>
             
         <h4>Residency</h4>
@@ -259,7 +285,9 @@
                                 <td>{{us.Foreignborn | tojson }} ({{us.Percentforeignborn | tojson }}%)</td>
                         </tr>
             </table>
+        <img src="https://cdn-images-1.medium.com/max/637/1*Eq40iwcboRFBMF37oAaM7Q.png" align="right">
         </div>
+       
     </section>
 
 </div>

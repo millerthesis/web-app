@@ -88,6 +88,7 @@ div#homepagetables{
 
 div#geotables{
     margin: 50px;
+    display:inline;
 }
 
 div#geotables td:hover{
@@ -96,3 +97,4 @@ div#geotables td:hover{
 section#debug div#geotables{
     width: 100%;
 }
+
