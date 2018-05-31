@@ -10,13 +10,25 @@
 <body class="">
 
 {% include 'snippets/sitewide/header.html' %}
+
+
 <div class="container">
 
     <h1 class="page-title">Search results for {{address_query | tojson }}</h1>
+    <ul>
+        <li>
+            1) receive pop-up window when hovering over table cells to receive the delta between current and historical census data (ex: "This is xxx higher than in 2000). 
+        </li>
+        <li>
+            2) Click on cell to receive visualization of delta between years.
+        </li> 
+
+        <li>
+            3) Make values numbers - add in commas 
+        </li>
+    </ul>
 
     {% include 'snippets/mapstuff/map.html' %}
-
-    <h3>TK: Hover over table cell to receive pop-up explaining delta b/w 2000-2016; click cell to receive data viz below chart</h3>
 
     <section id="debug">
         
@@ -62,7 +74,7 @@
                 </table>
             </div>
 
-            <h3>Demographics</h3>
+        <h3>Demographics</h3>
             <div id="geotables" style="overflow-x:auto;">
                 <table class="proto">
                     <th>Geography</th>

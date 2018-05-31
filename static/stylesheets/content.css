@@ -19,7 +19,7 @@ h1.page-title{
 /* specific stuff... */
 
 .homepage .lede-image img{
-    max-height: 300px;
+    max-height: 350px;
 }
 
 section#debug{
@@ -46,4 +46,10 @@ div#metricpages h3{
 
 div#proto{
     display: inline-block;
+}
+
+div#homepagetables img#example{
+    margin-top: 5em;
+    position: absolute;
+    right: 12em;
 }
