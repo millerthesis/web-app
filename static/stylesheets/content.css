@@ -64,3 +64,9 @@ section#debug img#ex{
     margin-right: 0;
 
 }
+
+div#metrictable img#example{
+    margin-top: 5em;
+    position: absolute;
+    right: 12em;
+}
