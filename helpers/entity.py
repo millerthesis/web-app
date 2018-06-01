@@ -16,6 +16,12 @@ def get_state(code):
 
     return get_entity(_id, 'state')
 
+def get_tract(code=False):
+    code = '0500000US06081'
+    # dummy
+    d = get_entity(code, 'county')
+    d['name'] = 'Dummy Tract'
+    return d
 
 def get_county(state_code, county_code):
     _id = '0500000US' + state_code + county_code

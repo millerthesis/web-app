@@ -1,0 +1,109 @@
+{% set index = indexes['gentrification'] %}
+
+<section id="gentrified-index" class="index">
+
+    <h2>
+        <a href="/gentrification">
+            Most Gentrified Areas
+        </a>
+    </h2>
+
+    <div class="description">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla distinctio ipsam quasi assumenda ad unde. Eaque corrupti aspernatur incidunt alias ea. Non odio veritatis, maxime repudiandae aliquid, sed blanditiis commodi!
+        </p>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-4">
+
+            {% set states = index['states'] %}
+
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>State</th>
+                        <th>TKVAL</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in states %}
+
+                    <tr>
+                        <td>
+                            <a href="/states/{{s.id}}">{{ s.name }}</a>
+                        </td>
+                        <td>{{ s.gentrification_index }}</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-sm-4">
+
+            {% set states = index['states'] %}
+
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>County</th>
+                        <th>TKVAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in states %}
+
+                    <tr>
+                        <td>
+                            <a href="/states/{{s.id}}">{{ s.name }}</a>
+                        </td>
+                        <td>{{ s.gentrification_index }}</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-sm-4">
+
+            {% set states = index['states'] %}
+
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Tract</th>
+                        <th>TKVAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in states %}
+
+                    <tr>
+                        <td>
+                            <a href="/states/{{s.id}}">{{ s.name }}</a>
+                        </td>
+                        <td>{{ s.gentrification_index }}</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</section>

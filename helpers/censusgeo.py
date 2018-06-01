@@ -39,6 +39,14 @@ def get_tract(data):
     d['tract'] = t['TRACT']
     d['state'] = t['STATE']
     d['county'] = t['COUNTY']
+
+    # county =  data['result']['geographies']['Counties'][0]
+    # d['county_name'] = county['NAME']
+
+    # state =  data['result']['geographies']['States'][0]
+    # d['state_name'] = state['NAME']
+
+
     return d
 
 

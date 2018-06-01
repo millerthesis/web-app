@@ -4,72 +4,64 @@
     {% include 'snippets/sitewide/head-meta.html' %}
     {% include 'snippets/sitewide/head-map-meta.html' %}
 
-    <title>Page Title</title>
+    <title>Tract</title>
 </head>
 
-<body class="">
+<body class="tract">
 
 {% include 'snippets/sitewide/header.html' %}
 
 
 <div class="container">
 
-    <h1 class="page-title">Search results for {{address_query | tojson }}</h1>
-    <ul>
-        <li>
-            1) receive pop-up window when hovering over table cells to receive the delta between current and historical census data (ex: "This is xxx higher than in 2000). 
-        </li>
+    <section class="title">
+        <h1 class="page-title">{{ tract.name }}, {{county.name}}</h1>
 
-        <li>
-            2) Make values numbers - add in commas 
-        </li>
-    </ul>
+        <div class="query-note">Most relevant tract for: <code>{{ address_query }}</code></div>
+    </section>
 
-    {% include 'snippets/mapstuff/map.html' %}
+    <section class="lede">
+
+        <div class="row">
+            <div class="col-sm-6">
+
+                <strong>Gentrication!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore adipisci fugit atque commodi facere architecto at earum, officiis blanditiis porro sit laborum perspiciatis sapiente debitis alias repellendus veritatis ex aliquam.
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        Gentrification Index
+                    </div>
+                    <div class="col-sm-6">
+                        22%
+                    </div>
+                </div>
+
+                <div class="toc">
+                    <ul class="list">
+                        <li>
+                            <a href="#demography">Demographics</a></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                    {% include 'snippets/mapstuff/map.html' %}
+            </div>
+        </div>
+
+
+    </section>
+
+
+
 
     <section id="debug">
-        
-        <div id="geotables">
-        </div>
 
-        <h2>Coordinates</h2>
-
-        <div id="geotables" style="overflow-x:auto;">
-                <table class="proto">
-                    <tr>
-                        <th>Name</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                    </tr>
-    
-                    <tr>
-                        <td>{{ coords.name | tojson }} </td>
-                        <td>{{ coords.latitude | tojson }}</td>
-                        <td>{{ coords.longitude | tojson }}</td>
-                    </tr>
-                
-                </table>
-        </div>
-        
-        <h2>Census codes</h2>    
-
-        <div id="geotables" style="overflow-x:auto;">
-            <table class="proto">
-                    <tr>
-                        <th>County</th>
-                        <th>Name</th>
-                        <th>State</th>
-                        <th>Tract</th>
-                    </tr>
-    
-                    <tr>
-                        <td>{{censuscodes.county | tojson }} </td>
-                        <td>{{censuscodes.name | tojson }} </td>
-                        <td>{{censuscodes.state | tojson }} </td>
-                        <td>{{censuscodes.tract | tojson }} </td>
-                    </tr>
-                </table>
-            </div>
+        {% include 'snippets/data-tables/tract-demographics.html' %}
 
         <h3>Demographics</h3>
             <div id="geotables" style="overflow-x:auto;">
@@ -81,7 +73,7 @@
                     <th>Median household income</th>
                     <th>Total White</th>
                     <th>Total non-white</th>
-                    
+
                         <tr>
                             <td>Tract</td>
                             <td>{{censuscodes.tract | tojson }}</td>
@@ -262,6 +254,49 @@
             <img src="https://cdn-images-1.medium.com/max/637/1*Eq40iwcboRFBMF37oAaM7Q.png" id="ex">
             <caption>Charts TK: 1) delta of born in other state, tract v county</caption>
             </div>
+
+
+
+        <h2>Coordinates</h2>
+
+        <div id="geotables" style="overflow-x:auto;">
+                <table class="proto">
+                    <tr>
+                        <th>Name</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                    </tr>
+
+                    <tr>
+                        <td>{{ coords.name | tojson }} </td>
+                        <td>{{ coords.latitude | tojson }}</td>
+                        <td>{{ coords.longitude | tojson }}</td>
+                    </tr>
+
+                </table>
+        </div>
+
+        <h2>Census codes</h2>
+
+        <div id="geotables" style="overflow-x:auto;">
+            <table class="proto">
+                    <tr>
+                        <th>County</th>
+                        <th>Name</th>
+                        <th>State</th>
+                        <th>Tract</th>
+                    </tr>
+
+                    <tr>
+                        <td>{{censuscodes.county | tojson }} </td>
+                        <td>{{censuscodes.name | tojson }} </td>
+                        <td>{{censuscodes.state | tojson }} </td>
+                        <td>{{censuscodes.tract | tojson }} </td>
+                    </tr>
+                </table>
+            </div>
+
+
     </section>
 
 
