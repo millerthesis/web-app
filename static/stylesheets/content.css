@@ -70,3 +70,15 @@ div#metrictable img#example{
     position: absolute;
     right: 12em;
 }
+
+
+
+
+body.tract h1.page-title{
+    margin-bottom: 0;
+}
+
+.query-note{
+    font-size: 0.9em;
+    font-style: italic;
+}
