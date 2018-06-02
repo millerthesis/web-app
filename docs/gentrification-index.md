@@ -20,7 +20,7 @@ As such, I have weighted each data variable accordingly: income per capita (.30)
 - Change in median age
 - Change in median home values
 - Change in owners vs renters
-- Change in population with bachleor's degree or higher
+- Change in population with bachelor's degree or higher
 - Change in income per capita
 
 
