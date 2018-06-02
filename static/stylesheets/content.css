@@ -71,9 +71,6 @@ div#metrictable img#example{
     right: 12em;
 }
 
-
-
-
 body.tract h1.page-title{
     margin-bottom: 0;
 }
@@ -81,4 +78,8 @@ body.tract h1.page-title{
 .query-note{
     font-size: 0.9em;
     font-style: italic;
+}
+
+div.row div.col-sm-6{
+    margin-top: 1em;
 }

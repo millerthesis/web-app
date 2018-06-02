@@ -25,28 +25,39 @@
         <div class="row">
             <div class="col-sm-6">
 
-                <strong>Gentrication!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore adipisci fugit atque commodi facere architecto at earum, officiis blanditiis porro sit laborum perspiciatis sapiente debitis alias repellendus veritatis ex aliquam.
+                <strong>[High/moderate/low gentrification]!</strong> This area is considered to be [low/moderate/highly] gentrified. There are x more/less white people in 2016 than in 2000, and the median age has increased/decreased by x. X % of people have a bachelor's degree, which is x more/less than in 2000. Explore more data about [query] in the categories below.
 
 
                 <div class="row">
                     <div class="col-sm-6">
-                        Gentrification Index
+                        Gentrification Index Score
                     </div>
                     <div class="col-sm-6">
                         22%
                     </div>
                 </div>
-
+                
                 <div class="toc">
                     <ul class="list">
                         <li>
-                            <a href="#demography">Demographics</a></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                            <a href="#demography">Demographics</a>
+                        </li>
+                        <li>
+                            <a href="#housing">Housing</a>
+                        </li>
+                        <li>
+                            <a href="#income">Income and education</a>
+                        </li>
+                        <li>
+                            <a href="#residency">Residency</a>
+                        </li>
                     </ul>
                 </div>
+                <div>
+                        More information on <a href="/states/{{state.id}}"> {{state.name}} </a>
+                    </div>
             </div>
+
 
             <div class="col-sm-6">
                     {% include 'snippets/mapstuff/map.html' %}
@@ -64,7 +75,7 @@
         {% include 'snippets/data-tables/tract-demographics.html' %}
 
         <h3>Demographics</h3>
-            <div id="geotables" style="overflow-x:auto;">
+            <div id="demography" style="overflow-x:auto;">
                 <table class="proto">
                     <th>Geography</th>
                     <th>Name</th>
@@ -117,7 +128,7 @@
             </div>
 
             <h3>Housing</h3>
-            <div id="geotables" style="overflow-x:auto;">
+            <div id="housing" style="overflow-x:auto;">
                 <table class="proto">
                         <th>Geography</th>
                         <th>Name</th>
@@ -163,7 +174,7 @@
             </div>
 
             <h3>Income and education</h3>
-            <div id="geotables" style="overflow-x:auto;">
+            <div id="income" style="overflow-x:auto;">
                 <table class="proto">
                         <th>Geography</th>
                         <th>Name</th>
@@ -210,7 +221,7 @@
             </div>
 
             <h3>Residency</h3>
-            <div id="geotables" style="overflow-x:auto;">
+            <div id="residency" style="overflow-x:auto;">
                 <table class="proto">
                         <th>Geography</th>
                         <th>Name</th>
