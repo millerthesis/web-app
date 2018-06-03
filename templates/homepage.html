@@ -31,48 +31,33 @@
 
                         {% include 'snippets/forms/address-search.html' %}
 
+                        <div>
+                                <div class="row" id="selectors">
+                                        <div>
+                                            <h2>Pick a state</h2>
+                                            {% include 'snippets/forms/state-selector.html' %}
+                                        </div>
+                                        <div>
+                                            <h2>...or a county</h2>
+                                            {% include 'snippets/forms/county-selector.html' %}
+                                        </div>
+                                        <div>
+                                            <h2>...or a city</h2>
+                                            {% include 'snippets/forms/city-selector.html' %}
+                                        </div>
+                                </div>
+                         </div>
+
                     </div>
                     <div class="col-sm-6">
                         <div class="lede-image">
-                            <img id="image1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Blank_US_Map_%28states_only%29.svg/800px-Blank_US_Map_%28states_only%29.svg.png" alt="United States">
+                            <img id="image1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Blank_US_Map_%28states_only%29.svg/800px-Blank_US_Map_%28states_only%29.svg.png" alt="United States" align="center">
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
-
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div>
-                        <h2>Pick a state</h2>
-                        {% include 'snippets/forms/state-selector.html' %}
-
-                    </div>
-                    <div class="col-sm-6" align="center">
-                        <h3>...or a place</h3>
-                        <ul>
-                            <li><a href="geocode?address=detroit">Detroit</a></li>
-                            <li><a href="geocode?address=palo+alto">Palo Alto</a></li>
-                            <li><a href="geocode?address=brooklyn">Brooklyn</a></li>
-                            <li><a href="geocode?address=chicago+il">Chicago</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>...or a category</h3>
-                        <ul>
-                            <li><a href="/demography">Demographics</a></li>
-                            <li><a href="/housing">Housing</a></li>
-                            <li><a href="/income">Income</a></li>
-                            <li><a href="/residency">Residency</a></li>
-                        </ul>
-                    </div>
-                    </div>
-        </section>
-
-
 
 <div class="container">
     <section id="indexes">
@@ -81,8 +66,6 @@
     </section>
 
 </div>
-
-
 
     {% include 'snippets/sitewide/footer.html' %}
 

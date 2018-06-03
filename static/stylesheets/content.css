@@ -66,8 +66,9 @@ section#debug img#ex{
 }
 
 img#example{
-    height: 350px;
+    height: 300px;
     display:inline-block;
+    margin-left:12em;
 }
 
 body.tract h1.page-title{
@@ -92,6 +93,28 @@ div.row div.col-sm-8{
     margin-top: 1em;
 }
 
-div.toc p{
-    margin-top: 2em;
+div.toc{
+    margin-top: 1em;
+}
+
+div#explore{
+    display:inline-block;
+    position:relative;
+}
+
+div.row#selectors div{
+    margin-right:8px;
+    margin-left:8px;
+}
+
+div.col-sm-4#metrics{
+    display:inline-block;
+}
+
+div img#heatmap{
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 750px;
 }

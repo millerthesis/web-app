@@ -19,10 +19,6 @@ table.proto th, td{
     border: 2px solid #000000;
 }
 
-table.proto td:hover{
-    background-color: royalblue;
-}
-
 table.homepage{
     padding: 10px;
     white-space: nowrap;
@@ -91,9 +87,7 @@ div#geotables{
     display:inline;
 }
 
-div#geotables td:hover{
-    background-color: royalblue;
-}
 section#debug div#geotables{
     width: 100%;
 }
+
