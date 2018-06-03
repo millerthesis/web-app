@@ -77,8 +77,17 @@ body.tract h1.page-title{
 .query-note{
     font-size: 0.9em;
     font-style: italic;
+    margin-top: 1em;
 }
 
 div.row div.col-sm-6{
+    margin-top: 1em;
+}
+
+div.row div.col-sm-8{
+    margin-top: 1em;
+}
+
+.btn-primary{
     margin-top: 1em;
 }
