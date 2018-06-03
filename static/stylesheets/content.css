@@ -65,10 +65,9 @@ section#debug img#ex{
 
 }
 
-div#metrictable img#example{
-    margin-top: 5em;
-    position: absolute;
-    right: 12em;
+img#example{
+    height: 350px;
+    display:inline-block;
 }
 
 body.tract h1.page-title{
