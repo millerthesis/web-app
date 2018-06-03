@@ -91,3 +91,7 @@ div.row div.col-sm-8{
 .btn-primary{
     margin-top: 1em;
 }
+
+div.toc p{
+    margin-top: 2em;
+}
