@@ -1,6 +1,6 @@
 # Gentrification index
 
-This index was created by using Census data from the 2000 Decennial and 2016 and attempts to quantify the level of gentrification of an area by measuring the changes in population of white people, median age, median home value, number of owner-occupied homes, number of people with at least a bachelor's degree and income per capita. These data points were chosen based on similar gentrification analyses by Governing magazine and the Cleveland Federal Reserve.
+This index was created by using Census data from the 2000 Decennial and 2016 American Community Survey and attempts to quantify the level of gentrification of an area by measuring the changes in population of white people, median age, median home value, number of owner-occupied homes, number of people with at least a bachelor's degree and income per capita. These data points were chosen based on similar gentrification analyses by Governing magazine and the Cleveland Federal Reserve.
 
 
 ## The most gentrified areas
