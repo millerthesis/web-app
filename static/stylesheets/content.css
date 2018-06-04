@@ -103,8 +103,8 @@ div#explore{
 }
 
 div.row#selectors div{
-    margin-right:8px;
-    margin-left:8px;
+    margin-right:18px;
+    margin-top:1em;
 }
 
 div.col-sm-4#metrics{

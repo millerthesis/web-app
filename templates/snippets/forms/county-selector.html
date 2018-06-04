@@ -4,11 +4,21 @@
             Pick County
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% for c in county %}
-                <a class="dropdown-item" href="/county/{{c.id}}">
-                    {{c.name}}
+                <a class="dropdown-item">
+                    <ul>
+                            <li>Los Angeles County</li>
+                            <li>Cook County</li>
+                            <li>Harris County</li>
+                            <li>Maricopa County</li>
+                            <li>San Diego County</li>
+                            <li>Kings County</li>
+                            <li>Santa Clara</li>
+                            <li>Philadelphia County</li>
+                            <li>Fairfax County</li>
+                            <li>Miami-Dade County</li>
+                            <li>Queens County</li>
+                    </ul>
                 </a>
-            {% endfor %}
         </div>
     
     </div>
