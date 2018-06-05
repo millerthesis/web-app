@@ -3,11 +3,11 @@
 <head>
     {% include 'snippets/sitewide/head-meta.html' %}
 
-    <title>State: {{state['name']}}</title>
+    <title>County: {{county['name']}}</title>
 </head>
 
 
-<body class="state-page">
+<body class="county-page">
 
     {% include 'snippets/sitewide/header.html' %}
 
@@ -16,9 +16,9 @@
 
 
 
-              <section id="main">
+            <section id="main">
 
-                <h1 class="page-title">Data for {{state['name']}}</h1>
+                <h1 class="page-title">Data for {{county['name']}}</h1>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/2000px-Alabama_in_United_States.svg.png" alt="Alabama" align="center" height="250" width="400">
 
 
@@ -81,7 +81,7 @@
                     <tr>
                         {% for c in counties %}
                         <td>
-                            <a href="/geocode/tract?address={{c.GEO_ID}}">
+                            <a href="/counties/{{c.GEO_ID}}">
                                 {{ c.NAME }}
                             </a>
                         </td>
