@@ -15,17 +15,10 @@
     </thead>
     <tbody>
         {% set residencyfields =  [
-                                'Born in state',
                                 'Percent born in state',
-                                'Born in other state',
                                 'Percent born in other state',
-                                'Foreign born',
                                 'Percent foreign born',
-                                'Moved in 1979 and earlier',
-                                'Moved in 1980 to 1989',
-                                'Moved in 1990 to 1999',
-                                'Moved in 2010 to 2014',
-                                'Moved in 2015 or later',
+                                'English-only speakers'
                                 ]
 
 
@@ -39,6 +32,7 @@
                 <td>{{fieldname}}</td>
                 <td>{{state[fieldname]}}</td>
                 <td>{{US[fieldname]}}</td>
+                <td>TK</td>
             </tr>
         {% endfor %}
     </tbody>
