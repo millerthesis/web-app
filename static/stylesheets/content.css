@@ -125,9 +125,6 @@ div#selectors{
     margin-left: 1em;
 }
 
-div.dropdown{
-    margin-left:15px;
-}
 
 caption {
     font-style: italic;
@@ -151,4 +148,14 @@ div.tables{
 
 div.tables h3{
     padding: 10px;
+}
+
+div.container section#main div{
+    display:block;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }

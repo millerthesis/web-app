@@ -13,48 +13,30 @@
 
     <div class="container">
 
-
-
-
               <section id="main">
-
                 <h1 class="page-title">Data for {{state['name']}}</h1>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Alabama_in_United_States.svg/2000px-Alabama_in_United_States.svg.png" alt="Alabama" align="center" height="250" width="400">
-
-
-                <section id="race">
+                    <div>
                     <h3>Demographic data (2016)</h3>
 
                     {% include 'snippets/data-tables/demography-table.html' %}
-
-                </section>
-
-
-                <section id="housing">
+                    
+                    </div>
+                    <div>
                     <h3>Housing data (2016)</h3>
 
-
-
                     {% include 'snippets/data-tables/housing-table.html' %}
-                </section>
-
-
-                <section id="income">
+                    </div>
+                    <div>
                     <h3>Income and education data (2016)</h3>
 
                     {% include 'snippets/data-tables/income-table.html' %}
-
-                </section>
-
-
-                <section id="residency">
+                    </div>
+                    <div>
                     <h3>Residency data (2016)</h3>
 
                     {% include 'snippets/data-tables/residency-table.html' %}
-
+                    </div>
                 </section>
-            </section>
-
 
 
             <section id="counties">

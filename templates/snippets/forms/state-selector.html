@@ -3,7 +3,7 @@
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Pick State
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenuButton">
         {% for s in states %}
             <a class="dropdown-item" href="/states/{{s.id}}">
                 {{s.name}}

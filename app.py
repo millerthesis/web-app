@@ -48,13 +48,6 @@ def geotracter():
 
 
 
-
-
-
-
-
-
-
 @myapp.route("/gentrification")
 def gentrification_metric():
     addr = 'tk'
@@ -182,8 +175,6 @@ def state(statecode):
             US=get_us(),
             counties=get_counties_by_state_code(_x)
             )
-
-
 
 
 @myapp.route("/proto/")
