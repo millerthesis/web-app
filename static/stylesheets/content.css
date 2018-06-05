@@ -135,3 +135,10 @@ div.dropdown{
 caption {
     font-style: italic;
 }
+
+section.lede img#heatmapexample{
+    max-width:700px;
+    display:inline-block;
+    margin-left: 10em;
+    padding: 1em;
+}
