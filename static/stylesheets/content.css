@@ -81,6 +81,11 @@ body.tract h1.page-title{
     margin-top: 1em;
 }
 
+div.row{
+    margin-top: 2em;
+    margin-left:1em;
+}
+
 div.row div.col-sm-6{
     margin-top: 1em;
 }
@@ -111,10 +116,22 @@ div.col-sm-4#metrics{
     display:inline-block;
 }
 
-div img#heatmap{
+div img#exampleheatmap{
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
     display: block;
     max-width: 750px;
+}
+
+div#selectors{
+    margin-left: 1em;
+}
+
+div.dropdown{
+    margin-left:5px;
+}
+
+caption {
+    font-style: italic;
 }
