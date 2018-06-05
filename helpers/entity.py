@@ -23,6 +23,17 @@ def get_tract(code=False):
     d['name'] = 'Dummy Tract'
     return d
 
+
+def get_counties_by_state_code(state_code):
+    counties = get_geo_data('county')
+    _x = 'US' + state_code
+    data = []
+    for row in counties:
+        if _x in row['GEO_ID']:
+            data.append(row)
+    return data
+
+
 def get_county(state_code, county_code):
     _id = '0500000US' + state_code + county_code
     return get_entity(_id, 'county')
