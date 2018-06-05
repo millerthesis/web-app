@@ -129,7 +129,7 @@ div#selectors{
 }
 
 div.dropdown{
-    margin-left:62px;
+    margin-left:35px;
 }
 
 caption {
@@ -141,4 +141,17 @@ section.lede img#heatmapexample{
     display:inline-block;
     margin-left: 10em;
     padding: 1em;
+}
+
+div.container img#example{
+    margin-bottom:8em;
+    size: 250px;
+}
+
+div.tables{
+    margin-top: 1em;
+}
+
+div.tables h3{
+    padding: 10px;
 }
