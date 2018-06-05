@@ -23,15 +23,15 @@
 
 
                 <section id="race">
-                    <h2>Race/Ethnicity Data (ACS 2016)</h2>
+                    <h3>Demographic data (2016)</h3>
 
-                    {% include 'snippets/data-tables/race-table.html' %}
+                    {% include 'snippets/data-tables/demography-table.html' %}
 
                 </section>
 
 
                 <section id="housing">
-                    <h2>Housing Data (ACS 2016)</h2>
+                    <h3>Housing data (2016)</h3>
 
 
 
@@ -40,7 +40,7 @@
 
 
                 <section id="income">
-                    <h2>Income/Poverty Data (ACS 2016)</h2>
+                    <h3>Income and education data (2016)</h3>
 
                     {% include 'snippets/data-tables/income-table.html' %}
 
@@ -48,7 +48,7 @@
 
 
                 <section id="residency">
-                    <h2>Residency Data (ACS 2016)</h2>
+                    <h3>Residency data (2016)</h3>
 
                     {% include 'snippets/data-tables/residency-table.html' %}
 
@@ -60,18 +60,42 @@
             <section id="counties">
 
                 <h2>Counties</h2>
-
                 <table class="table table-sm table-bordered">
-
-
-
-                    {% for c in counties %}
-
                     <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            White population
+                        </th>
+                        <th>
+                            Median age
+                        </th>
+                        <th>
+                            Income per capita
+                        </th>
+                        <th>
+                            Number with bachelor's
+                        </th>
+                    </tr>
+                    <tr>
+                        {% for c in counties %}
                         <td>
                             <a href="/counties/{{c.GEO_ID}}">
                                 {{ c.NAME }}
                             </a>
+                        </td>
+                        <td>
+                            Test
+                        </td>
+                        <td>
+                            Test
+                        </td>
+                        <td>
+                            Test
+                        </td>
+                        <td>
+                            Test
                         </td>
                     </tr>
 
