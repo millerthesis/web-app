@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, request
-from helpers.entity import get_state, get_states, get_us, get_county, get_tract
+from helpers.entity import get_state, get_states, get_us, get_county, get_tract, get_counties_by_state_code
 from helpers.indexes import get_indexes
 import helpers.geocoder as geo
 import helpers.censusgeo as cg
@@ -45,11 +45,6 @@ def geotracter():
                                 tract=tract,
                                 us=get_us(),
                             )
-
-
-
-
-
 
 
 
@@ -181,7 +176,12 @@ def infopage(endpoint):
 
 @myapp.route("/states/<statecode>")
 def state(statecode):
-    return render_template('state.html', state=get_state(statecode), US=get_us())
+    _x = statecode[-2:]
+    return render_template('state.html',
+            state=get_state(statecode),
+            US=get_us(),
+            counties=get_counties_by_state_code(_x)
+            )
 
 
 
