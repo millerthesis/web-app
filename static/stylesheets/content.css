@@ -81,9 +81,11 @@ body.tract h1.page-title{
     margin-top: 1em;
 }
 
-div.row div.col-sm-6{
+div.row{
     margin-top: 1em;
+    margin-left:1em;
 }
+
 
 div.row div.col-sm-8{
     margin-top: 1em;
@@ -111,10 +113,42 @@ div.col-sm-4#metrics{
     display:inline-block;
 }
 
-div img#heatmap{
+div img#exampleheatmap{
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
     display: block;
     max-width: 750px;
+}
+
+div#selectors{
+    margin-left: 1em;
+}
+
+div.dropdown{
+    margin-left:15px;
+}
+
+caption {
+    font-style: italic;
+}
+
+section.lede img#heatmapexample{
+    max-width:700px;
+    display:inline-block;
+    margin-left: 10em;
+    padding: 1em;
+}
+
+div.container img#example{
+    margin-bottom:8em;
+    size: 250px;
+}
+
+div.tables{
+    margin-top: 1em;
+}
+
+div.tables h3{
+    padding: 10px;
 }
