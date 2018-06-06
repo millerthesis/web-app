@@ -2,6 +2,9 @@ from helpers.entity import get_states
 
 
 
+
+
+
 def get_indexes():
     r = {}
     r['gentrification'] = gentrification_index()
