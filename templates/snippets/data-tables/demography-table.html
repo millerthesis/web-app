@@ -14,22 +14,24 @@
         </tr>
     </thead>
     <tbody>
-        {% set racefields = ['Population',
-                                'Median Age',
-                                'Median household income',
-                                'White population',
-                                'Non-white population',
+        {% set fields = ['total_population',
+                                'median_age',
+                                'median_household_income',
+                                'white_pct',
+                                'nonwhite_pct',
                                 ]
 
 
         %}
 
-        {% for fieldname in racefields %}
+        {% set year = '2016' %}
+
+        {% for fieldname in fields %}
 
             <tr>
                 <td>{{fieldname}}</td>
-                <td>{{state[fieldname]}}</td>
-                <td>{{US[fieldname]}}</td>
+                <td>{{state[year][fieldname]}}</td>
+                <td>{{US[year][fieldname]}}</td>
             </tr>
         {% endfor %}
     </tbody>

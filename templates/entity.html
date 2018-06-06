@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'snippets/sitewide/head-meta.html' %}
+    {% include 'snippets/sitewide/head-map-meta.html' %}
+
+    <title>{{entity.geo}} {{entity.name}}</title>
+</head>
+
+<body class="entity {{entity.geo}}">
+
+{% include 'snippets/sitewide/header.html' %}
+
+
+<div class="container">
+
+    <section class="title">
+        <h1 class="page-title">{{ entity.name }}</h1>
+    </section>
+
+    <section class="lede">
+
+        <div class="row">
+            <div class="col-sm-6">
+
+                <strong>[High/moderate/low gentrification]!</strong> This area is considered to be [low/moderate/highly] gentrified based on the gentrification index.  It has a score that is [x] lower/higher than the state average of [x].
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="/gentrification">Gentrification Index Score</a>
+                    </div>
+                    <div class="col-sm-6">
+                        {{ entity.gentrification.index}}
+                    </div>
+                </div>
+
+                <div class="toc">
+                <p>
+                    Explore information about
+                    <strong>{{entity.name}}</strong>
+                     by category:
+                </p>
+
+
+                    <ul class="list">
+                        <li>
+                            <a href="#demography">Demographics</a>
+                        </li>
+                        <li>
+                            <a href="#housing">Housing</a>
+                        </li>
+                        <li>
+                            <a href="#income">Income and education</a>
+                        </li>
+                        <li>
+                            <a href="#residency">Residency</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                    { include 'snippets/mapstuff/map.html' }
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="data-tables">
+
+        {% include 'snippets/data-tables/tract-demographics.html' %}
+
+        {% include 'snippets/data-tables/tract-housing.html' %}
+
+        {% include 'snippets/data-tables/tract-income.html' %}
+
+        {% include 'snippets/data-tables/tract-residency.html' %}
+
+    </section>
+
+    <section class="children">
+        {% for c in children %}
+
+        <div>
+            <a href="/{{c.geo}}/{{c.id}}">{{c.name}}</a>
+        </div>
+
+        {% endfor %}
+
+
+    </section>
+
+
+    <section class="debug">
+
+<code>
+{{ entity | tojson }}
+</code>
+
+    </section>
+</div>
+{% include 'snippets/sitewide/footer.html' %}
+
