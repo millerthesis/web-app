@@ -4,10 +4,10 @@
     {% include 'snippets/sitewide/head-meta.html' %}
     {% include 'snippets/sitewide/head-map-meta.html' %}
 
-    <title>Tract</title>
+    <title>{{entity.geo}} {{entity.name}}</title>
 </head>
 
-<body class="tract">
+<body class="entity {{entity.geo}}">
 
 {% include 'snippets/sitewide/header.html' %}
 
@@ -15,9 +15,7 @@
 <div class="container">
 
     <section class="title">
-        <h1 class="page-title">{{ tract.name }}, {{county.name}}</h1>
-
-        <div class="query-note">Most relevant tract for: <code>{{ address_query }}</code></div>
+        <h1 class="page-title">{{ entity.name }}</h1>
     </section>
 
     <section class="lede">
@@ -33,12 +31,18 @@
                         <a href="/gentrification">Gentrification Index Score</a>
                     </div>
                     <div class="col-sm-6">
-                        22%
+                        {{ entity.gentrification.index}}
                     </div>
                 </div>
 
                 <div class="toc">
-                <p>Explore information about '{{ address_query }}' by category:</p>
+                <p>
+                    Explore information about
+                    <strong>{{entity.name}}</strong>
+                     by category:
+                </p>
+
+
                     <ul class="list">
                         <li>
                             <a href="#demography">Demographics</a>
@@ -54,21 +58,18 @@
                         </li>
                     </ul>
                 </div>
-                <div>
-                        More information on <a href="/states/{{state.id}}"> {{state.name}} </a>
-                    </div>
             </div>
 
 
             <div class="col-sm-6">
-                    {% include 'snippets/mapstuff/map.html' %}
+                    { include 'snippets/mapstuff/map.html' }
             </div>
         </div>
 
 
     </section>
 
-    <section id="debug">
+    <section id="data-tables">
 
         {% include 'snippets/data-tables/tract-demographics.html' %}
 
@@ -80,49 +81,26 @@
 
     </section>
 
-        <h4>Coordinates</h4>
+    <section class="children">
+        {% for c in children %}
 
-        <div id="geotables">
-                <table class="table table-bordered table-sm table-striped">
-                    <tr>
-                        <th>Name</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                    </tr>
-
-                    <tr>
-                        <td>{{ coords.name | tojson }} </td>
-                        <td>{{ coords.latitude | tojson }}</td>
-                        <td>{{ coords.longitude | tojson }}</td>
-                    </tr>
-
-                </table>
+        <div>
+            <a href="/{{c.geo}}/{{c.id}}">{{c.name}}</a>
         </div>
 
-        <h4>Census codes</h4>
-
-        <div id="geotables">
-            <table class="table table-bordered table-sm table-striped">
-                    <tr>
-                        <th>County</th>
-                        <th>Name</th>
-                        <th>State</th>
-                        <th>Tract</th>
-                    </tr>
-
-                    <tr>
-                        <td>{{censuscodes.county | tojson }} </td>
-                        <td>{{censuscodes.name | tojson }} </td>
-                        <td>{{censuscodes.state | tojson }} </td>
-                        <td>{{censuscodes.tract | tojson }} </td>
-                    </tr>
-                </table>
-            </div>
+        {% endfor %}
 
 
+    </section>
 
 
+    <section class="debug">
 
+<code>
+{{ entity | tojson }}
+</code>
+
+    </section>
 </div>
 {% include 'snippets/sitewide/footer.html' %}
 

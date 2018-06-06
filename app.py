@@ -62,6 +62,33 @@ def geotracter():
                             )
 
 
+@myapp.route("/state/<statecode>")
+def state(statecode):
+    fips = statecode[-2:]
+    state = next(s for s in STATES if s['id'] == statecode)
+    counties = [c for c in COUNTIES if 'US' + fips in c['id']]
+    return render_template('entity.html',
+            state=state,
+            entity=state,
+            US=US_RECORD,
+            children=counties,
+            )
+
+@myapp.route("/county/<countycode>")
+def county(countycode):
+    statecode = countycode[-5:-3]
+    state = next(s for s in STATES if 'US' + statecode in s['id'])
+    county = next(c for c in COUNTIES if c['id'] == countycode)
+    tracts = [c for c in TRACTS if 'US' + fips in c['id']]
+
+    return render_template('entity.html',
+            state=state,
+            county=county,
+            entity=county,
+            children=tracts,
+            US=US_RECORD,
+            )
+
 
 @myapp.route("/gentrification")
 def gentrification_metric():
@@ -182,16 +209,6 @@ def infopage(endpoint):
     return render_template('infopages/{}.html'.format(endpoint))
 
 
-@myapp.route("/states/<statecode>")
-def state(statecode):
-    fips = statecode[-2:]
-    state = next(s for s in STATES if s['id'] == statecode)
-    counties = [c for c in COUNTIES if c['id'][-4:2] == fips]
-    return render_template('state.html',
-            state=state,
-            US=US_RECORD,
-            counties=counties
-            )
 
 
 @myapp.route("/proto/")
@@ -222,33 +239,6 @@ def geoprototype():
 @myapp.errorhandler(404)
 def render_404(err):
     return render_template('meta/404.html', error=err)
-
-
-# @myapp.route("/testdata")
-# def xfoo():
-#     return render_template('altairtest.html')
-
-
-# CODE FOR geocode_address():
-# from pathlib import Path
-#     import json
-
-#     addr = request.args['address']
-#     coords = geo.geocode(addr)
-#     censuscodes = cg.lookup_tract(coords['longitude'], coords['latitude'])
-#     county = get_county(censuscodes['state'], censuscodes['county'])
-#     state = get_state(censuscodes['state'])
-#     tract = {}
-
-#     return render_template('geocode.html',
-#                                 address_query=addr,
-#                                 coords=coords,
-#                                 censuscodes=censuscodes,
-#                                 county=county,
-#                                 state=state,
-#                                 tract=tract,
-#                                 us=get_us(),
-#                             )
 
 if __name__ == '__main__':
     myapp.run(debug=True, use_reloader=True)
