@@ -51,16 +51,18 @@ def metricpage():
 @myapp.route("/state/<statecode>")
 def state(statecode):
     entity = state = get_record_by_id(statecode)
+    parent = US_RECORD
     children = counties = get_records_by_parent_id(statecode, COUNTIES)
     peers = STATES
     return render_template('entity.html',
             state=state,
+            parent=parent,
             entity=entity,
             us=US_RECORD,
             peers=peers,
             children=children,
             entities_group=[state,US_RECORD,],
-            all_entities=[parent, entity] + peers + children,
+                all_entities=[US_RECORD, entity] + peers + children,
             )
 
 @myapp.route("/county/<countycode>")
