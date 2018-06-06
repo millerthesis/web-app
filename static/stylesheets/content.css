@@ -159,3 +159,17 @@ div.container section#main div{
     max-height: 200px;
     overflow-x: hidden;
 }
+
+body.state-page section#main div{
+    display:inline-block;
+}
+
+body.state-page section#main div#housing{
+   margin-left:13em;
+   margin-bottom:5em;
+}
+
+body.state-page section#main div#residency{
+   margin-left:10em;
+   margin-bottom:5em;
+}

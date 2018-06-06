@@ -14,14 +14,14 @@
     <div class="container">
 
               <section id="main">
-                <h1 class="page-title">Data for {{state['name']}}</h1>
+                <h1 class="page-title">Data for {{state['name']}}</h1>              
                     <div>
                     <h3>Demographic data (2016)</h3>
 
                     {% include 'snippets/data-tables/demography-table.html' %}
                     
                     </div>
-                    <div>
+                    <div id="housing">
                     <h3>Housing data (2016)</h3>
 
                     {% include 'snippets/data-tables/housing-table.html' %}
@@ -31,7 +31,7 @@
 
                     {% include 'snippets/data-tables/income-table.html' %}
                     </div>
-                    <div>
+                    <div id="residency">
                     <h3>Residency data (2016)</h3>
 
                     {% include 'snippets/data-tables/residency-table.html' %}
