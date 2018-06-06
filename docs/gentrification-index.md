@@ -11,7 +11,7 @@ This index was created by using Census data from the 2000 Decennial and 2016 Ame
 
 This index was created by using Census data from the 2000 Decennial and 2016 American Community Survey and attempts to quantify the level of gentrification of an area by measuring the population of white people, population below poverty level, median home value, number of owner-occupied homes, number of people with at least a bachelor's degree and income per capita. These data points were chosen based on similar gentrification analyses by Governing magazine and the Cleveland Federal Reserve.
 
-Each variable is weighted based on perceived impact on gentrification. These weights are based on factors found to be associated with gentrification in an analysis conducted by Richard Florida of CityLab. In that analysis, they found the factors that impact gentrification most to be income per capita (positive correlation of .61), number of college-educated residents (.51), and housing prices (.40). They did not rate the number of owner-occupied units or population below poverty level for their correlation with gentrification, and they found no correlation between race and gentrification at the neighborhood level. As such, I have weighted each data variable accordingly: income per capita (.30), median home value (.25), population with bachelor's or higher (.20), percentage of owner-occupied housing units (.15), percentage below poverty level (.10) and percentage of white people (.05).
+Each variable is weighted based on perceived impact on gentrification. These weights are based on factors found to be associated with gentrification in an analysis conducted by Richard Florida of CityLab. In that analysis, they found the factors that impact gentrification most to be income per capita (positive correlation of .61), number of college-educated residents (.51), and housing prices (.40). They did not rate the number of owner-occupied units or population below poverty level for their correlation with gentrification, and they found no correlation between race and gentrification at the neighborhood level. As such, I have weighted each data variable accordingly: income per capita (.30), median home value (.25), population with bachelor's or higher (.20), percentage of owner-occupied housing units (.15), and percentage of white people (.10).
 
 Certain variables are compared against values at the country-wide level. For example, "income per capita" is compared with the value 100,000, which represents an above-average income. Similarly, "median home value" is compared against 250,000, which is slightly higher than the average home cost of 188,000. Finally, I compare "percent white population" against the value 62, which is roughly the percentage of white population in the total United States.
 
@@ -22,9 +22,8 @@ Certain variables are compared against values at the country-wide level. For exa
 - Income per capita (.30)
 - Median home value (.25)
 - Percent with bachelor's degree (.20)
-- Percent owner-occupied homes (.10)
+- Percent owner-occupied homes (.1)
 - Percent white population (.10)
-- Percent below poverty level (.05)
 
 
 
@@ -32,10 +31,6 @@ Certain variables are compared against values at the country-wide level. For exa
 ### Change in white population
 
 This is considered to be a factor in gentrification based on the study by Governing magazine. In their analysis on gentrification, they found that "compared to lower-income areas that failed to gentrify, gentrifying Census tracts recorded increases in the non-Hispanic white population." However, in the analysis conducted by Richard Florida of CityLab, they did not find the population of white residents to be correlated with gentrification. That said, the increase in the total white population is often considered to be a sign of gentrification in a neighborhood, so I include it in my index. However, because it was not found to have a significant correlation with gentrification, I give it a low weighting of .05.
-
-### Below poverty level
-
-As neighborhoods gentrify, poorer residents become displaced by rising rents. This change may be reflected in Census data through fewer amounts of people who live below the poverty level, as those communities move to other areas that are more affordable. In their <a href="http://voorheescenter.red.uic.edu/wp-content/uploads/sites/122/2017/10/Voorhees-Center-Gentrification-Index-Oct-14.pdf">Gentrification index</a>, the Voorhees Center at the University of Illinois, Chicago included percent of people below poverty in their index. They based their inclusion of this variable on the research done by David Ley, specifically, “Gentrification in Recession: Social Change in Six Canadian Inner Cities, 1981-1986.”  
 
 
 ### Change in median home value
