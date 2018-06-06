@@ -4,11 +4,18 @@ from helpers.entity import get_state, get_states, get_us, get_county, get_tract,
 from helpers.indexes import get_indexes
 import helpers.geocoder as geo
 import helpers.censusgeo as cg
-
 from helpers.viz import makeprotomap
 
+from helpers.records import get_geo_records
 from pathlib import Path
 import json
+
+CENSUS_RECORDS = get_geo_records()
+US_RECORD = CENSUS_RECORDS['us'][0]
+STATES = CENSUS_RECORDS['state']
+COUNTIES = CENSUS_RECORDS['county']
+TRACTS = CENSUS_RECORDS['tract']
+GENTRIFICATION_KEYS = US_RECORD['gentrification'].keys()
 
 myapp = Flask(__name__)
 
@@ -20,10 +27,10 @@ def vizproto():
 
 @myapp.route("/")
 def homepage():
-
     return render_template('homepage.html',
-                        states=get_states(),
-                        indexes=get_indexes(),
+                                us=US_RECORD,
+                                states=STATES,
+                                gentrification_keys=GENTRIFICATION_KEYS
                         )
 
 
@@ -35,14 +42,13 @@ def metricpage():
 
 @myapp.route("/tract")
 def geotracter():
-    from pathlib import Path
-    import json
-
     addr = request.args['address']
     coords = geo.geocode(addr)
     codes = cg.lookup_tract(coords['longitude'], coords['latitude'])
-    county = get_county(codes['state'], codes['county'])
-    state = get_state(codes['state'])
+
+    countyfips = codes['state'] + codes['county']
+    county = next(c for c in COUNTIES if countyfips in c['id'])
+    state = next(c for c in STATES if codes['state'] in c['id'])
     tract = get_tract(codes['tract'])
 
     return render_template('tract.html',
@@ -178,11 +184,13 @@ def infopage(endpoint):
 
 @myapp.route("/states/<statecode>")
 def state(statecode):
-    _x = statecode[-2:]
+    fips = statecode[-2:]
+    state = next(s for s in STATES if s['id'] == statecode)
+    counties = [c for c in COUNTIES if c['id'][-4:2] == fips]
     return render_template('state.html',
-            state=get_state(statecode),
-            US=get_us(),
-            counties=get_counties_by_state_code(_x)
+            state=state,
+            US=US_RECORD,
+            counties=counties
             )
 
 

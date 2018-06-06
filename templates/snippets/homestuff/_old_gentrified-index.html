@@ -1,0 +1,98 @@
+<section id="gentrified-index" class="index">
+
+    <h2>
+        <a href="/gentrification">
+            Most Gentrified Areas
+        </a>
+    </h2>
+
+    <div class="description">
+        <p>
+            These are areas of the United States that rank highly on the <a href="/gentrification">Gentrification Index</a>. This index was created based on former analyses on gentrification by <a href="https://www.clevelandfed.org/newsroom-and-events/publications/economic-trends/2013-economic-trends/et-20131106-gentrification-and-financial-health.aspx">Daniel Hartley</a> at the Cleveland Federal Reserve and <a href="http://www.governing.com/gov-data/gentrification-in-cities-governing-report.html">Governing</a> magazine. The index uses data from the Census to calculate levels of gentrification, specifically: populations of white and nonwhite people; median age; median home values; percent of owner-occupied housing units; percent of people with at least a bachelor's degree; and income per capita. You can read about the background and analysis considerations on the <a href="/gentrification">Gentrification Index</a> page.
+        </p>
+        <div class="row">
+                {% set states = index['states'] %}
+            <div class="col-m">
+                <table class="table .table table-responsive table-bordered table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Index</th>
+                            <th>% White</th>
+                            <th>Median age</th>
+                            <th>Median home value</th>
+                            <th>% Owner-occupied</th>
+                            <th>% with bachelor's</th>
+                            <th>Income per capita</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in states %}
+
+                        <tr>
+                            <td>
+                                <a href="/states/{{s.id}}">{{ s.name }}</a>
+                            </td>
+                            <td>{{ s.gentrification_index }}</td>
+                            <td>TK</td>
+                            <td>TK</td>
+                            <td>TK</td>
+                            <td>TK</td>
+                            <td>TK</td>
+                            <td>TK</td>
+                        </tr>
+
+                        {% endfor %}
+                    </tbody>
+                    <caption>Average gentrification index score for all states: X</caption>
+                </table>
+                <img src="https://i.stack.imgur.com/uhhaw.png" id="exampleheatmap">
+
+            </div>
+
+            <table class="table .table table-responsive table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>County</th>
+                        <th>Index</th>
+                        <th>% White</th>
+                        <th>Median age</th>
+                        <th>Median home value</th>
+                        <th>% Owner-occupied</th>
+                        <th>% with bachelor's</th>
+                        <th>Income per capita</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in states %}
+
+                    <tr>
+                        <td>
+                            <a href="/states/{{s.id}}">{{ s.name }}</a>
+                        </td>
+                        <td>{{ s.gentrification_index }}</td>
+                        <td>TK</td>
+                        <td>TK</td>
+                        <td>TK</td>
+                        <td>TK</td>
+                        <td>TK</td>
+                        <td>TK</td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+                <caption>Average gentrification index score for all counties: X</caption>
+
+            </table>
+        </div>
+        <img src="https://i.stack.imgur.com/uhhaw.png" id="exampleheatmap">
+
+    </div>
+
+
+
+
+
+
+</section>
