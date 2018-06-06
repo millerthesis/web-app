@@ -5,10 +5,18 @@ from helpers.indexes import get_indexes
 import helpers.geocoder as geo
 import helpers.censusgeo as cg
 
+from helpers.viz import makeprotomap
+
 from pathlib import Path
 import json
 
 myapp = Flask(__name__)
+
+@myapp.route("/viz")
+def vizproto():
+    viz = makeprotomap()
+    return render_template('infopages/altairtest.html', viz=viz)
+
 
 @myapp.route("/")
 def homepage():
@@ -17,6 +25,7 @@ def homepage():
                         states=get_states(),
                         indexes=get_indexes(),
                         )
+
 
 @myapp.route("/metrics")
 def metricpage():
