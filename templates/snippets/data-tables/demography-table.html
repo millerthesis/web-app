@@ -1,0 +1,38 @@
+
+<table class="table .table table-responsive table-bordered table-striped table-sm">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                {{state['name']}}
+            </th>
+            <th>
+                {{US['name']}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set fields = ['total_population',
+                                'median_age',
+                                'median_household_income',
+                                'white_pct',
+                                'nonwhite_pct',
+                                ]
+
+
+        %}
+
+        {% set year = '2016' %}
+
+        {% for fieldname in fields %}
+
+            <tr>
+                <td>{{fieldname}}</td>
+                <td>{{state[year][fieldname]}}</td>
+                <td>{{US[year][fieldname]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

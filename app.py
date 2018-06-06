@@ -25,6 +25,9 @@ def get_record_by_id(id):
 def get_records_by_parent_id(id, data=CENSUS_RECORDS):
     return [d for d in data if d['parent_id'] == id]
 
+
+
+
 myapp = Flask(__name__)
 
 @myapp.route("/viz")
@@ -45,6 +48,7 @@ def homepage():
 @myapp.route("/metrics")
 def metricpage():
     return render_template('infopages/metric_pages/metrics.html')
+
 
 
 
@@ -129,27 +133,26 @@ def geotracter():
 
 
 
+# @myapp.route("/gentrification")
+# def gentrification_metric():
+#     addr = 'tk'
+#     coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
+#     censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
+#     us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
+#     tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
+#     county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
+#     state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
 
-@myapp.route("/gentrification")
-def gentrification_metric():
-    addr = 'tk'
-    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
-    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
-    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
-    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
-    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
-    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
+#     return render_template('infopages/metric_pages/gentrification.html',
 
-    return render_template('infopages/metric_pages/gentrification.html',
-
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=censuscodes,
-                                county=county,
-                                state=state,
-                                us=us,
-                                tract=tract,
-                            )
+#                                 address_query=addr,
+#                                 coords=coords,
+#                                 censuscodes=censuscodes,
+#                                 county=county,
+#                                 state=state,
+#                                 us=us,
+#                                 tract=tract,
+#                             )
 
 
 

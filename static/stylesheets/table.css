@@ -95,6 +95,35 @@ section#debug div#geotables{
     width: 100%;
 }
 
+table.residency{
+    text-align: justify;
+    padding: 10px;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+table.residency th{
+    padding: 5px;
+}
+
+div#metrictable{
+    margin: 50px;
+    width: 100%;
+}
+
+div#homepagetables{
+    margin: 50px;
+}
+
+div#geotables{
+    margin: 50px;
+    display:inline;
+}
+
+section#debug div#geotables{
+    width: 100%;
+}
+
 
 
 td.title, th.title{

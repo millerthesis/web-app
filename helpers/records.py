@@ -58,10 +58,6 @@ def getdata():
     return results
 
 def get_all_records():
-    """
-    returns a dict
-    {'us': [], 'state': []}
-    """
     data = getdata()
     return data
     # records = {}
