@@ -9,27 +9,21 @@ This index was created by using Census data from the 2000 Decennial and 2016 Ame
 
 ## The factors for this index
 
-This index and composite scoring method is based on the gentrification index produced by the <a href="http://voorheescenter.red.uic.edu/wp-content/uploads/sites/122/2017/10/Voorhees-Center-Gentrification-Index-Oct-14.pdf">Voorhees Center</a> at the University of Illinois, Chicago. These variables are based on factors found to be associated with gentrification in an analysis conducted by Richard Florida of CityLab. In thay analysis, they found the factors that impact gentrification most to be income per capita (positive correlation of .61), number of college-educated residents (.51), and housing prices (.40). They did not rate the number of owner-occupied units or median age for their correlation with gentrification, and they found no correlation between race and gentrification at the neighborhood level. However, the number of owner-occupied units, ages and race are included in the gentrification index produced by the Voorhees center, so I include them in my index.
+This index was created by using Census data from the 2000 Decennial and 2016 American Community Survey and attempts to quantify the level of gentrification of an area by measuring the population of white people, population below poverty level, median home value, number of owner-occupied homes, number of people with at least a bachelor's degree and income per capita. These data points were chosen based on similar gentrification analyses by Governing magazine and the Cleveland Federal Reserve.
 
-The index score is assigned to geographies at the Census tract level. This score is calculated by comparing the Census tract's performance in each of the six variables relative to the county it is in. If the Census tract outperformed the county, it received a +1 for that particular variable. If that community underperformed relative to the county, it received a score of -1. Some variables (median home value, income per capita) are associated positively with higher economic status. In these cases, Census tracts that have higher home values than the county received a +1, while home values below the county received a -1. On the other hand, the variable poverty is negatively associated with economic status, so Census tracts that have higher rates of poverty than the County received -1 for that score, and tracts with poverty rates lower than the county received a +1. If the values are equal to that of the county, the variables were assigned a 0. 
+Each variable is weighted based on perceived impact on gentrification. These weights are based on factors found to be associated with gentrification in an analysis conducted by Richard Florida of CityLab. In that analysis, they found the factors that impact gentrification most to be income per capita (positive correlation of .61), number of college-educated residents (.51), and housing prices (.40). They did not rate the number of owner-occupied units or population below poverty level for their correlation with gentrification, and they found no correlation between race and gentrification at the neighborhood level. As such, I have weighted each data variable accordingly: income per capita (.30), median home value (.25), population with bachelor's or higher (.20), percentage of owner-occupied housing units (.15), percentage below poverty level (.10) and percentage of white people (.05).
 
-To calculate the Gentrification index score for a given Census tract, its scores for each of the six variables were added together. Potential scores range from +6 to -6. 
-
-
-Based on their index score, Census tracts are divided into three groups: low, middle, and high socioeconomic status. Census tracts with a score between -6 and -3 are considered "low", tracts with a score between -2 and 2 are considered "middle", and tracts with a score between 3 and 6 are considered "high."
-
-To determine whether a tract has changed or not, its index score for 2016 and 2000/2009 were compared. A community is considered to have changed if its index score increases or decreases by more than two points. Then, each tract is categorized by the rate of change. If a tract has changed by more than +3/4 points, it is considered to be gentrified.
 
 
 **From 2000 to 2016**
-The variable score assignments are as follows:
 
-- Percent white population (non-hispanic), Above City Average - Positive (+1)
-- % Below Poverty, Above City Average - Negative (-1)
-- Median home values, Above City Average - Positive (+1)
-- % Owner-occupied home, Above City Average - Positive (+1)
-- % of population with bachelor's degree or higher, Above City Average - Positive (+1)
-- Income per capita, Above City Average - Positive (+1)
+- Income per capita (.30)
+- Median home value (.25)
+- Percent with bachelor's degree (.20)
+- Percent owner-occupied homes (.10)
+- Percent white population (.10)
+- Percent below poverty level (.05)
+
 
 
 
@@ -62,4 +56,24 @@ Finally, I include income per capita in the index because it was found to have a
 
 
 
+<!-- This index and composite scoring method is based on the gentrification index produced by the <a href="http://voorheescenter.red.uic.edu/wp-content/uploads/sites/122/2017/10/Voorhees-Center-Gentrification-Index-Oct-14.pdf">Voorhees Center</a> at the University of Illinois, Chicago. These variables are based on factors found to be associated with gentrification in an analysis conducted by Richard Florida of CityLab. In thay analysis, they found the factors that impact gentrification most to be income per capita (positive correlation of .61), number of college-educated residents (.51), and housing prices (.40). They did not rate the number of owner-occupied units or median age for their correlation with gentrification, and they found no correlation between race and gentrification at the neighborhood level. However, the number of owner-occupied units, ages and race are included in the gentrification index produced by the Voorhees center, so I include them in my index.
 
+The index score is assigned to geographies at the Census tract level. This score is calculated by comparing the Census tract's performance in each of the six variables relative to the county it is in. If the Census tract outperformed the county, it received a +1 for that particular variable. If that community underperformed relative to the county, it received a score of -1. Some variables (median home value, income per capita) are associated positively with higher economic status. In these cases, Census tracts that have higher home values than the county received a +1, while home values below the county received a -1. On the other hand, the variable poverty is negatively associated with economic status, so Census tracts that have higher rates of poverty than the County received -1 for that score, and tracts with poverty rates lower than the county received a +1. If the values are equal to that of the county, the variables were assigned a 0. 
+
+To calculate the Gentrification index score for a given Census tract, its scores for each of the six variables were added together. Potential scores range from +6 to -6. 
+
+
+Based on their index score, Census tracts are divided into three groups: low, middle, and high socioeconomic status. Census tracts with a score between -6 and -3 are considered "low", tracts with a score between -2 and 2 are considered "middle", and tracts with a score between 3 and 6 are considered "high."
+
+To determine whether a tract has changed or not, its index score for 2016 and 2000/2009 were compared. A community is considered to have changed if its index score increases or decreases by more than two points. Then, each tract is categorized by the rate of change. If a tract has changed by more than +3/4 points, it is considered to be gentrified. -->
+
+
+
+<!-- The variable score assignments are as follows:
+
+- Percent white population (non-hispanic), Above City Average - Positive (+1)
+- % Below Poverty, Above City Average - Negative (-1)
+- Median home values, Above City Average - Positive (+1)
+- % Owner-occupied home, Above City Average - Positive (+1)
+- % of population with bachelor's degree or higher, Above City Average - Positive (+1)
+- Income per capita, Above City Average - Positive (+1) -->
