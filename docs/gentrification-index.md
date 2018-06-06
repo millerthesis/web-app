@@ -13,6 +13,8 @@ This index was created by using Census data from the 2000 Decennial and 2016 Ame
 
 Each variable is weighted based on perceived impact on gentrification. These weights are based on factors found to be associated with gentrification in an analysis conducted by Richard Florida of CityLab. In that analysis, they found the factors that impact gentrification most to be income per capita (positive correlation of .61), number of college-educated residents (.51), and housing prices (.40). They did not rate the number of owner-occupied units or population below poverty level for their correlation with gentrification, and they found no correlation between race and gentrification at the neighborhood level. As such, I have weighted each data variable accordingly: income per capita (.30), median home value (.25), population with bachelor's or higher (.20), percentage of owner-occupied housing units (.15), percentage below poverty level (.10) and percentage of white people (.05).
 
+Certain variables are compared against values at the country-wide level. For example, "income per capita" is compared with the value 100,000, which represents an above-average income. Similarly, "median home value" is compared against 250,000, which is slightly higher than the average home cost of 188,000. Finally, I compare "percent white population" against the value 62, which is roughly the percentage of white population in the total United States.
+
 
 
 **From 2000 to 2016**
