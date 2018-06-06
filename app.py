@@ -40,28 +40,6 @@ def metricpage():
 
 
 
-@myapp.route("/tract")
-def geotracter():
-    addr = request.args['address']
-    coords = geo.geocode(addr)
-    codes = cg.lookup_tract(coords['longitude'], coords['latitude'])
-
-    countyfips = codes['state'] + codes['county']
-    county = next(c for c in COUNTIES if countyfips in c['id'])
-    state = next(c for c in STATES if codes['state'] in c['id'])
-    tract = get_tract(codes['tract'])
-
-    return render_template('tract.html',
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=codes,
-                                county=county,
-                                state=state,
-                                tract=tract,
-                                us=get_us(),
-                            )
-
-
 @myapp.route("/state/<statecode>")
 def state(statecode):
     fips = statecode[-2:]
@@ -70,7 +48,8 @@ def state(statecode):
     return render_template('entity.html',
             state=state,
             entity=state,
-            US=US_RECORD,
+            us=US_RECORD,
+            peers=STATES,
             children=counties,
             )
 
@@ -78,16 +57,65 @@ def state(statecode):
 def county(countycode):
     statecode = countycode[-5:-3]
     state = next(s for s in STATES if 'US' + statecode in s['id'])
-    county = next(c for c in COUNTIES if c['id'] == countycode)
-    tracts = [c for c in TRACTS if 'US' + fips in c['id']]
+    state_counties = [c for c in COUNTIES if 'US' + statecode in c['id']]
+    county = next(c for c in state_counties if c['id'] == countycode)
+    tracts = [c for c in TRACTS if 'US' + statecode in c['id']]
 
     return render_template('entity.html',
             state=state,
             county=county,
             entity=county,
             children=tracts,
-            US=US_RECORD,
+            peers=state_counties,
+            us=US_RECORD,
             )
+
+@myapp.route("/tract/<tractcode>")
+def tract(tractcode):
+
+    countycode = tractcode[-11:-6]
+    statecode = countycode[0:2] # 1400000US06001420400
+    ustag = 'US' + countycode
+
+    county = next(c for c in COUNTIES if countycode in c['id'])
+    state = next(c for c in STATES if statecode in c['id'])
+    countytracts = [c for c in TRACTS if ustag in c['id']]
+    tract = next(c for c in countytracts if tractcode in c['id'])
+
+
+
+    return render_template('entity.html',
+                                county=county,
+                                state=state,
+                                tract=tract,
+                                entity=tract,
+                                peers=countytracts,
+                                us=get_us(),
+                            )
+
+@myapp.route("/geotract")
+def geotracter():
+    addr = request.args['address']
+    # coords = geo.geocode(addr)
+    # codes = cg.lookup_tract(coords['longitude'], coords['latitude'])
+
+    # countyfips = codes['state'] + codes['county']
+    # county = next(c for c in COUNTIES if countyfips in c['id'])
+    # state = next(c for c in STATES if codes['state'] in c['id'])
+    # tract = get_tract(codes['tract'])
+
+    # return render_template('tract.html',
+    #                             address_query=addr,
+    #                             coords=coords,
+    #                             censuscodes=codes,
+    #                             county=county,
+    #                             state=state,
+    #                             tract=tract,
+    #                             us=get_us(),
+    #                         )
+
+
+
 
 
 @myapp.route("/gentrification")

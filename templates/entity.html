@@ -81,7 +81,23 @@
 
     </section>
 
+
+    <section class="peers">
+        <h2>Peers</h2>
+
+
+        {% for c in peers %}
+
+        <div>
+            <a href="/{{c.geo}}/{{c.id}}">{{c.name}}</a>
+        </div>
+
+        {% endfor %}
+    </section>
+
     <section class="children">
+        <h2>Children</h2>
+
         {% for c in children %}
 
         <div>
@@ -96,10 +112,10 @@
 
     <section class="debug">
 
-<code>
+<!-- <code>
 {{ entity | tojson }}
 </code>
-
+ -->
     </section>
 </div>
 {% include 'snippets/sitewide/footer.html' %}
