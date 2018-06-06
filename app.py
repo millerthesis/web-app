@@ -60,13 +60,14 @@ def state(statecode):
             peers=peers,
             children=children,
             entities_group=[state,US_RECORD,],
+            all_entities=[parent, entity] + peers + children,
             )
 
 @myapp.route("/county/<countycode>")
 def county(countycode):
     entity = county = get_record_by_id(countycode)
-    state = get_record_by_id(entity['parent_id'])
-    state_counties = get_records_by_parent_id(entity['parent_id'], COUNTIES)
+    parent=state = get_record_by_id(entity['parent_id'])
+    peers = state_counties = get_records_by_parent_id(entity['parent_id'], COUNTIES)
     children = tracts = get_records_by_parent_id(entity['id'], TRACTS)
 
     return render_template('entity.html',
@@ -74,9 +75,11 @@ def county(countycode):
             county=county,
             entity=entity,
             children=children,
-            peers=state_counties,
+            parent=parent,
+            peers=peers,
             us=US_RECORD,
             entities_group=[county,state,US_RECORD,],
+            all_entities=[US_RECORD, parent, entity] + peers + children,
             )
 
 @myapp.route("/tract/<tractcode>")
@@ -86,6 +89,7 @@ def tract(tractcode):
     peers = get_records_by_parent_id(entity['parent_id'], TRACTS)
     parent = county = get_record_by_id(entity['parent_id'])
     state = get_record_by_id(county['parent_id'])
+    children = []
 
     return render_template('entity.html',
             state=state,
@@ -95,7 +99,7 @@ def tract(tractcode):
             peers=peers,
             us=US_RECORD,
             entities_group=[tract,county,state,US_RECORD,],
-            )
+            all_entities=[US_RECORD, parent, entity] + peers + children,)
 
 
 

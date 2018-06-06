@@ -15,7 +15,7 @@
 <div class="container">
 
     <section class="title">
-        <h1 class="page-title">{{ entity.name }}</h1>
+        <h1 class="page-title">{{ entity.full_name }}</h1>
     </section>
 
     <section class="lede">
@@ -80,32 +80,36 @@
     </section>
 
 
-    <section class="peers">
-        <h2>Peers</h2>
+    <section>
+        <table class="table table-sm table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="title"></th>
+                    <th class="value">2016 Population</th>
+                    <th class="value">Gentrification Index</th>
+                </tr>
+            </thead>
+        <tbody>        {% for e in all_entities %}
 
+            <tr>
+                <td class="title">
+                    <a href="/{{e.geo}}/{{e.id}}">{{e.name}}</a>
+                </td>
+                <td class="num">
+                    {{e['2016'].total_population}}
+                </td>
+                <td class="num">
+                    {{e['gentrification'].index}}
 
-        {% for c in peers %}
-
-        <div>
-            <a href="/{{c.geo}}/{{c.id}}">{{c.name}}</a>
-        </div>
+                </td>
+            </tr>
 
         {% endfor %}
+    </tbody>
+    </table>
     </section>
 
-    <section class="children">
-        <h2>Children</h2>
 
-        {% for c in children %}
-
-        <div>
-            <a href="/{{c.geo}}/{{c.id}}">{{c.name}}</a>
-        </div>
-
-        {% endfor %}
-
-
-    </section>
 
 
     <section class="debug">

@@ -36,7 +36,7 @@
                 {{entity['2016'][variable]}}
             </td>
             {% set ent_delta = entity['delta'][variable] %}
-            <td class="pct value num {{'neg' if ent_delta < 0 else 'pos' }} ">
+            <td class="pct value num {{'neg' if ent_delta and ent_delta < 0 else 'pos' }} ">
                 {{ ent_delta }}
             </td>
 
@@ -46,15 +46,21 @@
             {% for e in entities if e != entity %}
 
                 {% set other_delta = e['delta'][variable] %}
-                <td class="pct value num {{'neg' if other_delta < 0 else 'pos'}}">
+                <td class="pct value num {{'neg' if other_delta and other_delta < 0 else 'pos'}}">
                    {{ other_delta}}
                 </td>
 
-                {% set deltdiff = (ent_delta - other_delta) | round(1) %}
-                <td class="pct value num {{'neg' if deltdiff < 0 else 'pos'}}">
-                    {{deltdiff}}
-                </td>
-            {% endfor %}
+                    {% if ent_delta and other_delta %}
+                        {% set deltdiff = (ent_delta - other_delta) | round(1) %}
+                        <td class="pct value num {{'neg' if deltdiff < 0 else 'pos'}}">
+                            {{deltdiff}}
+                        </td>
+                        {% else %}
+                        <td class="pct value num">
+
+                        </td>
+                    {% endif %}
+                {% endfor %}
 
 
 
