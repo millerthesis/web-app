@@ -6,16 +6,24 @@ import helpers.geocoder as geo
 import helpers.censusgeo as cg
 from helpers.viz import makeprotomap
 
-from helpers.records import get_geo_records
+from helpers.records import get_all_records
 from pathlib import Path
 import json
 
-CENSUS_RECORDS = get_geo_records()
-US_RECORD = CENSUS_RECORDS['us'][0]
-STATES = CENSUS_RECORDS['state']
-COUNTIES = CENSUS_RECORDS['county']
-TRACTS = CENSUS_RECORDS['tract']
+CENSUS_RECORDS = get_all_records()
+US_RECORD = next(c for c in CENSUS_RECORDS if c['geo'] == 'us')
+STATES = [c for c in CENSUS_RECORDS if c['geo'] == 'state']
+COUNTIES = [c for c in CENSUS_RECORDS if c['geo'] == 'county']
+TRACTS = [c for c in CENSUS_RECORDS if c['geo'] == 'tract']
 GENTRIFICATION_KEYS = US_RECORD['gentrification'].keys()
+
+
+
+def get_record_by_id(id):
+    return next(d for d in CENSUS_RECORDS if d['id'] == id)
+
+def get_records_by_parent_id(id, data=CENSUS_RECORDS):
+    return [d for d in data if d['parent_id'] == id]
 
 myapp = Flask(__name__)
 
@@ -42,56 +50,54 @@ def metricpage():
 
 @myapp.route("/state/<statecode>")
 def state(statecode):
-    fips = statecode[-2:]
-    state = next(s for s in STATES if s['id'] == statecode)
-    counties = [c for c in COUNTIES if 'US' + fips in c['id']]
+    entity = state = get_record_by_id(statecode)
+    children = counties = get_records_by_parent_id(statecode, COUNTIES)
+    peers = STATES
     return render_template('entity.html',
             state=state,
-            entity=state,
+            entity=entity,
             us=US_RECORD,
-            peers=STATES,
-            children=counties,
+            peers=peers,
+            children=children,
+            entities_group=[state,US_RECORD,],
             )
 
 @myapp.route("/county/<countycode>")
 def county(countycode):
-    statecode = countycode[-5:-3]
-    state = next(s for s in STATES if 'US' + statecode in s['id'])
-    state_counties = [c for c in COUNTIES if 'US' + statecode in c['id']]
-    county = next(c for c in state_counties if c['id'] == countycode)
-    tracts = [c for c in TRACTS if 'US' + statecode in c['id']]
+    entity = county = get_record_by_id(countycode)
+    state = get_record_by_id(entity['parent_id'])
+    state_counties = get_records_by_parent_id(entity['parent_id'], COUNTIES)
+    children = tracts = get_records_by_parent_id(entity['id'], TRACTS)
 
     return render_template('entity.html',
             state=state,
             county=county,
-            entity=county,
-            children=tracts,
+            entity=entity,
+            children=children,
             peers=state_counties,
             us=US_RECORD,
+            entities_group=[county,state,US_RECORD,],
             )
 
 @myapp.route("/tract/<tractcode>")
 def tract(tractcode):
 
-    countycode = tractcode[-11:-6]
-    statecode = countycode[0:2] # 1400000US06001420400
-    ustag = 'US' + countycode
-
-    county = next(c for c in COUNTIES if countycode in c['id'])
-    state = next(c for c in STATES if statecode in c['id'])
-    countytracts = [c for c in TRACTS if ustag in c['id']]
-    tract = next(c for c in countytracts if tractcode in c['id'])
-
-
+    entity = tract = get_record_by_id(tractcode)
+    peers = get_records_by_parent_id(entity['parent_id'], TRACTS)
+    parent = county = get_record_by_id(entity['parent_id'])
+    state = get_record_by_id(county['parent_id'])
 
     return render_template('entity.html',
-                                county=county,
-                                state=state,
-                                tract=tract,
-                                entity=tract,
-                                peers=countytracts,
-                                us=get_us(),
-                            )
+            state=state,
+            county=county,
+            entity=entity,
+            children=[],
+            peers=peers,
+            us=US_RECORD,
+            entities_group=[tract,county,state,US_RECORD,],
+            )
+
+
 
 @myapp.route("/geotract")
 def geotracter():

@@ -1,0 +1,67 @@
+
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+        <tr>
+            <th class="title"></th>
+            <th class="value">2011</th>
+            <th class="value">2016</th>
+            <th class="value">% Change</th>
+            <th>Compared to:</th>
+
+            {% for e in entities if e.geo != entity.geo %}
+
+                <th class="value">
+                    <a href="/{{e.geo}}/{{e.id}}">
+                    {{e.short_name}}
+                    </a>
+                </th>
+                <th class="value">+/-</th>
+
+            {% endfor %}
+        </tr>
+    </thead>
+
+     <tbody>
+    {% for varname, variable in fields %}
+
+        <tr>
+            <td class="title">
+                {{varname}}
+            </td>
+            <td class="value num">
+                {{entity['2011'][variable]}}
+            </td>
+
+            <td class="value num">
+                {{entity['2016'][variable]}}
+            </td>
+            {% set ent_delta = entity['delta'][variable] %}
+            <td class="pct value num {{'neg' if ent_delta < 0 else 'pos' }} ">
+                {{ ent_delta }}
+            </td>
+
+            <td></td>
+
+
+            {% for e in entities if e != entity %}
+
+                {% set other_delta = e['delta'][variable] %}
+                <td class="pct value num {{'neg' if other_delta < 0 else 'pos'}}">
+                   {{ other_delta}}
+                </td>
+
+                {% set deltdiff = (ent_delta - other_delta) | round(1) %}
+                <td class="pct value num {{'neg' if deltdiff < 0 else 'pos'}}">
+                    {{deltdiff}}
+                </td>
+            {% endfor %}
+
+
+
+
+
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>

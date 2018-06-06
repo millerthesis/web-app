@@ -1,41 +1,22 @@
 
-<table class="table .table table-responsive table-bordered table-striped table-sm">
-    <thead>
-        <tr>
-            <th>
-
-            </th>
-            <th>
-                {{state['name']}}
-            </th>
-            <th>
-                {{US['name']}}
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        {% set incomefields =  [
-                                'Income per capita',
-                                'Households with 200k+ income',
-                                'Have at least a bachelors degree',
-                                'Household income $200k+',
-                                'Below poverty',
-                                ]
-
-
+        {% set fields  = [
+                ('Income per capita', 'income_per_capita'),
+                ('Households with $200,000+ incomes', 'income_200k_pct'),
+                ('People living in poverty', 'poverty_pct'),
+                ('Homes valued $1,000,000+', 'homes_over_1m_pct')
+            ]
         %}
 
 
 
-        {% for fieldname in incomefields %}
 
-            <tr>
-                <td>{{fieldname}}</td>
-                <td>{{state[fieldname]}}</td>
-                <td>{{US[fieldname]}}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<section class="data-table" id="income">
+    <h3>Income</h3>
+
+{% with fields=fields, entities=entities_group %}
+    {% include 'snippets/data-tables/data-table-template.html' %}
+{% endwith %}
+
+</section>
 
 

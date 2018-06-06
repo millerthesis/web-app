@@ -95,3 +95,17 @@ section#debug div#geotables{
     width: 100%;
 }
 
+
+
+td.title, th.title{
+    text-align: left;
+}
+
+th.value, td.num{
+    text-align: right;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+td.neg{
+    color: red;
+}

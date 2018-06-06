@@ -1,0 +1,19 @@
+
+
+        {% set fields  = [
+                ('Median Age', 'median_age'),
+                ('White Population %', 'white_pct'),
+            ]
+        %}
+
+
+<section id="demographics">
+    <h3>Demographics</h3>
+
+
+{% with fields=fields, entities=entities_group %}
+    {% include 'snippets/data-tables/data-table-template.html' %}
+{% endwith %}
+
+
+</section>
