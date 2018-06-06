@@ -123,6 +123,7 @@ div img#exampleheatmap{
 
 div#selectors{
     margin-left: 1em;
+    margin-top:1em;
 }
 
 
@@ -172,4 +173,8 @@ body.state-page section#main div#housing{
 body.state-page section#main div#residency{
    margin-left:10em;
    margin-bottom:5em;
+}
+
+footer.footer div#footerstuff.row{
+    margin-left: -10px;
 }
