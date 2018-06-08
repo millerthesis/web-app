@@ -180,7 +180,7 @@ def housing():
                                 us=US_RECORD,
                                 states=STATES,
                                 tracts=TRACTS,
-                                counties=COUNTIES
+                                counties=get_metric_counties(COUNTIES)
                             )
 
 @myapp.route("/income")
@@ -191,7 +191,7 @@ def income():
                                  us=US_RECORD,
                                 states=STATES,
                                 tracts=TRACTS,
-                                counties=COUNTIES
+                                counties=get_metric_counties(COUNTIES)
                             )
 
 @myapp.route("/residency")
@@ -202,7 +202,7 @@ def residency():
                                 us=US_RECORD,
                                 states=STATES,
                                 tracts=TRACTS,
-                                counties=COUNTIES
+                                counties=get_metric_counties(COUNTIES)
                             )
 
 @myapp.route("/info/<endpoint>")

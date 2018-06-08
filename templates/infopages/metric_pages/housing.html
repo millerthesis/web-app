@@ -22,32 +22,17 @@
             </tr>
         </thead>
         <tbody>
+            {% for c in (counties | sort(attribute='delta.median_home_value', reverse=true))[0:10]  %}
             <tr>
-                <td>1</td>
-                <td>TK</td>
-                <td>TK</td>
+                <td><a href="/county/{{ c['id'] }}">{{ c['name'] }}</a></td>
+                <td>{{ c['2016']['median_home_value'] }}</td>
+                <td>{{ c['delta']['median_home_value'] }}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
+
+            {% endfor %}
         </tbody>
+        <caption>For counties with at least 50,000 people</caption>
+
     </table>
 </div>
 
@@ -63,32 +48,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
+           
         </tbody>
+        <caption>For counties with at least 50,000 people</caption>
+
     </table>
 </div>
 
@@ -103,33 +66,8 @@
                 <th>% Change</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-        </tbody>
+        <caption>For counties with at least 50,000 people</caption>
+
     </table>
 </div>
 
@@ -145,32 +83,17 @@
             </tr>
         </thead>
         <tbody>
+            {% for c in (counties | sort(attribute='delta.renter_occupied_pct', reverse=true))[0:10]  %}
             <tr>
-                <td>1</td>
-                <td>TK</td>
-                <td>TK</td>
+                <td><a href="/county/{{ c['id'] }}">{{ c['name'] }}</a></td>
+                <td>{{ c['2016']['renter_occupied_pct'] }}</td>
+                <td>{{ c['delta']['renter_occupied_pct'] }}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>TK</td>
-                <td>TK</td>
-            </tr>
+
+            {% endfor %}
         </tbody>
+        <caption>For counties with at least 50,000 people</caption>
+
     </table>
 </div>
 
