@@ -5,8 +5,11 @@ from helpers.indexes import get_indexes
 import helpers.geocoder as geo
 import helpers.censusgeo as cg
 from helpers.viz import makeprotomap
-
 from helpers.records import get_all_records
+
+from helpers.metrics import *
+
+
 from pathlib import Path
 import json
 
@@ -159,92 +162,47 @@ def geotracter():
 @myapp.route("/demography")
 def demography():
 
-
-    addr = "1200 bryn mawr chicago, il"
-    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
-    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
-    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
-    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
-    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
-    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
-
     return render_template('infopages/metric_pages/demographics.html',
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=censuscodes,
-                                county=county,
-                                state=state,
-                                us=us,
-                                tract=tract,
+                                us=US_RECORD,
+                                states=STATES,
+                                tracts=TRACTS,
+                                counties=get_metric_counties(COUNTIES)
                             )
+
+
+
 
 @myapp.route("/housing")
 def housing():
-    from pathlib import Path
-    import json
 
-    addr = "1200 bryn mawr chicago, il"
-    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
-    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
-    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
-    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
-    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
-    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
 
     return render_template('infopages/metric_pages/housing.html',
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=censuscodes,
-                                county=county,
-                                state=state,
-                                us=us,
-                                tract=tract,
+                                us=US_RECORD,
+                                states=STATES,
+                                tracts=TRACTS,
+                                counties=COUNTIES
                             )
 
 @myapp.route("/income")
 def income():
-    from pathlib import Path
-    import json
 
-    addr = "1200 bryn mawr chicago, il"
-    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
-    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
-    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
-    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
-    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
-    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
 
     return render_template('infopages/metric_pages/income.html',
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=censuscodes,
-                                county=county,
-                                state=state,
-                                us=us,
-                                tract=tract,
+                                 us=US_RECORD,
+                                states=STATES,
+                                tracts=TRACTS,
+                                counties=COUNTIES
                             )
 
 @myapp.route("/residency")
 def residency():
-    from pathlib import Path
-    import json
 
-    addr = "1200 bryn mawr chicago, il"
-    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
-    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
-    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
-    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
-    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
-    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
 
     return render_template('infopages/metric_pages/residency.html',
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=censuscodes,
-                                county=county,
-                                state=state,
-                                us=us,
-                                tract=tract,
+                                us=US_RECORD,
+                                states=STATES,
+                                tracts=TRACTS,
+                                counties=COUNTIES
                             )
 
 @myapp.route("/info/<endpoint>")
@@ -253,30 +211,6 @@ def infopage(endpoint):
 
 
 
-
-@myapp.route("/proto/")
-def geoprototype():
-    from pathlib import Path
-    import json
-
-    addr = "1200 bryn mawr chicago, il"
-    coords = json.loads(Path('static/samples/prototypepage/coords.json').read_text())
-    censuscodes = json.loads(Path('static/samples/prototypepage/censuscodes.json').read_text())
-    us = json.loads(Path('static/samples/prototypepage/us.json').read_text())
-    tract = json.loads(Path('static/samples/prototypepage/tract.json').read_text())
-    county = json.loads(Path('static/samples/prototypepage/county.json').read_text())
-    state = json.loads(Path('static/samples/prototypepage/state.json').read_text())
-
-
-    return render_template('protopage.html',
-                                address_query=addr,
-                                coords=coords,
-                                censuscodes=censuscodes,
-                                county=county,
-                                state=state,
-                                us=us,
-                                tract=tract,
-                            )
 
 
 @myapp.errorhandler(404)
