@@ -13,7 +13,7 @@
 
 <div class="col-sm-4" id="metrics">
     <h6>Counties with the greatest change in people born in state</h6>
-    <table class="table .table table-responsive table-bordered table-striped table-sm">
+    <table class="table .table table-responsive table-bordered table-striped table-sm" id="metrics">
         <thead>
             <tr>
                 <th>Rank</th>
@@ -21,8 +21,59 @@
                 <th>% Change</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td><a href="/county/0500000US15005">Kalawao County, Hawaii</a></td>
+                <td>47</td>
+                <td>370</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US02013">Aleutians East Borough, Alaska</a></td>
+                <td>1215</td>
+                <td>125.84</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US32009">Esmeralda County, Nevada</a></td>
+                <td>165</td>
+                <td>111.54</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US48261">Kenedy County, Texas</a></td>
+                <td>405</td>
+                <td>63.97</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US35003">Catron County, New Mexico</a></td>
+                <td>1825</td>
+                <td>53.49</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US48393">Roberts County, Texas</a></td>
+                <td>714</td>
+                <td>42.80</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US22087">St. Bernard Parish, Louisiana</a></td>
+                <td>36703</td>
+                <td>35.04</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US05117">Prairie County, Montana</a></td>
+                <td>955</td>
+                <td>32.09</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US08097">Pitkin County, Colorado</a></td>
+                <td>4693</td>
+                <td>31.49</td>
+            </tr>
+            <tr>
+                <td><a href="/county/0500000US13101">Echols County, Georgia</a></td>
+                <td>2509</td>
+                <td>29.00</td>
+            </tr>
+        </tbody>
         <caption>For counties with at least 50,000 people</caption>
-
     </table>
 </div>
 
@@ -55,7 +106,7 @@
 
 <div class="col-sm-4" id="metrics">
     <h6>Counties with the greatest change in number of foreign born</h6>
-    <table class="table .table table-responsive table-bordered table-striped table-sm">
+    <table class="table .table table-responsive table-bordered table-striped table-sm" id="metrics">
         <thead>
             <tr>
                 <th>Rank</th>
@@ -63,6 +114,16 @@
                 <th>% Change</th>
             </tr>
         </thead>
+        <tbody>
+            {% for c in (counties | sort(attribute='delta.foreign_born', reverse=true))[0:10]  %}
+            <tr>
+                <td><a href="/county/{{ c['id'] }}">{{ c['name'] }}</a></td>
+                <td>{{ c['2016']['foreign_born'] }}</td>
+                <td>{{ c['delta']['foreign_born'] }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
         <caption>For counties with at least 50,000 people</caption>
 
     </table>

@@ -1,6 +1,6 @@
 # Gentrification index
 
-This index was created by using Census data from the 2011 and 2016 American Community Survey and attempts to quantify the level of gentrification of an area by measuring the changes in population of white people, median age, median home value, number of owner-occupied homes, number of people with at least a bachelor's degree and income per capita. These data points were chosen based on similar gentrification analyses by Governing magazine, Cleveland Federal Reserve and the <a href="http://voorheescenter.uic.edu/what-we-do/areas-of-research/gentrification-index/">Voorhees Center</a> at the University of Illinois, Chicago.
+This index was created by using Census data from the 2011 and 2016 American Community Survey and attempts to quantify the level of gentrification of an area by measuring the changes in income per capita, median home value, population with bachelor's degree or higher, percent owner-occupied homes, population of white people and population below poverty line. These data points were chosen based on similar gentrification analyses by Governing magazine, Cleveland Federal Reserve and the <a href="http://voorheescenter.uic.edu/what-we-do/areas-of-research/gentrification-index/">Voorhees Center</a> at the University of Illinois, Chicago.
 
 
 ## The most gentrified areas

@@ -39,7 +39,7 @@
 
 <div class="col-sm-4" id="metrics">
     <h6>Counties with the greatest change in number of households with 200k+ income</h6>
-    <table class="table .table table-responsive table-bordered table-striped table-sm" id="metrics">
+    <table class="table .table table-responsive table-bordered table-striped table-sm">
         <thead>
             <tr>
                 <th>Rank</th>
@@ -47,6 +47,16 @@
                 <th>% Change</th>
             </tr>
         </thead>
+        <tbody>
+            {% for c in (counties | sort(attribute='delta.income_over_200k', reverse=true))[0:10]  %}
+            <tr>
+                <td><a href="/county/{{ c['id'] }}">{{ c['name'] }}</a></td>
+                <td>{{ c['2016']['income_over_200k'] }}</td>
+                <td>{{ c['delta']['income_over_200k'] }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
         <caption>For counties with at least 50,000 people</caption>
 
     </table>

@@ -38,8 +38,8 @@
 
 
 <div class="col-sm-4" id="metrics">
-    <h6>Counties with the greatest change in number of homes worth $1 million+</h6>
-    <table class="table .table table-responsive table-bordered table-striped table-sm" id="metrics">
+    <h6>Counties with the greatest change of homes worth $1 million+</h6>
+    <table class="table .table table-responsive table-bordered table-striped table-sm">
         <thead>
             <tr>
                 <th>Rank</th>
@@ -48,7 +48,14 @@
             </tr>
         </thead>
         <tbody>
-           
+            {% for c in (counties | sort(attribute='delta.homes_over_1m_pct', reverse=true))[0:10]  %}
+            <tr>
+                <td><a href="/county/{{ c['id'] }}">{{ c['name'] }}</a></td>
+                <td>{{ c['2016']['homes_over_1m_pct'] }}</td>
+                <td>{{ c['delta']['homes_over_1m_pct'] }}</td>
+            </tr>
+
+            {% endfor %}
         </tbody>
         <caption>For counties with at least 50,000 people</caption>
 
@@ -66,6 +73,16 @@
                 <th>% Change</th>
             </tr>
         </thead>
+        <tbody>
+            {% for c in (counties | sort(attribute='delta.owner_occupied_pct', reverse=true))[0:10]  %}
+            <tr>
+                <td><a href="/county/{{ c['id'] }}">{{ c['name'] }}</a></td>
+                <td>{{ c['2016']['owner_occupied_pct'] }}</td>
+                <td>{{ c['delta']['owner_occupied_pct'] }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
         <caption>For counties with at least 50,000 people</caption>
 
     </table>
