@@ -1,5 +1,5 @@
 "scripts": {
-    "start": "index.js"
+    "start": "node your-script.js"
 }
 
 {
