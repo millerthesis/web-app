@@ -1,0 +1,8 @@
+{
+    "name": "gentriviz",
+    "description": "thesis app",
+    "version": "1.0.0",
+    "engines": {
+      "node": "8.12.0"
+    }
+  }
