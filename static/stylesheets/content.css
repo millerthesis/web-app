@@ -122,13 +122,16 @@ div img#exampleheatmap{
 }
 
 div#selectors{
-    margin-left: 1em;
-    margin-top:1em;
+    margin-left: 2em;
+    margin-top: 1em;
 }
-
 
 caption {
     font-style: italic;
+}
+
+section.lede{
+    display: inline;
 }
 
 section.lede img#heatmapexample{
