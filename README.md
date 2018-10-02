@@ -80,3 +80,11 @@ Getting your code onto the Heroku server is as easy as it is getting (i.e. *push
 ```
 git push heroku master
 ```
+
+It'll take awhile to deploy and load. When it finishes, and assuming it finishes without error, you should be able to go to the URL previously given to you and see the app:
+
+https://stark-waters-82009.herokuapp.com/ 
+
+If you forgot what your project URL was, you can always visit your Heroku account via browser and see a list of your current apps:
+
+https://dashboard.heroku.com/apps/
